@@ -79,8 +79,31 @@ Water makes up around 80% of a cell's weight. All of life's neccessary reactions
 
 Water is very sticky due to it's ability to form hydrogen bonds. The interaction of these molecules together is unique due to the unique structure of water.
 
+Some definitions:
+A *solution* is a homogenous mexture of two or more substances.
+A *solute* is the substance that dissolves
+A *solvent* is the dissolving agent
+An *aqueous solution* is a solution in which water is the solvent
+
 ### Properties
 Water has many characteristics that are neccessary for life such as:
 1. Cohesiveness (it's sticky due to it's hydrogen bonds)
 2. Ability to moderate temperature (it can store a lot of heat with its hydrogen bonds and act as a buffer)
-3. Versatile solven (it is act as a solvent for all polar molecules)
+3. Versatile solvent (it is act as a solvent for all polar molecules)
+
+
+### Hydrophilic & Hydrophobic Substances
+A *hydrophilic substance* is a substance that is able to form hydrogen bonds with water. This includes polar substances that which water breaks down.
+
+A *hydrophobic substance* is a substance that is not able to form hydrogen bonds with water. A nonpolar molecule is classified as hydrophobic substance. These nonpolar molecules tend to aggregate and cause *hydrophobic interactions* which are very important within membranes and proteins.
+
+### Acids & Bases
+Water dissociates into ions (H+ and OH-) at a concentration of 10^-7 M each which is the definition nonacitic and nonbasic.
+
+*Acids* are defined as molecules that donate a hydrogen ion wheras *bases* are defined as molecules that donate hydroxyl ions or accept hydrogen ions in aqueous solutions.
+
+The *pH scale* is used to measure acidity and defined as pH = -log[H+]. Solutes alter the pH of a solution.
+
+*Organic acids* are commonly *corboxylic acids* (ex. lactic acid) which are weak acids that do not completly dissociate in water.
+
+*Organic bases* are commonly *amines* (contain amino group) as they accept protons.
