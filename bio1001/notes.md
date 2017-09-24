@@ -107,3 +107,30 @@ The *pH scale* is used to measure acidity and defined as pH = -log[H+]. Solutes 
 *Organic acids* are commonly *corboxylic acids* (ex. lactic acid) which are weak acids that do not completly dissociate in water.
 
 *Organic bases* are commonly *amines* (contain amino group) as they accept protons.
+
+## Lecture 4: Carbohydrates
+All biological structures are base up of the same building blocks. Larger molecules, *polymers*, are composed of smaller similiar molecules called *monomers* through the use of covalent bonds. 
+
+Structure determines function.
+
+There are four main groups of macromolecules:
+1. Carbohydrates
+2. Lipids
+3. Nucleic Acids
+4. Proteins
+
+### Creating & Destroying Polymers
+*Polymerization* is the synthesis of polymers. These reactions are called *condensation reactions* (or *dehydration reactions*) as they take place between an OH and H and form H2O when complete. They are catalyzed by enzymes.
+
+*Depolymerization* is the breakdown of polymers. These reactions are called *dehydration reactions* as they use H2O during the reaction. They are also catalyzed by enzymes.
+
+### Carbs
+*Carbohydrates* are the sugars and starches and are used to store energy and for cell to cell communication. A *monosaccharide* is a carbohydrate monomer which are also known as the simple sugars. *Glucose*, a 6 carbon sugar, is the most common monosaccharide and exists in both a linear and ring form.
+
+Other monosaccharides include *Ribose*, *Galactose*, *Ribulose* and *Fructose*. They exist as either *Aldehyes*, organic componds with a carbonyl group is at end, or *Ketones*, where the carbonyl group is in the middle of the structure. An *Aldose* is an aldehyde sugar and a *ketose* is a ketone sugar.
+
+A *disaccharide* is a compound composed of 2 monosaccharides linked by a covalent bond called a *glycosidic bond* which is the bond formed by the dehydration reactions. These disaccharides differ in the monosaccharides involved and the location of the bonded carbon.
+
+*Polysaccharides* are simply carbohydrate polymers formed by multiple dehydration reactions, similiar to disaccharides. They act as energy storage capabilities and structural molecules for cells.
+
+*α glucose structures* and *β glucose structures* differ only by the orientation of the hydroxyl on the first carbon. The α structure features the hydroxyl on the bottom whereas the β structure features the hydroxyl on the top. *Starch* is defined as a 1-4 linkage of α glucose monomers and *cellulose* is defined as a 1-4 linkage of β glucose monomers.
