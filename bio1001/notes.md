@@ -47,6 +47,40 @@ The electrons are located around the *nucleus*, which contain the protons and ne
 ### Covalent Bonds
 The type of bond is when valence electrons are shared between two atoms. It is a string bond and an atoms capactiy to form covalent bonds is determined by the number of valence electrons.
 
-Carbon is able to form covalent bonds numerous other elements to form *organic molecules*. *Carbon skeletons* are chains of carbons and form the backbone of these molecules.
+Carbon is able to form covalent bonds numerous other elements to form *organic molecules*. *Carbon skeletons* are chains of carbons and form the backbone of these molecules. It is able to form four covalent bonds, usually carbon, hydrogen, oxygen and nitrogen. 
 
-These bonds are either *polar*, where the electrons are unequally shared, or *nonpolar*, where the electrons are equally shared. C-C and C-H are nonpolar bonds whereas C-O and O-H are not shared equally. The electrons are attracted more to the O, therefore the O is more *electronegative*.
+These bonds are either *polar*, where the electrons are unequally shared, or *nonpolar*, where the electrons are equally shared. C-C and C-H are nonpolar bonds whereas C-O and O-H are not shared equally. The electrons are attracted more to the O, therefore the O is more *electronegative*. When the difference is greater than 0.4, a bond is said to be electronegative.
+
+A *polar molecule* is then defined as a molecule containing polar bonds where the sum of all of the bond's *dipole mouvement* does not add to 0.
+
+These bonds are often made and broken during biochemical reactions. These reactions are catalyzed by *enzymes*.
+
+### Ionic Bonds
+These bonds are formed when unpaired valence electrons are transferred from one atom to the other, creating *ions*. Once the ions are formed, they are able to bind together as they are oppositely charged.
+
+### Hydrogen Bonds
+*Hyrdrogen bonds* are stronger form of Van der Waal bonds. They occur when hydrogen bonds to an atom that strongly attracts the shared electrons (ex. F, O, N) creating partial charges. These types of bonds are especially important between water molecules, in DNA and in proteins.
+
+### Van der Waals Interactions
+Van der Waal bonds are weak bonds formed by partial charges that naturally occur as electrons orbit the nuclei. The asymmetry allows atoms to induce partial charges in other molecules and temporarily bond.
+
+### Functional Groups
+Functional groups are chemical groups that replace hydrogen on the carbon skeleton. The groups introduce unique properties to the molecule such as shape, interactions and the reactions that it is able to participate in.
+
+1. Hydroxyl Group -OH
+2. Carbonyl Group >C=O
+3. Carboxyl Group -COOH
+4. Amino Group -NH2
+5. Phosphate Group -OPO3 ^ 2-
+6. Methyl Group -CH3
+
+## Lectcure 3: Water
+Water makes up around 80% of a cell's weight. All of life's neccessary reactions take place in water and it is a universal solvent. It is the medium in which biological molecules are able to move through the cell and it influences their shape.
+
+Water is very sticky due to it's ability to form hydrogen bonds. The interaction of these molecules together is unique due to the unique structure of water.
+
+### Properties
+Water has many characteristics that are neccessary for life such as:
+1. Cohesiveness (it's sticky due to it's hydrogen bonds)
+2. Ability to moderate temperature (it can store a lot of heat with its hydrogen bonds and act as a buffer)
+3. Versatile solven (it is act as a solvent for all polar molecules)
