@@ -141,7 +141,7 @@ A *disaccharide* is a compound composed of 2 monosaccharides linked by a covalen
 Although humans cannot degrade cellulose, bacteria and fungi produce *celluloses* that are able to break it down. Polysaccharides are often used by bacteria as a cover around their cell walls.
 
 ### Carbohydrate Communication
-Sugar (*glycan*) chains on the surface of cells are often used for intercellular communication. They can be linked covalently to the membrane (*glycolipids*) or to membrane bound proteins (glycoproteins).
+Sugar (*glycan*) chains on the surface of cells are often used for intercellular communication. They can be linked covalently to the membrane (*glycolipids*) or to membrane bound proteins called *glycoproteins*.
 
 Different glycosidic linkages are possible as there many hydroxyl groups and two possible orientations. Vast amounts of *oligosaccharides* and polysaccharides can thus be built for communication purposes, in both linear and branched structures.
 
@@ -164,3 +164,27 @@ This superb ability allows for intermolecular recognition and glycan binding pro
 
 ### Phospholipids
 *Phospholipids* contain a hydrophilic head, containing a phosphate group and glycerol, with 2 fatty acid chains with hydrophobic tails. This molecule is therefore *amphipathic*, meaning it is both hydrophobic and hydrophilic at the same time.
+
+## Lecture 6: Membranes
+*Membranes* serve as a selectively permeable barrier, a protein anchor and a way to create a charge gradient. The membrane is a lipid bilayer made up of non-stationary phospholipids. Animal cells also contain cholesterol, another amphipathic molecule to hinder packing together.
+
+### The Proteins
+The membrane contains either *peripheral proteins*, proteins on the surface, or *integral proteins* (also known as *transmembrane proteins*), proteins that span the membrane.
+
+The integral proteins contains hydrophobic regions on the inside and hydrophilic regions on the outside of the membrane. These proteins are transporters, receptors, enzymes and anchors.
+
+1. *Transmembrane receptors* act as attachment sites for cells, viruses and molecules to recognize, communication and signal transduction.
+2. *Transmembrane enzymes* are involved in numerous function such as energy metabolism.
+3. *Membrane transport proteins* allow molecules that are not able to permeate the cell wall to enter the membrane. Whereas nonpolar molecules can pass through the hydrophobic core in *passive diffusion* down the *concentration gradient*, polar and ionic molecules must use *channel proteins* or *carrier proteins* to pass through.
+
+### Osmosis
+*Osmosis* is the diffusion of water and is a special case of passive diffusion. An *isotonic solution* is a solution where there is no net movement of water. When the external environment has a higher solute concentration relative to the internal environment, the net flow is towards the external environment. This solution is called a *hypertonic solution*.
+
+### Facilitated Diffusion
+Specific transport proteins are able to increase the rate of diffusion by moving solutes into the cytoplasm, this is called *facilitated diffusion*. This can occur through the use of channel proteins or carrier proteins (which change shape when the solute binds).
+
+### Active transport
+*Active transport* is the act of moving solutes against their concentration gradient and often requires energy, such as ATP.
+
+### Bulk Transport
+Through the use of vesicle, large amount of substances can be removed when *exocytosis* occurs (a vesicle fuses with the cell wall). This process is called *bulk transport*. For example, this is used by neurons when they use synaptic vesicles to release neurotransmitter molecules. *Endocytosis* is used as a way to transport large amounts of substances into the cell (mediated by proteins).
