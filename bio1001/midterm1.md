@@ -10,7 +10,7 @@ All cells regulate their internal environment to suit them best. *Homeostasis* i
 ## Energy
 Cells are able to obtain nutrients from their environment. The use *catabolic reactions* to break components down into energy (ex. glucose) and *anabolic reactions* to create compounds (ex. insulin). These reactions are what is known as *metabolism*.
 
-Prokaryotes make use of their cell membrane and cytoplasm to conduct metabolic reactions. In eukaryotes, these reactions occur at the mitochondria and chloroplasts.
+Prokaryotes make use of their cell membrane and *cytoplasm* to conduct metabolic reactions. In eukaryotes, these reactions occur at the mitochondria and chloroplasts.
 
 ## Genetic Information & Evolution
 Each cell can only arise from other cells through a process called *replication*. During this process, key aspects of cells are passed on such as the genetic information stored in their *DNA*.
@@ -25,7 +25,7 @@ In prokaryotes, DNA is not enclosed in a membrane but is usually found in the nu
 These membranes also allow for the specialized communication and transportation to take place. With use of *transport proteins* and *receptor proteins* (ex. *Fimbriae* allow bacteria to recognize their eukaryotic hosts), cells are able to control the flow of molecules and respond to changes in their external environment. In multicellular organisms, communication can also take place through the use of physical contact (ex. *Gap Junctions* are channels between cells to transport small molecules).
 
 ## Transportation
-The *cytoskeleton* provides a sort of structure to eukaryotic cells and is involved in *cell motility*. It is often used by motor proteins to transport organelles and *vesicles*.
+The *cytoskeleton* provides a sort of structure to eukaryotic cells and is involved in *cell motility*. It is often used by *motor proteins* to transport organelles and *vesicles*.
 
 ## Protein Synthesis
 DNA carries the information necessary to synthesize proteins, which occurs on the *ribosomes*. The small organelles are located in the *cytosol*, the soluble section of cell, and are called free ribosomes. The other location they are found is bound to the *endoplasmic reticulum*, the membrane located in the *cytoplasm* responsible for protein and lipid synthesis, creating the *rough emdoplasmic reticulum*. The majority of proteins created by these ribosomes are transported outside the cell.
@@ -125,23 +125,25 @@ There are four main groups of macromolecules:
 ## What are Carbs
 *Carbohydrates* are the sugars and starches and are used to store energy and for cell to cell communication. A *monosaccharide* is a carbohydrate monomer which are also known as the simple sugars. *Glucose*, a 6 carbon sugar, is the most common monosaccharide and exists in both a linear and ring form.
 
-Other monosaccharides include *Ribose*, *Galactose*, *Ribulose* and *Fructose*. They exist as either *Aldehydes*, organic compounds with a carbonyl group is at end, or *Ketones*, where the carbonyl group is in the middle of the structure. An *Aldose* is an aldehyde sugar and a *ketose* is a ketone sugar.
+Other monosaccharides include *Ribose*, *Galactose*, *Ribulose* and *Fructose*. Fructose is much sweeter than glucose as it bonds more tightly to the sugar receptor. Glucose and fructose also form different ring structures. They exist as either *Aldehydes* (glucose), organic compounds with a carbonyl group is at end, or *ketones* (fructose), where the carbonyl group is in the middle of the structure. An *Aldose* is an aldehyde sugar and a *ketose* is a ketone sugar.
 
 A *disaccharide* is a compound composed of 2 monosaccharides linked by a covalent bond called a *glyosidic bond* which is the bond formed by the dehydration reactions. These disaccharides differ in the monosaccharides involved and the location of the bonded carbon.
 
-*Polysaccharides* are simply carbohydrate polymers formed by multiple dehydration reactions, similar to disaccharides. They act as energy storage capabilities and structural molecules for cells.
+*Polysaccharides* are simply carbohydrate polymers formed by multiple dehydration reactions, similar to disaccharides. They act as energy storage capabilities and structural molecules for cells. The three main types of polysaccharides are *starch*, *glycogen* and *cellulose*.
 
 ## Carbohydrate Structures
 *α glucose structures* and *β glucose structures* differ only by the orientation of the hydroxyl on the first carbon. The α structure features the hydroxyl on the bottom whereas the β structure features the hydroxyl on the top. *Starch* and *glycogen* is defined as a 1-4 linkage of α glucose monomers and *cellulose* is defined as a 1-4 linkage of β glucose monomers.
 
 *Amylose* is a plant starch which acts as energy storage. Glycogen, although not a starch, is often referred to as an animal starch and also acts as an energy storage structure. Cellulose, used as plant cell walls, and *chitin*, used by insects for exoskeleton and for fungal walls, are both structural polysaccharides.
 
+*Amylase* is an enzyme that catalyzes the hydrolysis of sugars in animals.
+
 Although humans cannot degrade cellulose, bacteria and fungi produce *celluloses* that are able to break it down. Polysaccharides are often used by bacteria as a cover around their cell walls.
 
 ## Carbohydrate Communication
 Sugar (*glycan*) chains on the surface of cells are often used for intercellular communication. They can be linked covalently to the membrane (*glycolipids*) or to membrane bound proteins called *glycoproteins*.
 
-Different glycosidic linkages are possible as there many hydroxyl groups and two possible orientations. Vast amounts of *oligosaccharides* and polysaccharides can thus be built for communication purposes, in both linear and branched structures.
+Different *glycosidic linkages* are possible as there many hydroxyl groups and two possible orientations. Vast amounts of *oligosaccharides* and polysaccharides can thus be built for communication purposes, in both linear and branched structures.
 
 This superb ability allows for intermolecular recognition and glycan binding protein recognition. One example is of H.pylori, a protein which binds to an oligosaccharide through the use of hydrogen bonds.
 
@@ -178,10 +180,10 @@ The integral proteins contains hydrophobic regions on the inside and hydrophilic
 ## Osmosis
 *Osmosis* is the diffusion of water and is a special case of passive diffusion. An *isotonic solution* is a solution where there is no net movement of water. When the external environment has a higher solute concentration relative to the internal environment, the net flow is towards the external environment. This solution is called a *hypertonic solution* and causes *shriveled* cells (also known as *flaccid*). When the external environment has fewer solutes and the water flows into the internal environment, the situation is called *hypotonic* and causes the cell to become *lysed* or *turgid*.
 
-Water uses *aquaporins* are important membrane proteins that serve as channels for the transfer of water.
+Water uses *aquaporins* which are important membrane proteins that serve as channels for the transfer of water.
 
 ## Facilitated Diffusion
-Specific transport proteins are able to increase the rate of diffusion by moving solutes into the cytoplasm, this is called *facilitated diffusion*. This can occur through the use of channel proteins or carrier proteins (which change shape when the solute binds).
+Specific transport proteins are able to increase the rate of diffusion by moving solutes into the cytoplasm, this is called *facilitated diffusion* or *passive transport*. This can occur through the use of channel proteins or carrier proteins (which change shape when the solute binds).
 
 ## Active transport
 *Active transport* is the act of moving solutes against their concentration gradient and often requires energy, such as ATP.
