@@ -176,7 +176,9 @@ The integral proteins contains hydrophobic regions on the inside and hydrophilic
 3. *Membrane transport proteins* allow molecules that are not able to permeate the cell wall to enter the membrane. Whereas nonpolar molecules can pass through the hydrophobic core in *passive diffusion* down the *concentration gradient*, polar and ionic molecules must use *channel proteins* or *carrier proteins* to pass through.
 
 ## Osmosis
-*Osmosis* is the diffusion of water and is a special case of passive diffusion. An *isotonic solution* is a solution where there is no net movement of water. When the external environment has a higher solute concentration relative to the internal environment, the net flow is towards the external environment. This solution is called a *hypertonic solution*.
+*Osmosis* is the diffusion of water and is a special case of passive diffusion. An *isotonic solution* is a solution where there is no net movement of water. When the external environment has a higher solute concentration relative to the internal environment, the net flow is towards the external environment. This solution is called a *hypertonic solution* and causes *shriveled* cells (also known as *flaccid*). When the external environment has fewer solutes and the water flows into the internal environment, the situation is called *hypotonic* and causes the cell to become *lysed* or *turgid*.
+
+Water uses *aquaporins* are important membrane proteins that serve as channels for the transfer of water.
 
 ## Facilitated Diffusion
 Specific transport proteins are able to increase the rate of diffusion by moving solutes into the cytoplasm, this is called *facilitated diffusion*. This can occur through the use of channel proteins or carrier proteins (which change shape when the solute binds).
