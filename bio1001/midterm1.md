@@ -67,12 +67,12 @@ Functional groups are chemical groups that replace hydrogen on the carbon skelet
 
 1. Hydroxyl Group -OH
 2. Carbonyl Group >C=O
-3. Carboxyl Group -COOH
-4. Amino Group -NH2
-5. Phosphate Group -OPO3 ^ 2-
+3. Carboxyl Group -COOH - acts as an acid
+4. Amino Group -NH2 - acts as a base
+5. Phosphate Group -OPO3 ^ 2- - acts as a acid
 6. Methyl Group -CH3
 
-# Lectcure 3: Water
+# Lecture 3: Water
 Water makes up around 80% of a cell's weight. All of life's necessary reactions take place in water and it is a universal solvent. It is the medium in which biological molecules are able to move through the cell and it influences their shape.
 
 Water is very sticky due to it's ability to form hydrogen bonds. The interaction of these molecules together is unique due to the unique structure of water.
@@ -120,7 +120,7 @@ There are four main groups of macromolecules:
 ## Creating & Destroying Polymers
 *Polymerization* is the synthesis of polymers. These reactions are called *condensation reactions* (or *dehydration reactions*) as they take place between an OH and H and form H2O when complete. They are catalyzed by enzymes.
 
-*Depolymerization* is the breakdown of polymers. These reactions are called *dehydration reactions* as they use H2O during the reaction. They are also catalyzed by enzymes.
+*Depolymerization* is the breakdown of polymers. This reaction is called *hydrolysis* as they use H2O during the reaction. They are also catalyzed by *hydrolytic enzymes* (also known as *hydrolases*) which must be segregated within the *lysosome* (in animal cells) to prevent destruction of cellular components.
 
 ## What are Carbs
 *Carbohydrates* are the sugars and starches and are used to store energy and for cell to cell communication. A *monosaccharide* is a carbohydrate monomer which are also known as the simple sugars. *Glucose*, a 6 carbon sugar, is the most common monosaccharide and exists in both a linear and ring form.
