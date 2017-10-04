@@ -22,8 +22,15 @@ There are four levels of protein structure.
 
 1. *Primary Stucture*: The sequence of amino acids. There is an amino end and a carboxyl end.
 2. *Secondary Structure*: The coils and folds between the polypeptide chains as a result of the H bonds between the backbone atoms. The α helices are flexible whereas the β sheets are rigid. As a result, proteins can form *alpha helix* or *pleated sheets*. Some toxic proteins may go through α helix to β sheet transition.  
-3. *Tertiary Structure*: The coils and folds between the polypeptide chains as a result of the interactions amoung the various R groups. The interactions stabilize the tertiary structure of the protein through the user of all kinds of bonds. One special example is the *disulfide bridge* which occurs between cysteins during oxidation reactions.
-4. *Quaternary Structure*: When a protein consists of multiple polypeptide chains. Two or more polypeptide groups (subunits) may interact. For example, this may create fibrous proteins .....
+3. *Tertiary Structure*: The coils and folds between the polypeptide chains as a result of the interactions amoung the various R groups. The interactions stabilize the tertiary structure of the protein through the user of all kinds of bonds such as hydrogen/ionic bonds and hydrophobic/van der Waals interactions. One special example is the *disulfide bridge* which occurs between cysteins during oxidation reactions.
+4. *Quaternary Structure*: When a protein consists of multiple polypeptide chains. Two or more polypeptide groups (subunits) may interact. For example, this may create fibrous proteins such as *collagen* or globular proteins such as *hemoglobin*.
 
 ## Functional Groups
 Protein structure can be modified by the addition of functional groups. For example, a phosphate group can be added to the R group through the use of a covalent bond. This introduces a negatively charged functional group which changes the shape (and function) of the protein.
+
+## How is Structure Determined?
+Proteins structure is determined experimentatally through methods such as *x-ray crystallography* and *nuclear magnetic resonance spectroscopy*. Tertiary structure may also be predicted from the primary structure.
+
+The structure is influenced by factors such as pH, salt concentration and temperature.
+
+*Denuration* is the detruction of the weak bonds and interactions that maintain the 3D structure and leads to an inactive protein called *denured proteins*. *Renuration* is the opposite process.
