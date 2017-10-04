@@ -34,3 +34,18 @@ Proteins structure is determined experimentatally through methods such as *x-ray
 The structure is influenced by factors such as pH, salt concentration and temperature.
 
 *Denuration* is the detruction of the weak bonds and interactions that maintain the 3D structure and leads to an inactive protein called *denured proteins*. *Renuration* is the opposite process.
+
+# Lecture 8: Getting to Know Proteins Better
+Each protein has a unqiue shape (tertiary structure) that determines function. The shape is determined by the primary structure and the side chains of amino acids determine the interactions that occur within proteins.
+
+## Proteins & Disease
+The misfolding of proteins leads to many neurodegenerative diseases such as *alzheimers disease*, *huntingtons disease*, *parkinsons disease* and *prion diseases*. The risk factor increases with age due to the accumulation of misfolded proteins that aggregate. These proteins damage the nerves.
+
+### Alzeimers Disease
+Alzeimers is a degenerative brain disorder. An individual who has this disease has a progressive loss of abstract thinking and memory. During the onset, misfoldeed *amyloid* proteins (*β-amyloid* protein) begin to aggregate to form *amyloid plaques*.
+
+*Amyloid-β precursor proteins* (*APP*) are transmembrane proteins in nerve cells which normaly act as signal receptors involved in neural growth and repair.
+
+The *cleavage* of APP molecules, cut by *proeases*, changes during the onset of the disease. This abnormal cleavage produces neurotoxic Aβ peptides (40-23 amino acids) which aggregate to form amyloid plaques.
+
+Most cases of alzeihmers are not inherited; however, some forms of the disease can be inherited. For example, the amino acid at position 22 of the peptide may be G instead of E which creates a peptide called *Aβ22G*.
