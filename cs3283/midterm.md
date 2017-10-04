@@ -171,7 +171,7 @@ The advantages are:
 
 `W(n)` is the worst case, `B(n)` is the best case and `A(n)` is the average over the inputs of size `n`.
 
-If `a` = time taken by the fastest primitive operation and `b` = time taken by the slowest primitive operation then `an <= T(n) <= bn`. Changing the hardware affects T(n) by a constant factor, but does not alter the growth rate of `T(n)`.
+If `a` = time taken by the fastest primitive operation and `b` = time taken by the slowest primitive operation then `an <= T(n) <= bn`. Changing the hardware affects T(n) by a constant factor, but does not alter the growth rate of `T(n)`. If Ta(n0) < Tb(n0) for all n >= n0 then algorithm A is better than algorithm B
 
 ## CheckPrime(A)
 ```
@@ -195,3 +195,25 @@ or
   return true
 }
 ```
+Ta = a*n
+Tb = a*n^0.5
+
+# Lecture 4
+## Big-Oh Notation
+Definition: Given non-negative function f(n) and g(n), we say that f(n) = O(g(n)), if there exists *an integer n0* and *constant k > 0* such that f(n) <= k*g(n) for all integers n >= n0.
+
+f(n) = O(g(n)): f(n) is of order at most g(n) or f(n) if big oh of g(n). f(n) grows no faster than g(n) for large n.
+
+## Example 5n + 10 is O(n)
+We need to find a pair (k, n0) such that for all n >= n0, we have 5n + 10 <= kn for n >= n0
+
+1. 10 <= (k-5)n
+2. n >= 10/(k-5)
+3. Pick k=6 and n0 = 10
+4. 5n + 10 < 6n for n >= 10
+
+# Lecture 5
+Properties of Asymptotic:
+Suppose we know that f1(n) = O(g1(n)) and f2(n) = O(g2(n)) then
+* f1(n) + f2(n) = O(max(g1(n), g2(n)))
+* f1(n) x f2(n) = O(g1(n) x g2(n))
