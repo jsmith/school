@@ -94,3 +94,22 @@ In eukaryotic cells, DNA is found within the nucleus bound to *histone proteins*
 
 ## Genes
 *Genes* are discrete units of hereditary information. They are specific linear segments of DNA. Each gene occupies a distinct region on the chromosome.
+
+# Lecture 10: DNA Replication
+DNA replication is a key process for all living cells. It must be copied accurately and the process must be able to be carried out easily.
+
+## Process
+The high level process is:
+1. Separation: DNA strands seperate
+2. Enzymes bind and use each strand as a template
+
+It is a *semiconservative* process as each new double helix consists of one new and one old strand. It is also a fact process (50-500 nucleotides / second) and an accurate process (1 mistake / 10 billion nucleotides). The whole process required more than ten different proteins.
+
+### Primers
+The replication process begins with a predetermined sequence of nucleotides. It is a AT rich sequence at the site of replication. *Primers* are RNA sequences which bind to the specific sequence. Within eukaryotic cells, replication begins at several site simultaneously.
+
+### Seperation
+After the primers are attached, *helicase* begins to unwind the strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
+
+## Synthesis
+After separation begins, *DNA polymerase* catalyze the dehydration reactions neccessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group.
