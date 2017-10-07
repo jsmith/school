@@ -35,3 +35,39 @@ Some of the key rules will be broken as a result of the distributed teams which 
 
 # Methods and Tools for Maintaining an Distributed Agile Team
 This section will detail the methods and tools that are usually adapted by distributed teams that maintain an agile workflow.
+
+Agile teams are supposed to work in close proximity. As a result, several problems arise such as:
+
+1. Asynchronous communication
+2. Inability to form a close relationship with remote coworkers
+3. Difference in workplace (development) culture
+4. Difficulty scheduling meetings
+
+# Principles and Tools for Maintaining an Distributed Agile Team
+This section will detail the methods and tools that are usually adapted by distributed teams that maintain an agile workflow.
+
+## Structure
+This is likely the most important method for managing distributed agile teams. With a good team structure, necessary communication can be minimized. Good system architecture mandates loose cohesion. If teams are constructed correctly, they should be able work almost independently on their own subsystem. On tool to help minimize distributed knowledge is to implement code reviews across distributed teams. This creates an environment where knowledge also becomes distributed and therefore eases system maintenance and decreases a system's dependence on one team. For example, if production issues of one subsystem arises during the off hours of one particular team another may be able to step in and quickly resolve the issue.
+
+## Relationships
+Face to face communication across teams is a key aspect of agile development. Therefore, within distributed agile teams, it is even more important to foster relationships.
+
+Video conferencing is an important tool that should be used across distributed teams. It acts as a proxy for true in person communication; however, still has limitations. The time spent on video calls will often resemble meeting rather than a casual conversation. In addition, they also limit non-verbal communication and have difficulty conveying complex information such as challenges, successes and opportunities. If a team is truly distributed and agile, they should promote casual one on one video conferencing.  
+
+If possible, team meet-up events should routinely take place to further build rapport.
+
+## Culture
+Every successful agile team needs a development culture. As a result of the increased communication burden, ensuring a consistent development culture becomes more difficult. There exists several principles to minimize this burden.
+
+1. Over communicate decisions
+2. Minimize the difficulty of setting up the local development environment
+3. Create a clear definition of done
+4. Create clear guidelines for bug reporting
+
+## Maximize Golden Hours
+The "golden hours" of any distributed team are the hours when all of the teams are in the office. These should be maximized.
+
+# Sources
+* [Agile Manifesto](http://agilemanifesto.org/principles.html)
+* [Atlassian](https://www.atlassian.com/agile/remote-teams)
+>>>>>>> 9e1b90359724cbf20a2b779d749667db0e0ceca6
