@@ -1,8 +1,11 @@
 # Ideas
-* Learning from Human Preferences [source](https://blog.openai.com/deep-reinforcement-learning-from-human-preferences/)
-* AI Security
-* Generative Adversarial Networks
+* [Learning from Human Preferences](https://blog.openai.com/deep-reinforcement-learning-from-human-preferences/)
+* [Generative Adversarial Networks](https://github.com/zhangqianhui/AdversarialNetsPapers)
 
-# Sources
-* [Internation Conference on Machine Learning](https://2017.icml.cc/)
+## Generative Adversarial Networks
+* [The GAN World](https://github.com/savan77/The-GAN-World)
+* [Adversarial Nets Papers](https://github.com/zhangqianhui/AdversarialNetsPapers)
+
+# General Sources
+* [International Conference on Machine Learning](https://2017.icml.cc/)
 * [OpenAI](https://openai.com/research/)
