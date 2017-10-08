@@ -47,19 +47,15 @@ Agile teams are supposed to work in close proximity. According to [Atlassian], s
 # Principles and Tools for Maintaining an Distributed Agile Team
 This section will detail the methods and tools that are usually adapted by distributed teams that maintain an agile workflow.
 
-## Structure
-This is likely the most important method for managing distributed agile teams. With a good team structure, necessary communication can be minimized. Good system architecture mandates loose cohesion. If teams are constructed correctly, they should be able work almost independently on their own subsystem.
+## Enforcing Agile & Development Culture
+When establishing a distributed agile team, it is essential to incorporate agile into the teams culture. Teams may try avoid certain procedures initially or near releases. Scrum masters should ensure each practice is enforced so the project stays on track.
 
-According to [Microsoft], team size and mix should also be prioritized. It isn't a good idea to have one location specialize in a particular task, such as development or quality assurance. This structure may lead to inadequate communication where information may only flow in one direction and if problems arise, teams may be more willing to place blame on other teams. Specialized teams will also increase recruitment costs.
+Every successful agile team needs a culture. As a result of the increased communication burden, ensuring a uniform culture becomes more difficult, but more important. This is related to There exists several principles to minimize this burden.
 
-Work should also be evenly distributed across each location. An uneven workload affects the project delivery schedule and the quality of code produced. This is a unique problem which arises due to communication constraints. Bottlenecks as a result of strained developers are the cause.
-
-## Sharing your Work
-Within distributed agile teams, it is important to create an environment where knowledge is also distributed. This eases system maintenance by decreasing dependence on particular teams and increase overall code quality. For example, if production issues of one subsystem arises during the off hours of one particular team another may be able to step in and quickly resolve the issue.
-
-Pair programming, where two developers simultaneously collaborate on the same code, is a common practice among agile teams. Within distributed teams, this becomes more difficult as developers are not able to work *side by side*. This experience can be imitated using online tools although, it faces common communication limitations.
-
-On tool to help minimize distributed knowledge is to implement code reviews across distributed teams.
+1. Over communicate decisions
+2. Minimize the difficulty of setting up the local development environment
+3. Create a clear definition of done
+4. Create clear guidelines for bug reporting
 
 ## Relationships & Communication
 Face to face communication across teams is a key aspect of agile development. Therefore, within distributed agile teams, it is even more important to foster relationships.
@@ -68,18 +64,32 @@ Video conferencing is an important tool that should be used across distributed t
 
 According to [Microsoft], team members should be made aware of the additional communication responsibilities. The commitment of every member is needed to make agile work and team leaders should become mentors, especially during the transition phases.
 
-If possible, team meet-up events should routinely take place to further build rapport.
+## Structure
+This is likely the most important method for managing distributed agile teams. With a good team structure, necessary communication can be minimized. Good system architecture mandates loose cohesion. If teams are constructed correctly, they should be able work almost independently on their own subsystem.
+
+According to [Microsoft], team size and mix should also be prioritized. It isn't a good idea to have one location specialize in a particular task, such as development or quality assurance. This structure may lead to inadequate communication where information may only flow in one direction and if problems arise, teams may be more willing to place blame on other teams. Specialized teams will also increase recruitment costs.
+
+Work should also be evenly distributed across each location. An uneven workload affects the project delivery schedule and the quality of code produced. This is a unique problem which arises due to communication constraints. Bottlenecks as a result of strained developers are the cause.
+
+## Sharing your Work
+Within distributed agile teams, it is important to create an environment where knowledge is also distributed according to [Microsoft] and [Atlassian]. This eases system maintenance by decreasing dependence on particular teams and increase overall code quality. For example, if production issues of one subsystem arises during the off hours of one particular team another may be able to step in and quickly resolve the issue.
+
+Pair programming, where two developers simultaneously collaborate on the same code, is a common practice among agile teams. Within distributed teams, this becomes more difficult as developers are not able to work *side by side*. This experience can be imitated using online tools although, it faces common communication limitations.
+
+Other practices to help distribute knowledge and increase code quality include code reviews and *show and tell hour*. The former is an already common practice among agile teams where code is reviewed by team members before it is merged. The latter is a combination of scrum meetings and code reviews although and involves live demonstrations of code to all developers. Both of these techniques distribute knowledge while fostering code quality and reusability.
 
 ## Culture
-Every successful agile team needs a development culture. As a result of the increased communication burden, ensuring a consistent development culture becomes more difficult. There exists several principles to minimize this burden.
+Every individual comes from a different cultural background. This becomes apparent between countries and especially different continents. Where agile teams place an emphasis on individuals and interactions, team members should be especially aware of these differences. For example, being on time for meetings is important in some cultures whereas it is not as important in others. Not only is it important for every individual to have a general cultural awareness, one can try to minimize these differences by creating a common team culture.
 
-1. Over communicate decisions
-2. Minimize the difficulty of setting up the local development environment
-3. Create a clear definition of done
-4. Create clear guidelines for bug reporting
+## Time Differences & Maximize Golden Hours
+Teams who work across varying time zones face unique problems. As the time differences increase, so does the need for specific procedure to mitigate these problems. According to [Microsoft], *developer-to-developer* handshakes and end of day updates by each developer should be used to decrease the need for clarification or rework. These updates should clarify what code was changed, build status and any known issues.
 
-## Maximize Golden Hours
-The "golden hours" of any distributed team are the hours when all of the teams are in the office. These should be maximized.
+Each team should be totally aware of the time zone difference of other teams they work with. *Golden hours*, the hours when all of the teams are in the office, should be maximized. This is when communication is most similar to face to face communication.
+
+# Tools for Distributed Agile Teams
+Time zone tools
+Communication tools (text, video)
+Bug tracker tools
 
 [Agile Manifesto]: (http://agilemanifesto.org/principles.html)
 [Atlassian]: (https://www.atlassian.com/agile/remote-teams)
