@@ -31,7 +31,7 @@ This section will describe how teams maintain an agile workflow while working in
 ## Difficulties of Maintaining an Agile Workflow within a Distributed Team
 This is an important section as it will set up much of the rest of the paper. Like the title implies, it will describe the difficulties of maintaining an agile workflow within a distributed team.
 
-Some of the key rules will be broken as a result of the distributed teams which will all be detailed here.
+Some of the key rules will be broken as a result of the distributed teams which will all be detailed here. This section will be short however as it will only act as a transition.
 
 # Methods and Tools for Maintaining an Distributed Agile Team
 This section will detail the methods and tools that are usually adapted by distributed teams that maintain an agile workflow.

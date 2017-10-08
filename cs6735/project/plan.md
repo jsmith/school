@@ -7,6 +7,8 @@
 * [Adversarial Nets Papers](https://github.com/zhangqianhui/AdversarialNetsPapers)
 * [Ian Goodfellow Talk](https://www.youtube.com/watch?v=AJVyzd0rqdc)
 * [Karpathy Example](https://cs.stanford.edu/people/karpathy/gan/)
+* [Learning to Discover Cross-Domain Relations with Generative Adversarial Networks](http://proceedings.mlr.press/v70/kim17a.html)
+* [Wasserstein Generative Adversarial Networks](http://proceedings.mlr.press/v70/arjovsky17a.html)
 
 # General Sources
 * [International Conference on Machine Learning](https://2017.icml.cc/)
