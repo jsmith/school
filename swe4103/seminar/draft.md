@@ -50,7 +50,29 @@ Every individual comes from a different cultural background. This can be apparen
 ## Time Differences & Maximize Golden Hours
 Teams who work across varying time zones face unique problems. As these differences grow, so does the need for specific procedures to mitigate the resulting difficulties. Asynchronous communication, where team members communicate without immediate responses, become especially dangerous when important messages fail to be answered due to these time zone differences. Imagine a developer who needs clarification about particular change in code and is therefore unable to complete his work until the following day when he receives an answer. This may be a worse case scenario although, situations similar to these are likely to occur daily if the time zones are large and developer work overlaps. Sandeep
 
-Joshi recommends *developer-to-developer* handshakes, where developers communicate changes they've made, build status and any known issues[^7]. Any other relevant information should also be conveyed to minimize the need for any further communication and to streamline the development process. *Golden hours*, a term taken from photography, are the hours Dan Radigan uses to describe the time when all of the distributed teams and remote employees are working[^8]. Teams should used these hours to hold important meetings and for synchronous conversation.
+Joshi recommends *developer-to-developer* handshakes, where developers communicate changes they've made, build status and any known issues[^7]. Any other relevant information should also be conveyed to minimize the need for any further communication and to streamline the development process. *Golden hours*, a term taken from photography, are the hours Dan Radigan uses to describe the time when all of the distributed teams and remote employees are working[^8]. Teams should use these hours to hold important meetings and for synchronous conversation.
+
+## Development Culture
+Establishing a clear development culture is an essential part of any team, especially one that is distributed or dispersed. These cultural practices that typically aren't as important within a co-located team become essential due to communication limitations. This can also be seen as setting clear guidelines for teams such as:
+* Definition of done
+* Branching
+* Development environment setup
+* Bug reporting
+* Code review
+* Code style
+* Release
+* Testing
+
+The points above should be established to ensure a consistent development culture across team locations. Several of these guidelines, including branching, bug reporting and testing, code review and release, may be seen as a complete development. When establishing these guidelines, the whole development process should be covered. This should ensure there are no discrepancies between locations. It is important to establish some sort of document that allows team members to easily set up their development environments. Each team member should be working in the same environment to minimize setup problems or problems pushing code to production. Furthermore, it is necessary to establish a clear definition of done. This removes any sort of residual ambiguity about the development process.
+
+# Tools for Agile Teams
+Agile project management tools should be employed by any team practicing agile development. These tools help teams organize projects and help teams communicate updates, share work and track issues. Furthermore, they can help maintain a clear development culture.
+
+## Atlassian / JIRA
+JIRA :)
+
+# Other Things
+Establishing clear workflow / development culture. This would especially help distributed teams who may not always eb working in the same time zone. This includes IDE setup, definition of done, guidelines for bug reports, branching specifications, continuous integration, code reviews, wiki, testing tools
 
 [^1]: https://www.statcan.gc.ca/pub/11-008-x/2011001/article/11366-eng.pdf
 [^2]: https://people.stanford.edu/nbloom/sites/default/files/wfh.pdf
