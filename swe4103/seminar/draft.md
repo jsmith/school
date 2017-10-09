@@ -71,9 +71,6 @@ Agile project management tools should be employed by any team practicing agile d
 ## Atlassian / JIRA
 JIRA :)
 
-# Other Things
-Establishing clear workflow / development culture. This would especially help distributed teams who may not always eb working in the same time zone. This includes IDE setup, definition of done, guidelines for bug reports, branching specifications, continuous integration, code reviews, wiki, testing tools
-
 [^1]: https://www.statcan.gc.ca/pub/11-008-x/2011001/article/11366-eng.pdf
 [^2]: https://people.stanford.edu/nbloom/sites/default/files/wfh.pdf
 [^3]: https://insights.stackoverflow.com/survey/2017
