@@ -171,30 +171,32 @@ Introns exist for many reasons. Some introns control gene expression. Furthermor
 During this process, *tRNA* carries amino acids and three base pairs. These base pairs match up with specific three base pair long mRNA sequences called *codons*.
 
 ## Transfer RNA
-There are many types of *transfer RNAs* (tRNAs) in the cell. Each has a specific *anticodon* sequence and carries a specific amino acid. An anticodon matches with a complementary codon. 
+There are many types of *transfer RNAs* (tRNAs) in the cell. Each has a specific *anticodon* sequence and carries a specific amino acid. An anticodon matches with a complementary codon. The anticodon must be antiparallel so that the functional groups match up and the bonds are able to be formed.
 
-*Aminoacyl-tRNA synthases* match tRNA with a specific amino acid. There are 20 different kinds of this protein, all which catalyze the formation of a covalent bond between the tRNA and an amino acid to form *aminoacyl tRNA*. This process is called *chargin tRNA*.
+*Aminoacyl-tRNA synthases* match tRNA with a specific amino acid. There are 20 different kinds of this protein, all which catalyze the formation of a covalent bond between the tRNA and an amino acid to form *aminoacyl tRNA*. This process is called *charging tRNA*. The amino acid attaches to the 3' end of the tRNA.
 
 ## Ribosomes
-The ribosome is divided into a large subunit and a small subunit which join over the mRNA. *Ribosomal RNAs* (*rRNAs*) catalyzes the formation of *peptide bonds* between the amino acids.
+The ribosome is divided into a large sub-unit and a small sub-unit which join over the mRNA. *Ribosomal RNAs* (*rRNAs*) catalyzes the formation of *peptide bonds* between the amino acids.
 
 The large subunit contains three sites. The *peptidyl-tRNA bind site* (*P-site*) holds tRNA with attached peptide chain. The *aminoacyl-tRNA binding site* (*A-site*) holds tRNA holds the amino acid to be added. The *exit site* (*E-site*) is the location where the tRNA is discharged from the ribosome.
 
 ## Initation
 The initiator codon is *AUG* which adds the *met* amino acid. The anitcondon is located on the *initiator tRNA*. The *mRNA binding site* is located on the small subunit. After, the large subunit is added to form the *translation iniation complex*.
 
+The small sub-unit recognizes the 5' cap. It then scans down the mRNA until it reaches the AUG codon.
+
 ## Cycle
-The first part is the cycle is codon recognition when the tRNA attaches to the A-site (GTP to GDP). The next event that occurs is the formation of the peptide bond and the attachement of the polypeptide attachement to the A-site. The two tRNAs then translocate to the next positions (GTP to GDP). The tRNA in the E-site then exits the ribosome.
+The first part is the cycle is codon recognition when the tRNA attaches to the A-site (GTP to GDP). The next event that occurs is the formation of the peptide bond and the attachment of the polypeptide attachment to the A-site. The two tRNAs then translocate to the next positions (GTP to GDP). The tRNA in the E-site then exits the ribosome.
 
 ## Termincation
 The *release factor* bonds with one of the three *stop codons*. This structure also dissociates the structure and breaks the bond between the tRNA and polypeptide.
 
 ## Post-Translation
-The folding structure is determined by primary structure. Sometimes, there are cleavages of polypeptides and the *C-peptide* is removed. Furthermore, there is additions of sugars, phosphates and other molecules.
+The folding structure is determined by primary structure. Sometimes, there are cleavages of polypeptides and the *C-peptide* is removed. For example, insulin has part of the peptide removed and the two new parts bind together. Furthermore, there is additions of sugars, phosphates and other molecules (*phosphorylation*, *glycosylation*). This may occur in the *lumin* of the rough cytoplasmic reticulum.
 
 ## Genetic Code & Mutations
 This code is redundant and non ambiguous. Each dna triplet codes for one specific item.
 
 Changes in this genetic code, *mutations*, change the sequence of proteins and RNAs. These changes are passed on the offspring. *Mutagens* can be physical or chemical and can cause these mutations, along with errors in the replication process. *Frameshifts* may also occur due to insertions or deletions.
 
-Many mutations can be detremental. Some are "silent". Some can even be advantaguous. One example is the *β-globin* protein which aggregates and forms into sickle shaped proteins.
+Many mutations can be detrimental. Some are "silent". Some can even be advantageous. One example is the *β-globin* protein which aggregates and forms into sickle shaped proteins.
