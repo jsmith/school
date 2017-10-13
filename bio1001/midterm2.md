@@ -100,16 +100,69 @@ DNA replication is a key process for all living cells. It must be copied accurat
 
 ## Process
 The high level process is:
-1. Separation: DNA strands seperate
+1. Separation: DNA strands separate
 2. Enzymes bind and use each strand as a template
 
 It is a *semiconservative* process as each new double helix consists of one new and one old strand. It is also a fact process (50-500 nucleotides / second) and an accurate process (1 mistake / 10 billion nucleotides). The whole process required more than ten different proteins.
 
 ### Primers
-The replication process begins with a predetermined sequence of nucleotides. It is a AT rich sequence at the site of replication. *Primers* are RNA sequences which bind to the specific sequence. Within eukaryotic cells, replication begins at several site simultaneously.
+The replication process begins with a predetermined sequence of nucleotides. It is a AT rich sequence at the site of replication. *Primers* are RNA sequences which bind to the specific sequence. These primers provide the initial 3' OH and are constructed by *primase*. Within eukaryotic cells, replication begins at several site simultaneously.
 
-### Seperation
+### Separation
 After the primers are attached, *helicase* begins to unwind the strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
 
 ## Synthesis
-After separation begins, *DNA polymerase* catalyze the dehydration reactions neccessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group.
+After separation begins, *DNA polymerase III* catalyze the dehydration reactions necessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group.
+
+DNA polymerase only catalyzes the addtion of nucleoside triphosphates to the 3' end; however, since there is a replication fork the actual replication occurs in both directions simultaneously.
+
+DNA polymerase also features a sliding clamp to reattach the hydrogen bonds. The synthesis of the *leading strand* is continuous whereas the synthesis of the *lagging strand* is discontinuous. As the lagging strand has multiple DNA fragments, called *okazaki fragments*, there are multiple RNA fragments. *DNA polymerase I* replaces the RNA primers with DNA. *DNA ligase* links the okazaki fragments.
+
+*DNA polymerase* detects and corrects errors during replication. Later, other enzymes also do some "proofreading".
+
+## Termination
+In prokaryotes, replication continues until the whole circular strand is complete. In eukaryotes, chromosome replication terminates at *telomeres*. In humans, the sequence consists of TTAGGG repeated ~2500x.
+
+Each replication cycle, the lagging strand is shortened by the primer length. Humans can lose up to 300 base pairs of *telomeric DNA* per replication. After 50-70 divisions, most cells die; however, some cells maintain their telomeres using *telomerase* which catalyzes the addition of *telomeric sequences*. This protein is produced in the vast majority of cancer cells.
+
+# Lecture 11: Transcription
+Most DNA encodes proteins (the rest encode RNA). Specific sequences, called *genes*, of DNA encode specific proteins. This process is similiar in both eukaryotes and prokaryotes.
+
+This *transcription* process begins and ends at specific sequences of nucleotides. *mRNA* is produced from one DNA strand. During the *translation* phase, a polymer of amino acids called *polypeptide* is created.
+
+## Prokaryotes vs. Eukaryotes
+Transcription and translation occur simultaneously in prokaryotes at no specific location.
+
+In eukaryotes, the two processes are spatially separated by the nucleus. There may be additional processing that occurs before transport.
+
+Multiple *ribosome* may be attached to one mRNA molecule.
+
+## Regulatory Sequence & Mechanisms of Transcription
+The *regulatory sequence* is a region "upstream" of the beginning of the gene. It controls factors such as timing, location and amount of gene expression. The beginning of the transcription starts at a predetermined location called the *promoter*. This is the binding site for RNA polymerase.
+
+The *transcription start site* is the first nucleotide in the mRNA that is produced which is located before the end of the promoter. The *transcription unit* is the full mRNA sequence that is copied. The *protein coding sequence* is only a subunit of this sequence.
+
+A eukaryotic promoter includes a *TATA box*. Before *RNA polymerase II* can find, several *transcription factors* must bind to the DNA. After the RNA polymerase has bound, additional transcription factors are bound forming the *transcription initiation complex*.
+
+RNA polymerase II separates by melting and catalyzes the polymerization of RNA 5' 3'.
+
+For RNA, U pairs with A instead of T.
+
+# Lecture 12: RNA Processing
+Enzymes in the nucleus modify *pre-RNA* before it is transported out. During this event, both ends of the pre-RNA are altered. In addition, some interior parts are also cut out and spliced together.
+
+## End Modification
+At the 5' end a *cap* is added and at the 3' end *poly-A tail* is added. This allows RNA to be exported, protects it from degradation and help the ribosome bind.
+
+The cap is *guanosine triphosphate*. It forms a triphosphate linkage. A methyl group is also added to the cap at N7 to form 7-methylguanosine.
+
+A complex of proteins recognizes a *polyadenylation signal* in the *3'UTR*, the section of the mRNA that immediately follows the termination codon, and initiates the *polyadenylation* process. The complex cleaves the 3' end and adds a long chain of *adenine nucleotides* called the poly-A tail (long sequence of A's).
+
+## Interior Modification
+Within the mRNA, *introns* are intervening sequences that are transcribed but removed. *Exons* are sequences that remain and that are spliced together.
+
+The process is completed by a large complex of proteins and RNA called a *spliceosome*. One of the key items is called *snRNPs* which stands for *small nuclear ribonucleic proteins* which consists of snRNA and protein.
+
+The intron ends are recognized by the snRNAs by binding to specific sequences at the ends via complementary base pairing, like usual. There are different kinds of snRNAs which bind to other locations on the intron. The ends of the introns are then cut at these splice sites and the exons are joined together.
+
+Introns exist for many reasons. Some introns control gene expression. Furthermore, some genes code for multiple polypeptides depending on which areas are treated as exons during splicing. This is called *alternative RNA splicing*. For example, the *doublesex* gene on the fruit fly *Drosophila melanogaster* produces two different sex proteins. About 60% of human genes are spliced into more than one different mRNA for a total of ~100,000 proteins. For example, the muscle protein *α-trpomysin* codes for the heart muscle and uterine muscle. 
