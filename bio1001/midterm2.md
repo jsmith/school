@@ -109,7 +109,7 @@ It is a *semiconservative* process as each new double helix consists of one new 
 The replication process begins with a predetermined sequence of nucleotides. It is a AT rich sequence at the site of replication. *Primers* are RNA sequences which bind to the specific sequence. These primers provide the initial 3' OH and are constructed by *primase*. Within eukaryotic cells, replication begins at several site simultaneously.
 
 ### Separation
-After the primers are attached, *helicase* begins to unwind the strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
+After the primers are attached, *helicase* begins to unwind the strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA and help hold the DNA strands apart during replication. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
 
 ## Synthesis
 After separation begins, *DNA polymerase III* catalyze the dehydration reactions necessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group.
