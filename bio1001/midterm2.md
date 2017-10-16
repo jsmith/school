@@ -2,7 +2,7 @@
 Proteins have many functions and are fundamental aspects of the cell.
 
 ## The Building Blocks
-For proteins, the monomers are the *amino acids* and the polymers are called *peptides*, *polypeptides* and *proteins*.  
+For proteins, the monomers are the *amino acids* and the polymers are called * s*, *polypeptides* and *proteins*.  
 
 ## Structure of Amino Acid
 The structure of an amino acid contains an amino, carboxyl and R groups. The aspect that distinguishes one amino acid from another is the *side chain* (the R group) which consist of hydrocarbons, oxygen's, carboxyl groups or other amino groups.
@@ -109,7 +109,7 @@ It is a *semiconservative* process as each new double helix consists of one new 
 The replication process begins with a predetermined sequence of nucleotides. It is a AT rich sequence at the site of replication. *Primers* are RNA sequences which bind to the specific sequence. These primers provide the initial 3' OH and are constructed by *primase*. Within eukaryotic cells, replication begins at several site simultaneously.
 
 ### Separation
-After the primers are attached, *helicase* begins to unwind the strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
+After the primers are attached, *helicase* begins to unwind the strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA and help hold the DNA strands apart during replication. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
 
 ## Synthesis
 After separation begins, *DNA polymerase III* catalyze the dehydration reactions necessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group.
@@ -166,3 +166,37 @@ The process is completed by a large complex of proteins and RNA called a *splice
 The intron ends are recognized by the snRNAs by binding to specific sequences at the ends via complementary base pairing, like usual. There are different kinds of snRNAs which bind to other locations on the intron. The ends of the introns are then cut at these splice sites and the exons are joined together.
 
 Introns exist for many reasons. Some introns control gene expression. Furthermore, some genes code for multiple polypeptides depending on which areas are treated as exons during splicing. This is called *alternative RNA splicing*. For example, the *doublesex* gene on the fruit fly *Drosophila melanogaster* produces two different sex proteins. About 60% of human genes are spliced into more than one different mRNA for a total of ~100,000 proteins. For example, the muscle protein *α-trpomysin* codes for the heart muscle and uterine muscle. 
+
+# Lecture 13: Translation
+During this process, *tRNA* carries amino acids and three base pairs. These base pairs match up with specific three base pair long mRNA sequences called *codons*.
+
+## Transfer RNA
+There are many types of *transfer RNAs* (tRNAs) in the cell. Each has a specific *anticodon* sequence and carries a specific amino acid. An anticodon matches with a complementary codon. The anticodon must be antiparallel so that the functional groups match up and the bonds are able to be formed.
+
+*Aminoacyl-tRNA synthases* match tRNA with a specific amino acid. There are 20 different kinds of this protein, all which catalyze the formation of a covalent bond between the tRNA and an amino acid to form *aminoacyl tRNA*. This process is called *charging tRNA*. The amino acid attaches to the 3' end of the tRNA.
+
+## Ribosomes
+The ribosome is divided into a large sub-unit and a small sub-unit which join over the mRNA. *Ribosomal RNAs* (*rRNAs*) catalyzes the formation of *peptide bonds* between the amino acids.
+
+The large subunit contains three sites. The *peptidyl-tRNA bind site* (*P-site*) holds tRNA with attached peptide chain. The *aminoacyl-tRNA binding site* (*A-site*) holds tRNA holds the amino acid to be added. The *exit site* (*E-site*) is the location where the tRNA is discharged from the ribosome.
+
+## Initation
+The initiator codon is *AUG* which adds the *met* amino acid. The anitcondon is located on the *initiator tRNA*. The *mRNA binding site* is located on the small subunit. After, the large subunit is added to form the *translation iniation complex*.
+
+The small sub-unit recognizes the 5' cap. It then scans down the mRNA until it reaches the AUG codon.
+
+## Cycle
+The first part is the cycle is codon recognition when the tRNA attaches to the A-site (GTP to GDP). The next event that occurs is the formation of the peptide bond and the attachment of the polypeptide attachment to the A-site. The two tRNAs then translocate to the next positions (GTP to GDP). The tRNA in the E-site then exits the ribosome.
+
+## Termincation
+The *release factor* bonds with one of the three *stop codons*. This structure also dissociates the structure and breaks the bond between the tRNA and polypeptide.
+
+## Post-Translation
+The folding structure is determined by primary structure. Sometimes, there are cleavages of polypeptides and the *C-peptide* is removed. For example, insulin has part of the peptide removed and the two new parts bind together. Furthermore, there is additions of sugars, phosphates and other molecules (*phosphorylation*, *glycosylation*). This may occur in the *lumin* of the rough cytoplasmic reticulum.
+
+## Genetic Code & Mutations
+This code is redundant and non ambiguous. Each dna triplet codes for one specific item.
+
+Changes in this genetic code, *mutations*, change the sequence of proteins and RNAs. These changes are passed on the offspring. *Mutagens* can be physical or chemical and can cause these mutations, along with errors in the replication process. *Frameshifts* may also occur due to insertions or deletions.
+
+Many mutations can be detrimental. Some are "silent". Some can even be advantageous. One example is the *β-globin* protein which aggregates and forms into sickle shaped proteins.
