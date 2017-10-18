@@ -106,15 +106,15 @@ The high level process is:
 It is a *semiconservative* process as each new double helix consists of one new and one old strand. It is also a fact process (50-500 nucleotides / second) and an accurate process (1 mistake / 10 billion nucleotides). The whole process required more than ten different proteins.
 
 ### Separation
-The replication process begins with the seperation of the DNA strands. The site of seperation is an AT rich sequence at the site of replication. The origin is a specific sequence of nucleotides.
+The replication process begins with the seperation of the DNA strands. The site of seperation is an AT rich sequence at the site of replication. The origin is a specific sequence of nucleotides. An *initiator protein* binds to the DNA and uses ATP to slightly unwind the DNA. Within eukaryotic cells, replication begins at several site simultaneously.
 
-*Helicase* unwinds these strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA and help hold the DNA strands apart during replication. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
+*Helicase* then begins to fully unwinds these strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA and help hold the DNA strands apart during replication. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* (*DNA Gyrase*) breaks, untwists and rejoins the strands ahead of the DNA helicase.
 
 ### Primers
-After the seperation of the strands, an RNA primer needs to be attached to start the replication process. *Primers* are RNA sequences which bind to the specific sequence. These primers provide the initial 3' OH and are constructed by *primase*. Within eukaryotic cells, replication begins at several site simultaneously.
+After the seperation of the strands, an RNA primer needs to be attached to start the replication process. *Primers* are RNA sequences which bind to the specific sequence. These primers provide the initial 3' OH and are constructed by *primase*. Primase binds to the first initiating sequence to do this. The leading strand only needs one primer constructed; however, the lagging strands requires multiple primers.
 
 ## Synthesis
-After separation begins, *DNA polymerase III* catalyze the dehydration reactions necessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group.
+After separation begins, *DNA polymerase III* catalyze the dehydration reactions necessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group as the directionis always 5' -> 3'.
 
 DNA polymerase only catalyzes the addtion of nucleoside triphosphates to the 3' end; however, since there is a replication fork the actual replication occurs in both directions simultaneously.
 
@@ -130,14 +130,14 @@ Each replication cycle, the lagging strand is shortened by the primer length. Hu
 # Lecture 11: Transcription
 Most DNA encodes proteins (the rest encode RNA). Specific sequences, called *genes*, of DNA encode specific proteins. This process is similiar in both eukaryotes and prokaryotes.
 
-This *transcription* process begins and ends at specific sequences of nucleotides. *mRNA* is produced from one DNA strand. During the *translation* phase, a polymer of amino acids called *polypeptide* is created.
+This *transcription* process begins and ends at specific sequences of nucleotides. *mRNA* is produced from one DNA strand. During the *translation* phase, a polymer of amino acids called a *polypeptide* is created.
 
 ## Prokaryotes vs. Eukaryotes
 Transcription and translation occur simultaneously in prokaryotes at no specific location.
 
 In eukaryotes, the two processes are spatially separated by the nucleus. There may be additional processing that occurs before transport.
 
-Multiple *ribosome* may be attached to one mRNA molecule.
+Multiple *ribosomes* may be attached to one mRNA molecule.
 
 ## Regulatory Sequence & Mechanisms of Transcription
 The *regulatory sequence* is a region "upstream" of the beginning of the gene. It controls factors such as timing, location and amount of gene expression. The beginning of the transcription starts at a predetermined location called the *promoter*. This is the binding site for RNA polymerase.
