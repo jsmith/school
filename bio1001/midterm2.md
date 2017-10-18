@@ -173,7 +173,7 @@ During this process, *tRNA* carries amino acids and three base pairs. These base
 ## Transfer RNA
 There are many types of *transfer RNAs* (tRNAs) in the cell. Each has a specific *anticodon* sequence and carries a specific amino acid. An anticodon matches with a complementary codon. The anticodon must be antiparallel so that the functional groups match up and the bonds are able to be formed.
 
-*Aminoacyl-tRNA synthases* match tRNA with a specific amino acid. There are 20 different kinds of this protein, all which catalyze the formation of a covalent bond between the tRNA and an amino acid to form *aminoacyl tRNA*. This process is called *charging tRNA*. The amino acid attaches to the 3' end of the tRNA.
+*Aminoacyl-tRNA synthetase* match tRNA with a specific amino acid. There are 20 different kinds of this protein, all which catalyze the formation of a covalent bond between the tRNA and an amino acid to form *aminoacyl tRNA*. This process is called *charging tRNA*. The amino acid attaches to the 3' end of the tRNA.
 
 ## Ribosomes
 The ribosome is divided into a large sub-unit and a small sub-unit which join over the mRNA. *Ribosomal RNAs* (*rRNAs*) catalyzes the formation of *peptide bonds* between the amino acids.
