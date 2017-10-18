@@ -105,11 +105,13 @@ The high level process is:
 
 It is a *semiconservative* process as each new double helix consists of one new and one old strand. It is also a fact process (50-500 nucleotides / second) and an accurate process (1 mistake / 10 billion nucleotides). The whole process required more than ten different proteins.
 
-### Primers
-The replication process begins with a predetermined sequence of nucleotides. It is a AT rich sequence at the site of replication. *Primers* are RNA sequences which bind to the specific sequence. These primers provide the initial 3' OH and are constructed by *primase*. Within eukaryotic cells, replication begins at several site simultaneously.
-
 ### Separation
-After the primers are attached, *helicase* begins to unwind the strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA and help hold the DNA strands apart during replication. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
+The replication process begins with the seperation of the DNA strands. The site of seperation is an AT rich sequence at the site of replication. The origin is a specific sequence of nucleotides.
+
+*Helicase* unwinds these strands in both directions by breaking the hydrogen bonds. *Single-strand binding proteins* protect the unwound ssDNA and help hold the DNA strands apart during replication. While unwinding, the strands also become very twisted. Another protein called *topoismomerase* breaks, untwists and rejoins the strands ahead of the DNA helicase.
+
+### Primers
+After the seperation of the strands, an RNA primer needs to be attached to start the replication process. *Primers* are RNA sequences which bind to the specific sequence. These primers provide the initial 3' OH and are constructed by *primase*. Within eukaryotic cells, replication begins at several site simultaneously.
 
 ## Synthesis
 After separation begins, *DNA polymerase III* catalyze the dehydration reactions necessary for the addition of nucleotides to make the new strands of DNA. This reaction also requires a 3' OH group.
