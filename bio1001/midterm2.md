@@ -196,6 +196,8 @@ The *release factor* bonds with one of the three *stop codons*. This structure a
 ## Post-Translation
 The folding structure is determined by primary structure. Sometimes, there are cleavages of polypeptides and the *C-peptide* is removed. For example, insulin has part of the peptide removed and the two new parts bind together. Furthermore, there is additions of sugars, phosphates and other molecules (*phosphorylation*, *glycosylation*). This may occur in the *lumin* of the rough cytoplasmic reticulum.
 
+For example, *kinase* is an ezyme which phosphorolates proteins to add a phosphate group (*phosphorylation*).
+
 ## Genetic Code & Mutations
 This code is redundant and non ambiguous. Each dna triplet codes for one specific item.
 
