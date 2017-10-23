@@ -1,3 +1,7 @@
+/**
+ * This file contains the selection sort algorithm
+ * @author Jacob Smith
+ */
 public class SelectionSort {
   public static void main(String[] args) {
     int[] A = {7, 4, 8, 2, 5, 3, 9};
@@ -5,6 +9,10 @@ public class SelectionSort {
     show(A); // display the sorted result A
   }
 
+  /**
+   * The selection sort algorithm
+   * @param int[] A The array to sort
+   */
   public static void sort(int[] A) {
     for(int i = 0; i < A.length; i++) {
       int min = i; // index of the minimum value
@@ -20,6 +28,10 @@ public class SelectionSort {
     }
   }
 
+  /**
+   * Prints an integer array
+   * @param int[] A The array to print
+   */
   public static void show(int[] A) {
     System.out.print("Sorted array using selection sort: ");
     for(int i = 0; i < A.length-1; i++) {

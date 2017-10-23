@@ -1,3 +1,7 @@
+/**
+ * This file tests the Queue object
+ * @author Jacob Smith
+ */
 public class QueueTest {
   public static void main (String[] args) {
     Queue queue = new Queue();
@@ -8,14 +12,14 @@ public class QueueTest {
         queue.enqueue(i);
         continue;
       }
-      if(queue.empty()) {
-        System.out.println("Error - Queue is empty"); //error checking is implemented here
-        continue;
-      }
-      if (i == 0) {
-         queue.dequeue();
-      } else { // i < 0
-        System.out.println(queue.front());
+      try {
+        if (i == 0) {
+          queue.dequeue();
+        } else { // i < 0
+          System.out.println(queue.front());
+        }
+      } catch(EmptyException e) {
+        System.out.println("Error - Queue is empty");
       }
     }
   }

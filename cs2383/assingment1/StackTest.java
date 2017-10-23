@@ -1,3 +1,7 @@
+/**
+ * This file tests the Stack.java file
+ * @author Jacob Smith
+ */
 public class StackTest {
   public static void main (String[] args) {
     Stack stack = new Stack();
@@ -8,14 +12,14 @@ public class StackTest {
         stack.push(i);
         continue;
       }
-      if(stack.empty()) {
-        System.out.println("Error - Stack is empty"); //error checking is implemented here
-        continue;
-      }
-      if (i == 0) {
-         stack.pop();
-      } else { // i < 0
-        System.out.println(stack.top());
+      try {
+        if (i == 0) {
+           stack.pop();
+        } else { // i < 0
+          System.out.println(stack.top());
+        }
+      } catch(EmptyException e) {
+        System.out.println("Error - Stack is empty");
       }
     }
   }

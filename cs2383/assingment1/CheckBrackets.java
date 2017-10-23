@@ -1,3 +1,7 @@
+/**
+ * This file contains an algorithm to check if a String contains valid brackets
+ * @author Jacob Smith
+ */
 public class CheckBrackets {
   public static void main(String[] args) {
     String test1 = "(()())()";
@@ -8,6 +12,11 @@ public class CheckBrackets {
     assert(!validBrackets(test3));
   }
 
+  /**
+   * This is an algorithm that checks if a string has valid brackets
+   * @param  String brackets      the brackets string
+   * @return        whether or not the string contains valid brackets
+   */
   public static boolean validBrackets(String brackets) {
     int open = 0;
     for(int i = 0; i < brackets.length(); i++) {
