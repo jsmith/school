@@ -6,12 +6,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class MatrixUtilsTest {
-    private Matrix matrix;
+public class MatrixTest {
+    private ca.jacob.cs6735.utils.Matrix matrix;
 
     @Before
     public void setup() {
-        matrix = new Matrix(new Integer[][]{{1, 2, 3}, {1, 2, 3}});
+        matrix = new ca.jacob.cs6735.utils.Matrix(new Integer[][]{{1, 2, 3}, {1, 2, 3}});
     }
 
     @Test
