@@ -1,12 +1,14 @@
 package ca.jacob.cs6735.algorithms.dt;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.Math;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.logging.Logger;
 
 public class Node {
-  private static final Logger LOG = Logger.getLogger(Node.class.getName());
+  private static final Logger LOG = LoggerFactory.getLogger(Node.class);
 
   private Double entropy;
   private Integer[][] x;
@@ -27,13 +29,19 @@ public class Node {
     if(this.entropy != null) return entropy;
 
     Map<Integer, Integer> classes = calculateOccurances(y);
-    LOG.fine("there are " + classes.size() + " classes");
+    LOG.debug("there are {} classes", classes.size());
+
+    double sum = 0;
+    for(Integer count : classes.values()) {
+      sum += count;
+    }
+    LOG.debug("sum is " + sum);
 
     entropy = 0.;
     for(Integer count : classes.values()){
-      entropy -= count*log2(count);
+      entropy -= count/sum*log2(count/sum);
     }
-    LOG.fine("the entropy is " + entropy);
+    LOG.debug("the entropy is {}", entropy);
 
     return entropy;
   }
@@ -49,7 +57,7 @@ public class Node {
 
   }
 
-  private Double log2(int value) {
+  private Double log2(double value) {
     return Math.log(value) / Math.log(2);
   }
 
