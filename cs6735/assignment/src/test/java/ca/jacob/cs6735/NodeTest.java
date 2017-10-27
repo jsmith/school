@@ -20,11 +20,6 @@ public class NodeTest {
     }
 
     @Test
-    public void testCalculateOccurances() {
-        //TODO
-    }
-
-    @Test
     public void testEntropy() {
         assertEquals(1, node.entropy(), DELTA);
     }

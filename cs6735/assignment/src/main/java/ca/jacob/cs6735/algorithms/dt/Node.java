@@ -1,29 +1,33 @@
 package ca.jacob.cs6735.algorithms.dt;
 
+import ca.jacob.cs6735.utils.Matrix;
+import ca.jacob.cs6735.utils.Vector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.Math;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
+
+import static ca.jacob.cs6735.utils.Matrix.calculateOccurances;
+import static ca.jacob.cs6735.utils.Matrix.log2;
 
 public class Node {
   private static final Logger LOG = LoggerFactory.getLogger(Node.class);
 
   private Double entropy;
-  private Integer[][] x;
-  private Integer[] y;
-  private Node[] nodes;
+  private Matrix x;
+  private Vector y;
+  private ArrayList<Node> nodes;
 
   public Node(Integer[][] x, Integer[] y) {
-    this.x = x;
-    this.y = y;
+    this.x = new Matrix(x);
+    this.y = new Vector(y);
+    this.initNodes();
   }
 
-  /**
-   * The method returns the entropy of the node
-   * @return The entropy of the node
-   */
+  public void initNodes() {
+    this.nodes = new ArrayList<Node>();
+  }
+
   public Double entropy() {
     LOG.info("entropy - starting");
     if(this.entropy != null) return entropy;
@@ -48,30 +52,32 @@ public class Node {
 
   public void split() {
     LOG.info("split - starting");
-    int numOfAttributes = x[0].length;
-    Double[] entropies = new Double[numOfAttributes];
-    for(int i = 0; i < numOfAttributes; i++) {
-      Map<Integer, Integer> splitInfo = calculateOccurances(x[i]);
-    }
+    int numOfAttributes = x.colCount();
 
+    for(int j = 0; j < numOfAttributes; j++) {
+      Map<Integer, Map<Matrix, Vector>>  split = new HashMap<Integer, Map<Matrix, Vector>>();
+      for(int i = 0; j < x.rowCount(); j++) {
+        Integer value = x.at(i, j);
 
-  }
+        Map<Matrix, Vector> entry = split.get(value);
+        if(entry == null) {
+          entry = new HashMap<Matrix, Vector>();
+          split.put(value, entry);
+        }
 
-  private Double log2(double value) {
-    return Math.log(value) / Math.log(2);
-  }
-
-  private Map<Integer, Integer> calculateOccurances(Integer[] values) {
-    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-    for(Integer value : values) {
-      Integer count = map.get(value);
-      if(count == null) {
-        count = 0;
-      } else {
-        count++;
+        Vector v = entry.get(x.row(i));
+        if(v == null) {
+          Matrix mat = new Matrix();
+          v = new Vector();
+          mat.pushRow(x.row(i));
+          entry.put(mat, v);
+        }
+        v.push(y.at(i));
       }
-      map.replace(value, count);
     }
-    return map;
   }
+
+
+
+
 }
