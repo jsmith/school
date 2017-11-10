@@ -113,3 +113,20 @@ During ATP hydrolysis, an H2O molecule is used to break the ending phosphate gro
 Yeast uses both aerobic and anaerobic reactions to produce energy. As the *dissolved oxygen tension* decreases, yeast switches from aerobic to anaerobic reactions.
 
 # Lecture 18: Respiration
+Respiration uses the products of glycolysis to produce more ATP. It occurs within the *mitochondria*.
+
+## Pyruvate Oxidation
+*Pyruvate oxidation* links glycolysis to the *citric acid cycle*. For eukaryotes, this reaction typically occurs in the *matrix*, the innermost compartment of the mitochondria. In prokaryotes, this occurs in the cytoplasm. Overall, this process converts pyruvate into acetyl CoA, also producing one NADH molecule and releasing one carbon dioxide molecule. Furthermore, this step involves the oxidation of pyruvate.
+
+## Citric Acid Cycle
+During the *citric acid cycle*, acetyl CoA combines with a four-carbon molecule before entry a cycle of reactions where ultimately the four-carbon molecule is regenerated. During the reactions, two molecules of CO2 are released, three NADH, one molecule of FADH2, another electron transporter, and one molecule of both ATP and GTP.
+
+## Oxidative Phosphorylation
+The electron transport carriers produced during the other steps deposit their electrons in the electron transport chain and are transformed into their oxidative states. The electrons move down the membrane of the matrix while releasing energy. This energy is then used to pump protons across the membrane, forming an *electro-chemical gradient*. As protons flow back to the inner matrix, the pass through *ATP synthase* (*ATPase*), producing ATP. At the end of the chain, electrons are accepted by oxygen (which also uses protons) to form water.
+
+*Cytochrome c* is a small protein which carries one electron between *complex III* and *complex IV* (also known as *cytochrome c oxidase*). *Complex IV* receives four cytochrome c molecules and helps in the synthesis of 2H20.
+
+During *chemiosmosis*, ATP is synthesized by the flow of H+ back into the matrix. It uses the *proton motive force*.
+
+## Reduction & Activation Energy
+The more negative activation energy, the less likely it will be reduced. The more positive activation energy, the more likely it will be reduced.
