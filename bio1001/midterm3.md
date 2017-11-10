@@ -162,3 +162,39 @@ The body stores energy in multiple forms. These types of molecules enter the aer
 * Glycogen from liver
 * Fat reserves
 * Protein
+
+# Lecture 21: Photosynthesis
+*Photosynthesis* is the process by which plants, algae and some bacteria use sunlight to drive the synthesis of organic molecules, usually from carbon dioxide and water.
+
+## Keeling Curve
+A *Keeling Curve* is a graph that plots the ongoing change in CO2 concentration in the atmosphere.
+
+## Terminology
+All green plant tissues can photosynthesize; however, the majority occurs in the leaves. These have a middle layer of leaf tissue called *mesophyll* which are the primary site of photosynthesis. Small pores called *stomata* on the surface of plant cells allow for CO2 to diffuse into the mesophyll layer and oxygen diffuse out. Each mesophyll cell contains organelles called chloroplasts. Within each there are disc like structures called *thylakoids* which are stacked together to form *grana*. The fluid space around the *grana* is known as the *stroma*. The membrane of each *thylakoid* contains green-colored pigments referred to as *chlorophylls* and within the membrane is known as the *thylakoid space*.
+
+*Chlorophyll* contains a double bond system of *porphyrin ring* which is responsible for absorbing the light. *Chlorophyll a* contains CH3 whereas *chlorophyll b* contains CHO. The central bound Mg2+ affects the electron distribution within the ring. The hydrophobic tail keeps it within the membrane.
+
+## Light-Dependent Reactions
+These reactions take place in the thylakoid membrane and require a supply of light energy. Chlorophylls absorb this light and convert it ATP and *NADPH*. *NADPH* is similar to NADH; however, it also has an extra phosphate group attached to one of the sugars. NADPH is the terminal acceptor and the ATP is synthesized with ATP synthase, similar to mitochondria. During this reaction, H2O is oxidized and O2 is produced.
+
+## Calvin Cycle (Light-Independent Reactions)
+The *Calvin Cycle* takes place within the stroma. During these reactions, the products from the *light-independent reactions*, in addition to CO2, react to form (Ch2O)n (typically *glyceraldehyde-3-phosphate*, or *G3P*) sugars which then combine to form glucose. During this reaction, CO2 is reduced.
+
+This cycle takes 3CO2, 9 ATP & 6 NADPH as input and produces 1 *G3P*, 6 NADP+ and 9 *ADP* & *P groups*. It is a four step process that involves carbon fixation to 3 *RuBP*, reduction of 6 *3-PGA* to 6 *G3P* and the regeneration of 3 RuBP with the ATP & NADPH*.
+
+*G3P* is used to produce both glucose, sucrose and starches for the cell. The sucrose exits the cell the be used by the plant. During the night, starches may be used as an energy source.
+
+## Carotenoids
+*Carotenoids* are organic pigments that are produced by plants and algae. *β-carotene* is a yellow/orange pigment that gives vegetables and fruit their rick colors.
+
+## Light Absorbing Pigment Molecules
+When light is absorbed, electrons transfer to higher orbitals. To release that energy, there are several options:
+
+* Release photon
+* Donate electron to electron acceptor
+* Send light to another pigment molecule
+
+## Photosystem
+Within the membranes of thylakoids, there exist *light-harvesting complexes* that bind chloroplasts and carotenoids. They absorb light and direct *excitation energy* through the use of *pigment molecules* into *reaction centers*. A pair of special *chlorophyll a* molecules are at the center within the reaction centers. These chlorophylls lose electrons when they absorb excitation energy and as such is a strong *oxidant*, a molecule that gains electrons & is reduced in a chemical reaction. The electrons from the chlorophyll are sent to the *primary electron acceptor*.
+
+Plants have two photosystems connected by an electron transport chain. They reaction move from *photosystem II* to *photosystem I*. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.  
