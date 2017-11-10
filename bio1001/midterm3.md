@@ -62,4 +62,30 @@ After chromatin modification, regulation of transcription initiation is the next
 
 Some *transcription factors* also act as *repressors* by several different mechanisms. For example, some block activator binding within enhancers. Others interfere with the activators directly. Furthermore, some activators and repressors act on the chromatin structure directly by promoting protein *acetylation* or *de-acetylation* (also referred to as *silencing*).
 
+## Combinatorial Control of Gene Activation
+Although the number of unique control elements (unique DNA sequences) is small, the number of possible enhancers is large due to the factorial growth of combinations. Each combination will be able to activate transcription only when the appropriate activator proteins are present.
+
+This feature is also the means by which prokaryotic cells express multiple genes at the same time. Activator proteins recognize specific control elements independent of gene location. Therefore, genes may be spread out across multiple chromosomes. Coordinated control of dispersed gene expression usually occurs due to chemical signals. For example, a steroid hormone enters the cell and binds to a specific intracellular receptor protein, forming a hormone-receptor complex. Every gene whose transcription is stimulated by this given steroid has a control element recognized by the complex. This mechanism also applies to transmembrane receptors which activate *signal transduction pathways*.
+
+Inside the nucleus, recent evidence points to congregation of active genes in the interior regions while non-expressed genes are typically found on the exterior.
+
 # Lecture 16: Enzyme and Pathways
+This lecture includes the making and breaking of biological molecules. *Metabolism* is all of an organisms biochemical reactions. The metabolic pathways of life form large complex networks.
+
+## Metabolic Pathways
+A *metabolic pathways* begins with a specific molecule and end with the formation of a specific product. Each of these reaction is catalyzed by a specific enzyme.
+
+The two main types of pathways include *catabolic pathways* (breaking down of complex molecules) and *anabolic pathways* (building up of complex molecules). Catabolic reactions release energy whereas anabolic reactions consume it. Energy change is measured by *Gibb's Free Energy* where ΔG = ΔG products - ΔG reactants. Therefore, exergonic reactions release energy, the reaction is spontaneous ΔG is negative. Endergonic reactions consume energy, are not spontaneous and ΔG is positive. These facts indicate which require an input of energy and which reactions supply energy for cellular work; however, they do not indicate at which rates the reactions will occur.
+
+The rate of reactions increase by enzymes. They act as catalyst and speed up the reaction. Reactants (substrates) contort into unstable configuration during their *transition state*. They require an *energy of activate*. Enzymes lower this energy barrier.
+
+## Enzymes
+Each enzyme has a unique shape which determines which chemical reaction it will catalyze. *Substrates* bind to an enzyme's *active site* (pocket on surface). The shapes of both the enzyme and substrates change upon binding, breaking and forming new bonds. Enzymes reduce activation energy by inducing the transition state by:
+
+1. Brining the reacting molecules together in the correct orientation. This reduces the reliance on random collisions.
+1. Changing the shape of the substrate molecule to achieve the transition state
+1. Exposing the reactants to an altered chemical (charged) environment to promote *catalysis*. The R-groups of the amino acids on the enzyme interact with the substrate.
+
+The ability of enzymes to catalyze reactions is influenced by the cellular environment, physical factors, temperature, salt concentration, pH, etc. Each enzyme will have unique optimal factors.
+
+Enzymes may also be inhibited *competitive inhibitors* or *noncompetitive inhibitors*. These are important for regulation of enzyme activity. Many drugs, antibiotics, toxins and poisons are enzyme inhibitors. *Cofactors* are inorganic and organic chemicals that assist enzymes during the *catalysis* of reactions.
