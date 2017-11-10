@@ -140,3 +140,25 @@ This lecture contained question about respiration.
 The production of ethanol (or lactic acid) regenerates NADH+ to allow for glycolysis to continue. This occurs in the absence of oxygen.
 
 After beer is fermented, it is chilled, causing the proteins to precipitate and the removal of various compounds that import off-flavours. Small brewers carbonate the beer by adding small amounts of sugar to allow for yeast to produce CO2. Breweries directly infuse the CO2.
+
+# Lecture 20: Exercise Metabolism
+When an individual looses weight, they use up fat storage in their body. The weight itself is primarily lost from CO2 and sweat/urine.
+
+## Metabolism of Glucose
+* Glycolysis produces 2 ATP & NADH
+* Fermentation remove 2 NADH
+* TCA produces 2 ATP & FADH2 and 8 NADH
+* Oxidative Phosphorylation produces 26-28 ATP
+
+## Energy Systems for Exercise
+All cells have muscle cells have ATP, but only enough to last around 3 seconds of intense exercise.
+
+* *Creatine phosphate* is a high energy density molecule that can be broken down by cells to form ATP. This will provide you with 8-10 seconds of working your muscles at a high rate. *Creatine phosphate* + ADP -> *creatine* + ATP
+* *Glycolysis-fermentation* is the glycolysis fermentation cycle. This cycle does not take any oxygen and therefore can provide energy for up to 90 seconds.
+* *Glycolysis-TCA-Oxidative Phosphorylation* is the usual energy cycle. Within two minutes of exercise, the body starts supplying muscles with more oxygen.
+
+The body stores energy in multiple forms. These types of molecules enter the aerobic cycle at different locations. This list includes:
+* Glucose in cells & food
+* Glycogen from liver
+* Fat reserves
+* Protein
