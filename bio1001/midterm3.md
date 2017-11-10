@@ -42,5 +42,24 @@ Again, consider the *lac operon*. When glucose is present, the operon should sti
 These are often substrates or products of the pathways they control.
 
 # Lecture 15: Eukaryotic Gene Regulation
+Eukaryotic cells must coordinate gene expression such that the only the right genes are expressed when needed. This is different from prokaryotic cells which do not typically live in colonies and all have the same task.
+
+## Cell Differentiation
+There is a lot of differentiation within human cells. Each one typically expresses only 20% of their protein-coding genes and cells such as neurons or muscle cells express even less. This is due to *differential gene expression* (this applies to both eukaryotic and prokaryotic cells).
+
+## Regulation of Chromatin Structure
+The location of a gene's promoter relative to the placement of nucleosomes and to the sites where the DNA attaches to the *chromosome scaffold* can affect whether a gene is transcribed or not. Furthermore, genes within highly condensed areas are not typically expressed.
+
+## Histone Modification
+The modification of histones directly affects the regulation of genes. *Histone acetylation*, the addition of acetyl, promotes gene expression by opening up the chromatin structure. However, the addition of methyl groups reduces transcription. *DNA methylation* primarily occurs in plants, animals and fungi. Genes typically maintain methylation throughout cell divisions. This accounts for *genomic imprinting* in mammals, where methylation permanently regulates expression of genes at the start of development.
+
+*Epigenetic inheritance* is the inheritance of traits transmitted by mechanisms not involving the nucleotide sequence. This includes modifications to the chromatin structure. *Epigenetic information* may be the answer to differences between genetically identical cells.
+
+## Regulation of Transcription Initiation
+After chromatin modification, regulation of transcription initiation is the next step in gene expression regulation.
+
+*Control elements* are segments of non-coding DNA that serve as binding sites for proteins called *transcription factors*, which in turn regulates gene expression. *Proximal* control elements are those located just upstream of the promoter whereas *distal control elements* are located farther up (may be thousands of nucleotides away). Groupings of distant groupings are also known as *enhancers*. Each gene will have multiple enhancers; however, each enhancer is typically associated with only one gene. In eukaryotic cells, the rate of gene expression can be increased or decreased by the binding of specific transcription factors to these *distal control elements*. *Transcription activators* are proteins which have two key components. They have a DNA binding domain, where they can bind the to DNA, and one or more activation domains, where they bind to other regulatory proteins or components of the transcription machinery. Protein-mediated bending is the current mechanisms believed to bring these enhances closer to *mediator proteins*, *transcription coactivator*, which help assemble the *initiation complex*.
+
+Some *transcription factors* also act as *repressors* by several different mechanisms. For example, some block activator binding within enhancers. Others interfere with the activators directly. Furthermore, some activators and repressors act on the chromatin structure directly by promoting protein *acetylation* or *de-acetylation* (also referred to as *silencing*).
 
 # Lecture 16: Enzyme and Pathways
