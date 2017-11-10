@@ -121,12 +121,22 @@ Respiration uses the products of glycolysis to produce more ATP. It occurs withi
 ## Citric Acid Cycle
 During the *citric acid cycle*, acetyl CoA combines with a four-carbon molecule before entry a cycle of reactions where ultimately the four-carbon molecule is regenerated. During the reactions, two molecules of CO2 are released, three NADH, one molecule of FADH2, another electron transporter, and one molecule of both ATP and GTP.
 
+*Citrate* is the first molecule formed during the citric acid cycle. Acetyl CoA combines with *oxaloacetate*, the four carbon molecule, to form the compound.
+
 ## Oxidative Phosphorylation
 The electron transport carriers produced during the other steps deposit their electrons in the electron transport chain and are transformed into their oxidative states. The electrons move down the membrane of the matrix while releasing energy. This energy is then used to pump protons across the membrane, forming an *electro-chemical gradient*. As protons flow back to the inner matrix, the pass through *ATP synthase* (*ATPase*), producing ATP. At the end of the chain, electrons are accepted by oxygen (which also uses protons) to form water.
 
 *Cytochrome c* is a small protein which carries one electron between *complex III* and *complex IV* (also known as *cytochrome c oxidase*). *Complex IV* receives four cytochrome c molecules and helps in the synthesis of 2H20.
 
-During *chemiosmosis*, ATP is synthesized by the flow of H+ back into the matrix. It uses the *proton motive force*.
+During *chemiosmosis*, ATP is synthesized by the flow of H+ back into the matrix. It uses the *proton motive force*. A rotor within the membrane spins when a proton flows past which also spins a rod. This rod extends down into the *knob*. Three catalytic sites join a phosphate group to ADP to form ATP.  
 
 ## Reduction & Activation Energy
 The more negative activation energy, the less likely it will be reduced. The more positive activation energy, the more likely it will be reduced.
+
+# Lecture 19: Respiration
+This lecture contained question about respiration.
+
+## Fermentation
+The production of ethanol (or lactic acid) regenerates NADH+ to allow for glycolysis to continue. This occurs in the absence of oxygen.
+
+After beer is fermented, it is chilled, causing the proteins to precipitate and the removal of various compounds that import off-flavours. Small brewers carbonate the beer by adding small amounts of sugar to allow for yeast to produce CO2. Breweries directly infuse the CO2.
