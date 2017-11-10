@@ -89,3 +89,27 @@ Each enzyme has a unique shape which determines which chemical reaction it will 
 The ability of enzymes to catalyze reactions is influenced by the cellular environment, physical factors, temperature, salt concentration, pH, etc. Each enzyme will have unique optimal factors.
 
 Enzymes may also be inhibited *competitive inhibitors* or *noncompetitive inhibitors*. These are important for regulation of enzyme activity. Many drugs, antibiotics, toxins and poisons are enzyme inhibitors. *Cofactors* are inorganic and organic chemicals that assist enzymes during the *catalysis* of reactions.
+
+# Lecture 17: Glycolysis
+Cellular respiration is a metabolic pathway that breaks down glucose and produces ATP. It occurs at several stages including *glycolysis*, *pyruvate oxidation*, the *Krebs cycle* and *oxidative phosphorylation*.
+
+*Glycolysis* is a series of chemical reactions that breaks down glucose into two molecules three-carbon molecules of *pyruvate*. It takes place in the cytosol of the cell and can be broken down into two main phases.
+
+## Energy-Requiring Phase
+During this phase, the glucose molecule is rearranged and two phosphate groups are attached. This turns it into *fructose-1,6-bisphosphate*, an unstable molecule which allows it to split in two to form *glyceraldehyde-3-phosphate*. As two phosphate groups are attached, two *ATP* molecules are used up.
+
+## Energy-Releasing Phase
+In this phase, each three-carbon molecule is transformed into *pyruvate*. There are 4 *ATP* molecules and 2 *NADH* molecules created during the two reactions.
+
+## ATP
+*Adenine Tri-Phosphate* is the energy currency of the cell. It contains an *adenine* molecule, a *ribose* sugar and three phosphate groups. In between the phosphate groups there are *phosphoanhydride bonds*.
+
+During ATP hydrolysis, an H2O molecule is used to break the ending phosphate group off the chain, forming ADP. This reaction is offers large amounts of energy as there is repulsion between the negatively charged products and the resonance stabilization of the products.
+
+## NADH
+*Nicotinamide Adenine Dinucleotide* function as an electron shuttle. NAH+ is reduced to form NADH in a reaction using *dehydrogenase* and two hydrogen two hydrogen molecules.
+
+## Yeast
+Yeast uses both aerobic and anaerobic reactions to produce energy. As the *dissolved oxygen tension* decreases, yeast switches from aerobic to anaerobic reactions.
+
+# Lecture 18: Respiration
