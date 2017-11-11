@@ -197,4 +197,40 @@ When light is absorbed, electrons transfer to higher orbitals. To release that e
 ## Photosystem
 Within the membranes of thylakoids, there exist *light-harvesting complexes* that bind chloroplasts and carotenoids. They absorb light and direct *excitation energy* through the use of *pigment molecules* into *reaction centers*. A pair of special *chlorophyll a* molecules are at the center within the reaction centers. These chlorophylls lose electrons when they absorb excitation energy and as such is a strong *oxidant*, a molecule that gains electrons & is reduced in a chemical reaction. The electrons from the chlorophyll are sent to the *primary electron acceptor*.
 
-Plants have two photosystems connected by an electron transport chain. They reaction move from *photosystem II* to *photosystem I*. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.  
+Plants have two photosystems connected by an electron transport chain. They reaction move from *photosystem II* to *photosystem I*. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.
+
+# Lecture 22: Genomes
+This lecture will cover the content & composition of the genome with emphasis on the human genome. We will examine unique vs repetitive (*dispersed* vs *tandem*) sequences, *mobile genetic elements* and *tandem repeats*.
+
+The human genome is packed into *chromosomes*. To sequence a genome, one cuts up the genome into small pieces (short enough for sequencing) the digitally pieces them together. *Bioinformatics* is using digital means to better understand biology.
+
+Unique sequences make up over %45 percent of the genome whereas 55% of the genome is repetitive sequences. *Dispersed repeats*, also know as *mobile genetic elements*, make up 45% where as *tandem repeats* make up 10%.
+
+Dispersed Repeats:
+* Retrotransposons (LTR and Non-LTR)
+* Transposons
+
+Tandem Repeats:
+* rDNA
+* Telomeres
+* Short Tandem Repeats (Satellite DNA)
+
+## Mobile Genetic Elements
+*Mobile genetic elements* are a type of DNA that can move around in the genome.
+
+*Retrotransposons* are the most abundant type of repetitive element. They copy themselves through the use of an RNA intermediary (a copy and paste mechanism). The most common type of *Non-LTR* (*Non-long terminal repeat*) retrotransposon in humans for are:
+
+* LINE (*Long Interspersed Elements*) are long sequences and extremely abundant (~20% of the genome). They are completely autonomous.
+* SINE (*Short Interspersed Elements*) are small sequences and also extremely abundant (%13 of the genome). They are non autonomous. *Alu* elements are the most common type of SINE
+
+*Endogenous retroviruses* (*ERVs*) are the most important type of *LTRs* (*long terminal repeats*). They look very similar to a typical *retrovirus*. They contain an LTR, core structural protein, viral protease, reverse transcriptase and viral envelope. ERVs likely entered the genome as a retrovirus and stayed.
+
+*Transposons* are a less common type of *MGE* and only take up 3% of the genome. They are excised from the genome and placed in a new location (cut & paste).  
+
+## Tandem Repeats
+* *Ribosomal DNA clusters*:
+* *Telomeres*: 3 nucleotide repeat (x100 - x1000) found. *Telomerase* uses RNA templates to extend telomeres. They protect the ends of chromosomes.
+* *Short Tandem Repeats*: 3% of DNA is short repeated sequences (1 - several hundred nucleotides in length). They are often used for *DNA fingerprinting*.
+
+## Recap
+Non-coding DNA accounts for the differences in DNA size between eukaryotes. It is composed of dispersed repeats (retrotransposons, ERVs, transposons) + tandem repeats(rDNA, satellite DNA, telomeres). Understand what they are and how the work. MGEs contribute to evolutionary diversification through the use of genetic mutations, changes in genome expression, gene duplication, chromosome rearrangement, etc. Read p. 472 to undertand how this works. 
