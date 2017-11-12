@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{2017arXiv170100160G}
 I.~{Goodfellow}.
@@ -16,6 +16,11 @@ Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
 \newblock {\em Deep Learning}.
 \newblock MIT Press, 2016.
 \newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem{2016arXiv161107004I}
+P.~{Isola}, J.-Y. {Zhu}, T.~{Zhou}, and A.~A. {Efros}.
+\newblock {Image-to-Image Translation with Conditional Adversarial Networks}.
+\newblock {\em ArXiv e-prints}, November 2016.
 
 \bibitem{genmodelingopenai}
 Andrej Karpathy, Pieter Abbeel, Greg Brockman, Peter Chen, Vicki Cheung, Rocky

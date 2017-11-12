@@ -7,6 +7,8 @@
 * [Ian Goodfellow Talk](https://www.youtube.com/watch?v=AJVyzd0rqdc)
 * [Karpathy Example](https://cs.stanford.edu/people/karpathy/gan/)
 * [The Gan Zoo](https://github.com/hindupuravinash/the-gan-zoo)
+* [About Improved GANs](https://github.com/aleju/papers/blob/master/neural-nets/Improved_Techniques_for_Training_GANs.md)
+* [Ian on Quora](https://www.quora.com/What-are-the-pros-and-cons-of-using-generative-adversarial-networks-a-type-of-neural-network-Could-they-be-applied-to-things-like-audio-waveform-via-RNN-Why-or-why-not)
 
 ## Papers
 * [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) - The paper that first proposed this new framework for generative models. It was submitted by Goodfellow et al. on June 10, 2014.
@@ -22,7 +24,7 @@
 Abstract of the research paper.
 
 ### Introduction
-Talk about how neural networks are great at classification using large labeled datasets. 
+Talk about how neural networks are great at classification using large labeled datasets.
 
 What is a generative model?
 
@@ -34,13 +36,10 @@ What are the motivations behind GANs?
 
 What are the problems associated with GANs?
 
-### Related Work
-What research is related to GANs?
-
-What other models are related to GANs?
-
 ### Theoretical Background
 What is the theory behind GANs?
+
+Maximum likelihood estimation, what is that?
 
 ### State of Research
 

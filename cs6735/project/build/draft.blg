@@ -11,45 +11,45 @@ I was expecting a `,' or a `}'---line 125 of file references.bib
  :   title = generative 
  :                      Models,
 I'm skipping whatever remains of this entry
-You've used 9 entries,
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            541 strings with 5563 characters,
-and the built_in function-call counts, 3173 in all, are:
-= -- 275
-> -- 241
+            545 strings with 5729 characters,
+and the built_in function-call counts, 3479 in all, are:
+= -- 302
+> -- 264
 < -- 1
-+ -- 94
-- -- 85
-* -- 237
-:= -- 575
-add.period$ -- 27
-call.type$ -- 9
-change.case$ -- 66
++ -- 103
+- -- 93
+* -- 260
+:= -- 634
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 73
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 103
-empty$ -- 189
-format.name$ -- 85
-if$ -- 621
+cite$ -- 10
+duplicate$ -- 113
+empty$ -- 206
+format.name$ -- 93
+if$ -- 679
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 9
-newline$ -- 47
-num.names$ -- 20
-pop$ -- 78
+int.to.str$ -- 10
+missing$ -- 10
+newline$ -- 52
+num.names$ -- 22
+pop$ -- 85
 preamble$ -- 1
-purify$ -- 59
+purify$ -- 65
 quote$ -- 0
-skip$ -- 80
+skip$ -- 86
 stack$ -- 0
-substring$ -- 77
-swap$ -- 18
+substring$ -- 82
+swap$ -- 19
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 34
+type$ -- 38
 warning$ -- 0
-while$ -- 22
-width$ -- 10
-write$ -- 91
+while$ -- 24
+width$ -- 12
+write$ -- 101
 (There was 1 error message)
