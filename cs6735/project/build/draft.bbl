@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{2017arXiv170100160G}
+I.~{Goodfellow}.
+\newblock {NIPS 2016 Tutorial: Generative Adversarial Networks}.
+\newblock {\em ArXiv e-prints}, December 2017.
+
+\bibitem{2014arXiv1406.2661G}
+I.~J. {Goodfellow}, J.~{Pouget-Abadie}, M.~{Mirza}, B.~{Xu}, D.~{Warde-Farley},
+  S.~{Ozair}, A.~{Courville}, and Y.~{Bengio}.
+\newblock {Generative Adversarial Networks}.
+\newblock {\em ArXiv e-prints}, June 2014.
+
+\bibitem{Goodfellow-et-al-2016}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep Learning}.
+\newblock MIT Press, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem{genmodelingopenai}
+Andrej Karpathy, Pieter Abbeel, Greg Brockman, Peter Chen, Vicki Cheung, Rocky
+  Duan, Ian Goodfellow, Durk Kingma, Jonathan Ho, Rein Houthooft, Tim Salimans,
+  John Schulman, Ilya Sutskever, , and Wojciech Zaremba.
+
+\bibitem{NIPS2001_2020}
+Andrew~Y. Ng and Michael~I. Jordan.
+\newblock On discriminative vs. generative classifiers: A comparison of
+  logistic regression and naive bayes.
+\newblock In T.~G. Dietterich, S.~Becker, and Z.~Ghahramani, editors, {\em
+  Advances in Neural Information Processing Systems 14}, pages 841--848. MIT
+  Press, 2002.
+
+\bibitem{2014arXiv1404.7828S}
+J.~{Schmidhuber}.
+\newblock {Deep Learning in Neural Networks: An Overview}.
+\newblock {\em ArXiv e-prints}, April 2014.
+
+\end{thebibliography}
