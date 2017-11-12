@@ -22,6 +22,11 @@ Andrej Karpathy, Pieter Abbeel, Greg Brockman, Peter Chen, Vicki Cheung, Rocky
   Duan, Ian Goodfellow, Durk Kingma, Jonathan Ho, Rein Houthooft, Tim Salimans,
   John Schulman, Ilya Sutskever, , and Wojciech Zaremba.
 
+\bibitem{2014arXiv1411.1784M}
+M.~{Mirza} and S.~{Osindero}.
+\newblock {Conditional Generative Adversarial Nets}.
+\newblock {\em ArXiv e-prints}, November 2014.
+
 \bibitem{NIPS2001_2020}
 Andrew~Y. Ng and Michael~I. Jordan.
 \newblock On discriminative vs. generative classifiers: A comparison of
@@ -30,9 +35,20 @@ Andrew~Y. Ng and Michael~I. Jordan.
   Advances in Neural Information Processing Systems 14}, pages 841--848. MIT
   Press, 2002.
 
+\bibitem{2016arXiv160603498S}
+T.~{Salimans}, I.~{Goodfellow}, W.~{Zaremba}, V.~{Cheung}, A.~{Radford}, and
+  X.~{Chen}.
+\newblock {Improved Techniques for Training GANs}.
+\newblock {\em ArXiv e-prints}, June 2016.
+
 \bibitem{2014arXiv1404.7828S}
 J.~{Schmidhuber}.
 \newblock {Deep Learning in Neural Networks: An Overview}.
 \newblock {\em ArXiv e-prints}, April 2014.
+
+\bibitem{2016arXiv161102200T}
+Y.~{Taigman}, A.~{Polyak}, and L.~{Wolf}.
+\newblock {Unsupervised Cross-Domain Image Generation}.
+\newblock {\em ArXiv e-prints}, November 2016.
 
 \end{thebibliography}
