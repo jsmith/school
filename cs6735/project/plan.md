@@ -6,6 +6,7 @@
 * [Adversarial Nets Papers](https://github.com/zhangqianhui/AdversarialNetsPapers)
 * [Ian Goodfellow Talk](https://www.youtube.com/watch?v=AJVyzd0rqdc)
 * [Karpathy Example](https://cs.stanford.edu/people/karpathy/gan/)
+* [The Gan Zoo](https://github.com/hindupuravinash/the-gan-zoo)
 
 ## Papers
 * [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) - The paper that first proposed this new framework for generative models. It was submitted by Goodfellow et al. on June 10, 2014.
