@@ -126,7 +126,7 @@ During the *citric acid cycle*, acetyl CoA combines with a four-carbon molecule 
 ## Oxidative Phosphorylation
 The electron transport carriers produced during the other steps deposit their electrons in the electron transport chain and are transformed into their oxidative states. The electrons move down the membrane of the matrix while releasing energy. This energy is then used to pump protons across the membrane, forming an *electro-chemical gradient*. As protons flow back to the inner matrix, the pass through *ATP synthase* (*ATPase*), producing ATP. At the end of the chain, electrons are accepted by oxygen (which also uses protons) to form water.
 
-*Cytochrome c* is a small protein which carries one electron between *complex III* and *complex IV* (also known as *cytochrome c oxidase*). *Complex IV* receives four cytochrome c molecules and helps in the synthesis of 2H20.
+*Cytochrome c* is a small iron rich protein which carries one electron between *complex III* and *complex IV* (also known as *cytochrome c oxidase*). *Complex IV* receives four cytochrome c molecules and helps in the synthesis of 2H20.
 
 During *chemiosmosis*, ATP is synthesized by the flow of H+ back into the matrix. It uses the *proton motive force*. A rotor within the membrane spins when a proton flows past which also spins a rod. This rod extends down into the *knob*. Three catalytic sites join a phosphate group to ADP to form ATP.  
 
@@ -175,7 +175,7 @@ All green plant tissues can photosynthesize; however, the majority occurs in the
 *Chlorophyll* contains a double bond system of *porphyrin ring* which is responsible for absorbing the light. *Chlorophyll a* contains CH3 whereas *chlorophyll b* contains CHO. The central bound Mg2+ affects the electron distribution within the ring. The hydrophobic tail keeps it within the membrane.
 
 ## Light-Dependent Reactions
-These reactions take place in the thylakoid membrane and require a supply of light energy. Chlorophylls absorb this light and convert it ATP and *NADPH*. *NADPH* is similar to NADH; however, it also has an extra phosphate group attached to one of the sugars. NADPH is the terminal acceptor and the ATP is synthesized with ATP synthase, similar to mitochondria. During this reaction, H2O is oxidized and O2 is produced.
+These reactions take place in the thylakoid membrane and require a supply of light energy. Chlorophylls absorb this light and convert it ATP and *NADPH*. *NADPH* is similar to NADH; however, it also has an extra phosphate group attached to one of the sugars. NADPH is the terminal acceptor and the ATP is synthesized (Using the 2 protons from the splitting of water) with ATP synthase, similar to mitochondria. During this reaction, H2O is oxidized and O2 is produced.
 
 ## Calvin Cycle (Light-Independent Reactions)
 The *Calvin Cycle* takes place within the stroma. During these reactions, the products from the *light-independent reactions*, in addition to CO2, react to form (Ch2O)n (typically *glyceraldehyde-3-phosphate*, or *G3P*) sugars which then combine to form glucose. During this reaction, CO2 is reduced.
@@ -197,7 +197,7 @@ When light is absorbed, electrons transfer to higher orbitals. To release that e
 ## Photosystem
 Within the membranes of thylakoids, there exist *light-harvesting complexes* that bind chloroplasts and carotenoids. They absorb light and direct *excitation energy* through the use of *pigment molecules* into *reaction centers*. A pair of special *chlorophyll a* molecules are at the center within the reaction centers. These chlorophylls lose electrons when they absorb excitation energy and as such is a strong *oxidant*, a molecule that gains electrons & is reduced in a chemical reaction. The electrons from the chlorophyll are sent to the *primary electron acceptor*.
 
-Plants have two photosystems connected by an electron transport chain. They reaction move from *photosystem II* to *photosystem I*. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.
+Plants have two photosystems connected by an electron transport chain. They reaction move from *photosystem II* to *photosystem I*. While in photosystem II, eletrons are derived from H2O which then fill the vacancies in *P680+*. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.
 
 # Lecture 22: Genomes
 This lecture will cover the content & composition of the genome with emphasis on the human genome. We will examine unique vs repetitive (*dispersed* vs *tandem*) sequences, *mobile genetic elements* and *tandem repeats*.
