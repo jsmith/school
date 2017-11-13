@@ -7,7 +7,7 @@
 
 \usepackage{natbib}
 \usepackage{graphicx}
-
+\usepackage[options ]{algorithm2e}
 \usepackage{parskip}
 
 \graphicspath{{./img/}}
@@ -54,6 +54,38 @@ When compared to other generative models, especially deep generative models, GAN
 \end{figure}
 
 \section{Background}
+hello
+
+\begin{algorithm}[H]
+  \SetAlgoLined
+  \Input{$n$: The number of training iterations} \linebreak
+  \Input{$k$: The number of discriminator iterations} \linebreak
+  \For{training iteration in n} {
+    \For{discriminator iteration in k} {
+      sample $m$ vectors $\{z^{(1)},...,z^{(m)}\}$ from distribution $p_z(z)$\;
+      sample $m$ vectors $\{x^{(1)},...,x^{(m)}\}$ from the training samples\;
+      update the discriminator using its stochastic gradient
+      $$\nabla_{\theta_d}\frac{1}{m}\sum_{i=1}^{m}[\log(D(x^{(i)}))+\log(1-D(G(z^{(i)})))]$$
+    }
+    sample $m$ vectors $\{z^{(1)},...,z^{(m)}\}$ from distribution $p_z(z)$\;
+    update the generator using its stochastic gradient\;
+    $$\nabla_{\theta_g}\frac{1}{m}\sum_{i=1}^{m}[\log(1-D(G(z^{(i)})))]$$
+  }
+  \caption{The initial generative adversarial network algorithm developed by Goodfellow \textit{et al.} in 2014 \citep{2014arXiv1406.2661G}. Multiple variations of this algorithm have since been produced. One of the benefits of adversarial networks is that they may be updated using regular gradient descent.}
+\end{algorithm}
+
+This algorithm presents the initial training algorithm used by Goodfellow \textit{et al.} when GANs were introduced in 2014 \citep{2014arXiv1406.2661G}. Many modifications have been made by various sources. The first step in the algorithm is to optimize the discriminator $D$. Optimally, one would train $D$ to completion; however, this is unrealistic in practice. The number of discriminator training iterations becomes a hyperparameter of the algorithm. For the initial GAN experiments, this number was set to $1$ to reduce computation time.
+
+\section{Issues}
+Generative adversarial networks are often characterized by their instability. The training process of
+
+Shape, count, orientation
+
+\section{Improvements}
+
+\section{Model Variations}
+
+\section{Research Frontiers}
 
 \section{Conclusion}
 Generative models are currently being applied to many problems \citep{genmodelingopenai}; however, they offer many more possibilities due to their ability to understand the data they are given.

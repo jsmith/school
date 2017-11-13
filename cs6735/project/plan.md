@@ -9,6 +9,7 @@
 * [The Gan Zoo](https://github.com/hindupuravinash/the-gan-zoo)
 * [About Improved GANs](https://github.com/aleju/papers/blob/master/neural-nets/Improved_Techniques_for_Training_GANs.md)
 * [Ian on Quora](https://www.quora.com/What-are-the-pros-and-cons-of-using-generative-adversarial-networks-a-type-of-neural-network-Could-they-be-applied-to-things-like-audio-waveform-via-RNN-Why-or-why-not)
+* [GAN Tutorial](https://arxiv.org/pdf/1701.00160.pdf)
 
 ## Papers
 * [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) - The paper that first proposed this new framework for generative models. It was submitted by Goodfellow et al. on June 10, 2014.
