@@ -54,6 +54,9 @@ When compared to other generative models, especially deep generative models, GAN
 \end{figure}
 
 \section{Background}
+Generative adversarial networks may use any differentiable functions for the models; however, the optimal results are typically achieved when neural networks are used \citep{2014arXiv1406.2661G}. We first define a vector $z$ such that $z~p_z(z)$. This vector becomes the argument of the generator $G(z;\theta_g)$ where $G$ is a differentiable funciton and $\theta_g$ is its parameters. Another differentiable function $D(x;\theta_d)$ for the discriminator. This function takes as input a vector $x$, either from the output of $G$ or a sample from the training set, and is parameratized by $\theta_d$. The output of the discriminator is a scaler number representating the probability that the arguments were derived from the training data. In this situation, there exists a minimax game where $D$ attempts to maximize the probability of assigning a correct label and $G$ attempts to minimize $\log(1-D(G(z)))$.
+
+$$\min{G}\max{D}V(D, G) = \mathbb{E}_{x~p_{data}(x)}[\log(D(x))] + \mathbb{E}_{z~p_z(z)}[\log(1-D(G(z)))]$$
 
 \section{Conclusion}
 Generative models are currently being applied to many problems \citep{genmodelingopenai}; however, they offer many more possibilities due to their ability to understand the data they are given.
