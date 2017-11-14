@@ -54,11 +54,23 @@ When compared to other generative models, especially deep generative models, GAN
 \end{figure}
 
 \section{Background}
-Generative adversarial networks may use any differentiable functions for the models; however, the optimal results are typically achieved when neural networks are used \citep{2014arXiv1406.2661G}. We first define a vector $z$ such that $z~p_z(z)$. This vector becomes the argument of the generator $G(z;\theta_g)$ where $G$ is a differentiable funciton and $\theta_g$ is its parameters. Another differentiable function $D(x;\theta_d)$ for the discriminator. This function takes as input a vector $x$, either from the output of $G$ or a sample from the training set, and is parameratized by $\theta_d$. The output of the discriminator is a scaler number representating the probability that the arguments were derived from the training data. In this situation, there exists a minimax game where $D$ attempts to maximize the probability of assigning a correct label and $G$ attempts to minimize $\log(1-D(G(z)))$.
+Generative adversarial networks may use any differentiable functions for the models; however, the optimal results are typically achieved when neural networks are used \citep{2014arXiv1406.2661G}. We first define a vector $z$ such that $z~p_z(z)$. This vector becomes the argument of the generator $G(z;\theta_g)$ where $G$ is a differentiable function and $\theta_g$ is its parameters. Another differentiable function $D(x;\theta_d)$ for the discriminator. This function takes as input a vector $x$, either from the output of $G$ or a sample from the training set, and is parametrized by $\theta_d$. The output of the discriminator is a scalar number representation the probability that the arguments were derived from the training data. In this situation, there exists a minimax game where $D$ attempts to maximize the probability of assigning a correct label and $G$ attempts to minimize $\log(1-D(G(z)))$. The networks $G$ and $D$ play a minimax game with the value function $V(D,G)$:
 
-$$\min{G}\max{D}V(D, G) = \mathbb{E}_{x~p_{data}(x)}[\log(D(x))] + \mathbb{E}_{z~p_z(z)}[\log(1-D(G(z)))]$$
+$$\min_{G}\max_{D}V(D, G) = \mathbb{E}_{x\sim p_{data}(x)}[\log(D(x))] + \mathbb{E}_{z\sim p_z(z)}[\log(1-D(G(z)))]$$
 
-In this minimax version of the loss functions, the generator suffers from a vanishing gradient when the descriminator confidently rejects the generated data. The initial solution proposed by Goodfellow was to train the generator to maximize $log(D(G(z)))$ rather than minimize $log(1-D(G(z)))$ \citep{2014arXiv1406.2661G}; however, even this new cost function does not completly remove the gradients problems \citep{2017arXiv170104862A}.
+For the training step, any variant of gradient descent may be used with respect to the individual cost functions \citep{2017arXiv170100160G}. The first updates $\theta_D$ while attempting to minimize the discriminator cost function $J_D$ while the other updates $\theta_G$ while attempting to minimize the generator cost function $J_G$. There exist several variations of the cost function that may be used for training purposes; however, the discriminator cost has remained the same for each.
+
+$$J_d(\theta_D,\theta\G) = -\frac{1}{2}\mathbb{E}_{x\sim p_{data}(x)}[\log(D(x))] - \frac{1}{2}\mathbb{E}_{z\sim p_{z}(z)}[\log(1-D(G(z)))]$$
+
+This is a standard cross entropy cost function that is trained on two minibatches, one from the dataset and one from the generator. For this to become a zero-sum game, a minimax game, the cost function of the generator is simply the negation of the discriminator.
+
+$$J_g(\theta_D,\theta\G) = -J_d(\theta_D,\theta\G)$$
+
+This version of the generator loss function is particularly useful for theoretical analysis as shown in the first GAN paper \citep{2014arXiv1406.2661G}. It can be shown that the minimax game is the same as minimizing the Jensen-Shannon divergence and that each player will eventually converge if both players are able to directly update the function space as oppose to the parameters within a neural network \citep{2017arXiv170100160G}. However, in this minimax version, the loss function of the generator suffers from a vanishing gradient when the discriminator confidently rejects the generated data. The solution proposed by Goodfellow is to train the generator to maximize $log(D(G(z)))$ rather than minimize $log(1-D(G(z)))$ \citep{2014arXiv1406.2661G}. This function is heuristically motivated as to provide strong gradients when either the generator or discriminator is not functioning optimally.
+
+$$J_g(\theta_D,\theta\G) = -\frac{1}{2}\mathbb{E}_{z\sim p_{z}(z)}[\log(D(G(z)))]$$
+
+
 
 \begin{algorithm}[H]
   \SetAlgoLined
@@ -78,7 +90,7 @@ In this minimax version of the loss functions, the generator suffers from a vani
   \caption{The initial generative adversarial network algorithm developed by Goodfellow \textit{et al.} in 2014 \citep{2014arXiv1406.2661G}. Multiple variations of this algorithm have since been produced. One of the benefits of adversarial networks is that they may be updated using regular gradient descent.}
 \end{algorithm}
 
-This algorithm presents the initial training algorithm used by Goodfellow \textit{et al.} when GANs were introduced in 2014 \citep{2014arXiv1406.2661G}. Many modifications have been made by various sources. The first step in the algorithm is to optimize the discriminator $D$. Optimally, one would train $D$ to completion; however, this is unrealistic in practice. The number of discriminator training iterations becomes a hyperparameter of the algorithm. For the initial GAN experiments, this number was set to $1$ to reduce computation time.
+This algorithm presents the initial training algorithm used by Goodfellow \textit{et al.} when GANs were introduced in 2014 \citep{2014arXiv1406.2661G}. Many modifications have been made by various sources. The first step in the algorithm is to optimize the discriminator $D$. Optimally, one would train $D$ to completion; however, this is unrealistic in practice. The number of discriminator training iterations becomes a hyperparameter of the algorithm. For the initial GAN experiments, this number was set to $1$ to reduce computation time. The preferable value for this hyperparameter is still largely debated amongst researchers \citep{2017arXiv170100160G}.
 
 \section{Issues}
 Generative adversarial networks are often characterized by their instability. The training process of
