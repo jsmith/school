@@ -70,7 +70,16 @@ This version of the generator loss function is particularly useful for theoretic
 
 $$J_g(\theta_D,\theta\G) = -\frac{1}{2}\mathbb{E}_{z\sim p_{z}(z)}[\log(D(G(z)))]$$
 
+Maximum likelihood learning is another option for training GANs \citep{2017arXiv170100160G}. In this situation, we would be minimizing the Kullback-Leibler divergence between $p_{data}$ and $p_{model}$.
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.65]{costfunc}
+\caption{The cost of the generator................}
+\label{fig:Image to Image Examples}
+\end{figure}
+
+This following algorithm presents initial training algorithm used by Goodfellow \textit{et al.} when GANs were introduced in 2014 \citep{2014arXiv1406.2661G}. Many modifications have been made by various sources. The first step in the algorithm is to optimize the discriminator $D$. Initially, many thought it would be optimal to train $D$ to completion; however, as previously mentioned, this is still a controversial topic among researchers \citep{2017arXiv170100160G}. For the initial GAN experiments, this number was set to $1$ to reduce computation time.
 
 \begin{algorithm}[H]
   \SetAlgoLined
@@ -87,10 +96,8 @@ $$J_g(\theta_D,\theta\G) = -\frac{1}{2}\mathbb{E}_{z\sim p_{z}(z)}[\log(D(G(z)))
     update the generator using its stochastic gradient\;
     $$\nabla_{\theta_g}\frac{1}{m}\sum_{i=1}^{m}[\log(1-D(G(z^{(i)})))]$$
   }
-  \caption{The initial generative adversarial network algorithm developed by Goodfellow \textit{et al.} in 2014 \citep{2014arXiv1406.2661G}. Multiple variations of this algorithm have since been produced. One of the benefits of adversarial networks is that they may be updated using regular gradient descent.}
+  \caption{The initial generative adversarial network algorithm developed by Goodfellow \textit{et al.} in 2014 \citep{2014arXiv1406.2661G}. Multiple variations of this algorithm have since been produced. One of the benefits of adversarial networks is that they may be updated using back propogation.}
 \end{algorithm}
-
-This algorithm presents the initial training algorithm used by Goodfellow \textit{et al.} when GANs were introduced in 2014 \citep{2014arXiv1406.2661G}. Many modifications have been made by various sources. The first step in the algorithm is to optimize the discriminator $D$. Optimally, one would train $D$ to completion; however, this is unrealistic in practice. The number of discriminator training iterations becomes a hyperparameter of the algorithm. For the initial GAN experiments, this number was set to $1$ to reduce computation time. The preferable value for this hyperparameter is still largely debated amongst researchers \citep{2017arXiv170100160G}.
 
 \section{Issues}
 Generative adversarial networks are often characterized by their instability. The training process of
