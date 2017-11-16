@@ -211,7 +211,7 @@ When light is absorbed, electrons transfer to higher orbitals. To release that e
 ## Photosystem
 Within the membranes of thylakoids, there exist *light-harvesting complexes* that bind chloroplasts and carotenoids. They absorb light and direct *excitation energy* through the use of *pigment molecules* into *reaction centers*. A pair of special *chlorophyll a* molecules are at the center within the reaction centers. These chlorophylls lose electrons when they absorb excitation energy and as such is a strong *oxidant*, a molecule that gains electrons & is reduced in a chemical reaction. The electrons from the chlorophyll are sent to the *primary electron acceptor*.
 
-Plants have two photosystems connected by an electron transport chain. They reaction move from *photosystem II* to *photosystem I*. While in photosystem II, eletrons are derived from H2O which then fill the vacancies in *P680+*. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.
+Plants have two photosystems connected by an electron transport chain. The electrons move from *photosystem II* to *photosystem I* via *peophytin*, the primary electron acceptor at photosystem II. While in photosystem II, eletrons are derived from H2O which then fill the vacancies in *P680+*. *Cholorphyll Ao* is the primary electron acceptor in photosystem I. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.
 
 # Lecture 22: Genomes
 This lecture will cover the content & composition of the genome with emphasis on the human genome. We will examine unique vs repetitive (*dispersed* vs *tandem*) sequences, *mobile genetic elements* and *tandem repeats*.
