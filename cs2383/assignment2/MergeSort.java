@@ -8,17 +8,13 @@ public class MergeSort {
   }
 
   public static void sort(int[] A) {
-    mergeSort(A);
-  }
-
-  public static void mergeSort(int[] A) {
     if(A.length == 1) return;
     int[] A1 = new int[A.length/2];
     int[] A2 = new int[A.length/2 + A.length%2];
     System.arraycopy(A, 0, A1, 0, A1.length);
     System.arraycopy(A, A.length/2, A2, 0, A2.length);
-    mergeSort(A1);
-    mergeSort(A2);
+    sort(A1);
+    sort(A2);
     merge(A, A1, A2);
   }
 
