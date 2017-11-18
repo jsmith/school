@@ -93,13 +93,17 @@ Enzymes may also be inhibited *competitive inhibitors* or *noncompetitive inhibi
 # Lecture 17: Glycolysis
 Cellular respiration is a metabolic pathway that breaks down glucose and produces ATP. It occurs at several stages including *glycolysis*, *pyruvate oxidation*, the *Krebs cycle* and *oxidative phosphorylation*.
 
+`6O2 + C6H12O6 -> 6CO2 + 6H2O + energy`
+
 *Glycolysis* is a series of chemical reactions that breaks down glucose into two molecules three-carbon molecules of *pyruvate*. It takes place in the cytosol of the cell and can be broken down into two main phases.
+
+`C6H12O6 + 2ATP + 2ADP + Pi + 2NAD+ -> 2NADH + 4ATP + 2Pyruvate + 2H+ + 2H2O`
 
 ## Energy-Requiring Phase
 During this phase, the glucose molecule is rearranged and two phosphate groups are attached. This turns it into *fructose-1,6-bisphosphate*, an unstable molecule which allows it to split in two to form *glyceraldehyde-3-phosphate*. As two phosphate groups are attached, two *ATP* molecules are used up.
 
 ## Energy-Releasing Phase
-In this phase, each three-carbon molecule is transformed into *pyruvate*. There are 4 *ATP* molecules and 2 *NADH* molecules created during the two reactions.
+In this phase, each three-carbon molecule is transformed into *pyruvate*. There are 4 *ATP* molecules and 2 *NADH* molecules created during these reactions.
 
 ## ATP
 *Adenine Tri-Phosphate* is the energy currency of the cell. It contains an *adenine* molecule, a *ribose* sugar and three phosphate groups. In between the phosphate groups there are *phosphoanhydride bonds*.
@@ -116,17 +120,27 @@ Yeast uses both aerobic and anaerobic reactions to produce energy. As the *disso
 Respiration uses the products of glycolysis to produce more ATP. It occurs within the *mitochondria*.
 
 ## Pyruvate Oxidation
-*Pyruvate oxidation* links glycolysis to the *citric acid cycle*. For eukaryotes, this reaction typically occurs in the *matrix*, the innermost compartment of the mitochondria. In prokaryotes, this occurs in the cytoplasm. Overall, this process converts pyruvate into acetyl CoA, also producing one NADH molecule and releasing one carbon dioxide molecule. Furthermore, this step involves the oxidation of pyruvate.
+*Pyruvate oxidation* links glycolysis to the *citric acid cycle*. For eukaryotes, this reaction typically occurs in the *matrix*, the innermost compartment of the mitochondria. In prokaryotes, this occurs in the cytoplasm. Overall, this process converts pyruvate into acetyl CoA (a two carbon molecule), also producing one NADH molecule and releasing one carbon dioxide molecule. Furthermore, this step involves the oxidation of pyruvate.
+
+`2Pyruvate + 2CoA-SH + 2NAD+ -> 2Acetyl CoA + 2CO2 + 2NADH`
 
 ## Citric Acid Cycle
-During the *citric acid cycle*, acetyl CoA combines with a four-carbon molecule before entry a cycle of reactions where ultimately the four-carbon molecule is regenerated. During the reactions, two molecules of CO2 are released, three NADH, one molecule of FADH2, another electron transporter, and one molecule of both ATP and GTP.
+During the *citric acid cycle*, acetyl CoA combines with a four-carbon molecule named *oxaloacetic acid* before entry a cycle of reactions where ultimately the four-carbon molecule is regenerated. During the reactions, two molecules of CO2 are released, three NADH, one molecule of FADH2, another electron transporter, and one molecule of both ATP and GTP.
 
-*Citrate* is the first molecule formed during the citric acid cycle. Acetyl CoA combines with *oxaloacetate*, the four carbon molecule, to form the compound.
+*Citrate* (*citric acid*) is the first molecule formed during the citric acid cycle. Acetyl CoA combines with *oxaloacetate*, the four carbon molecule, to form this compound.
+
+During the following steps, both carbons are cleaved off in a set of *oxidation reactions* to return to *oxaloacetic acid*.
+
+`2Acetyl CoA + 2GDP + 2Pi + 2FAD + 6NAD+ -> 2CoA + 4CO2 + 2GTP + 6NADH + 2FAH2`
 
 ## Oxidative Phosphorylation
 The electron transport carriers produced during the other steps deposit their electrons in the electron transport chain and are transformed into their oxidative states. The electrons move down the membrane of the matrix while releasing energy. This energy is then used to pump protons across the membrane, forming an *electro-chemical gradient*. As protons flow back to the inner matrix, the pass through *ATP synthase* (*ATPase*), producing ATP. At the end of the chain, electrons are accepted by oxygen (which also uses protons) to form water.
 
+The electrons go down the gradient of electronegativity. The final state is water where they feel more comfortable than with NADH. NADH enters at *complex I* whereas FADH2 enters at *complex II*. The carriers are oxidized and their electrons enter *ubiquinone* (Q), an electron accepter which is reduced to form *QH2*. This acceptor then enters *complex III* and then transfers it's electrons to *Cytochrome c*.
+
 *Cytochrome c* is a small iron rich protein which carries one electron between *complex III* and *complex IV* (also known as *cytochrome c oxidase*). *Complex IV* receives four cytochrome c molecules and helps in the synthesis of 2H20.
+
+Only complexes I, III & IV transfer protons to the inner mitochondrial space.
 
 During *chemiosmosis*, ATP is synthesized by the flow of H+ back into the matrix. It uses the *proton motive force*. A rotor within the membrane spins when a proton flows past which also spins a rod. This rod extends down into the *knob*. Three catalytic sites join a phosphate group to ADP to form ATP.  
 
@@ -175,7 +189,7 @@ All green plant tissues can photosynthesize; however, the majority occurs in the
 *Chlorophyll* contains a double bond system of *porphyrin ring* which is responsible for absorbing the light. *Chlorophyll a* contains CH3 whereas *chlorophyll b* contains CHO. The central bound Mg2+ affects the electron distribution within the ring. The hydrophobic tail keeps it within the membrane.
 
 ## Light-Dependent Reactions
-These reactions take place in the thylakoid membrane and require a supply of light energy. Chlorophylls absorb this light and convert it ATP and *NADPH*. *NADPH* is similar to NADH; however, it also has an extra phosphate group attached to one of the sugars. NADPH is the terminal acceptor and the ATP is synthesized (Using the 2 protons from the splitting of water) with ATP synthase, similar to mitochondria. During this reaction, H2O is oxidized and O2 is produced.
+These reactions take place in the thylakoid membrane and require a supply of light energy. Electrons are first pulled into *photosystem I* by *P680*. Some of the electrons are transferred to *photosystem II* which move an electron to the thykaloid space. Light enters both photosystems which excite the electrons. The elections then travel and reduce NADP+. The protons move accross the gradient and convert ADP to ATP. *NADPH* is similar to NADH; however, it also has an extra phosphate group attached to one of the sugars. NADPH is the terminal acceptor and the ATP is synthesized (Using the 2 protons from the splitting of water and from the mouvement of protons accross the gradient) with ATP synthase, similar to mitochondria. During this reaction, H2O is oxidized and O2 is produced.
 
 ## Calvin Cycle (Light-Independent Reactions)
 The *Calvin Cycle* takes place within the stroma. During these reactions, the products from the *light-independent reactions*, in addition to CO2, react to form (Ch2O)n (typically *glyceraldehyde-3-phosphate*, or *G3P*) sugars which then combine to form glucose. During this reaction, CO2 is reduced.
@@ -197,7 +211,7 @@ When light is absorbed, electrons transfer to higher orbitals. To release that e
 ## Photosystem
 Within the membranes of thylakoids, there exist *light-harvesting complexes* that bind chloroplasts and carotenoids. They absorb light and direct *excitation energy* through the use of *pigment molecules* into *reaction centers*. A pair of special *chlorophyll a* molecules are at the center within the reaction centers. These chlorophylls lose electrons when they absorb excitation energy and as such is a strong *oxidant*, a molecule that gains electrons & is reduced in a chemical reaction. The electrons from the chlorophyll are sent to the *primary electron acceptor*.
 
-Plants have two photosystems connected by an electron transport chain. They reaction move from *photosystem II* to *photosystem I*. While in photosystem II, eletrons are derived from H2O which then fill the vacancies in *P680+*. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.
+Plants have two photosystems connected by an electron transport chain. The electrons move from *photosystem II* to *photosystem I* via *peophytin*, the primary electron acceptor at photosystem II. While in photosystem II, eletrons are derived from H2O which then fill the vacancies in *P680+*. *Cholorphyll Ao* is the primary electron acceptor in photosystem I. It moves protons into the inner membrane, similar to mitochondria, and also produces NADPH which is sent to the Calvin cycle.
 
 # Lecture 22: Genomes
 This lecture will cover the content & composition of the genome with emphasis on the human genome. We will examine unique vs repetitive (*dispersed* vs *tandem*) sequences, *mobile genetic elements* and *tandem repeats*.
