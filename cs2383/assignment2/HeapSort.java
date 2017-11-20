@@ -30,11 +30,11 @@ public class HeapSort {
 
     int max = i;
     if(i1 < n && A[i1] > A[max]) {
-      i1 = max;
+      max = i1;
     }
 
     if(i2 < n && A[i2] > A[max]) {
-      i2 = max;
+      max = i2;
     }
 
     if(i != max) {
