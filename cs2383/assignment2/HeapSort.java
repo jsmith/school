@@ -8,9 +8,10 @@ public class HeapSort {
   }
 
   public static void sort(int[] A) {
+    heapify(A, 0, A.length);
     for(int i = A.length-1; i >= 0; i--) {
-      heapify(A, 0, i+1);
       swap(A, 0, i);
+      siftDown(A, 0, i);
     }
   }
 
@@ -27,21 +28,18 @@ public class HeapSort {
     int i1 = i*2+1;
     int i2 = i*2+2;
 
-    if(n <= i2) {
-      return;
-    } else if(n <= i1) {
-      if(A[i] < A[i1]) {
-        swap(A, i, i1);
-      }
-      return;
+    int max = i;
+    if(i1 < n && A[i1] > A[max]) {
+      i1 = max;
     }
 
-    if(A[i1] > A[i2] && A[i1] > A[i]) {
-      swap(A, i, i1);
-      siftDown(A, i1, n);
-    } else if(A[i2] > A[i]) {
-      swap(A, i, i2);
-      siftDown(A, i2, n);
+    if(i2 < n && A[i2] > A[max]) {
+      i2 = max;
+    }
+
+    if(i != max) {
+      swap(A, i, max);
+      siftDown(A, max, n);
     }
   }
 
