@@ -16,16 +16,62 @@
 \maketitle
 
 \section{Introduction}
+This report details the experimental study conducted for the CS6735 programming project. Six machine learning algorithms were implemented, including both regular and ensemble learning algorithms. Each was evaluated on five datasets from the UCI machine learning data repository using 10 times 5-fold cross validation. The technical details of the implementation will be described and the results will be analyzed.
 
 \section{Algorithms}
+For this study, six different algorithms; however, only the five unique algorithms are described in this section. Both the ID3 decision tree and Naïve Bayes algorithms were applied to the adaboost ensemble algorithm as weak learners.
+
+\subsection{ID3}
+\subsection{Naïve Bayes}
+\subsection{Adaboost}
+\subsection{Random Forest}
+\subsection{K-Nearest Neighbors}
 
 \section{Data}
+\subsection{Breast Cancer Data}
+\subsection{Car Data}
+Transformed to integer values
+
+\subsection{E. Coli Data}
+Removed categorical values
+
+\subsection{Letter Recognition Data}
+\subsection{Mushroom Data}
 
 \section{Technical Details}
+Identification information was removed ...
+No discretization was performed ...
+Unknown variables from the breast cancer dataset were replaced ...
+Limitations placed on trees ...
+Distributions used for Naïve Bayes ...
+C4.5 continuous variable implementation ...
+Number of trees for random forest ... & size of datasets
+Number of weak learners for adaboost ... & size of datasets
+How many neighbors ...
 
 \section{Project Design}
+A Java machine learning framework was first created ...
+The external dependencies include JUnit for unit tests and slfj4 for logging. Both work independently of the code written for the machine learning algorithms. They functioned as tools to write code and may be completely removed if necessary ...
+
+An `Algorithm` interface and `Model` abstract class were created as the high level objects that all algorithms and models implement. This abstraction proved extremely useful for ensemble implementation and general code cleanliness. The main class where the algorithms are implemented on the datasets is extremely easy to read.
+
+A `KFold` object was created which implements the cross validation algorithm. This object generates a `Report` on a given algorithm and dataset ...
+
+\subsection{Math Package}
+Data was particularly difficult to handle. Whereas Java is a statically typed language, difficulties arose in handling both floating point and integer values. To manage this, a math package was created which implements useful data structures such as vectors and matrices. These object were used to abstract away from the underlying data structures. Furthermore, the `Vector` object provided many useful methods for vector arithmetic such as element-wise multiplication, division and exponents. These methods also support broadcasting, where a vector can be multiplied by a single number. These objects are used throughout the library in place of primitive arrays and ArrayLists and have were essential to the code quality. Often, methods it was necessary to have two associated objects held in one data structure. For example, there exists a method within the DataSet object which splits itself into two parts based on a pivot point. This method would preferably return a pair of datasets; however, many common data structures such as arrays, lists and maps seemed did not seem to adequate. To accomplish this task, a simple Tuple data structure was created.
+
+Several other useful objects were implemented within the math package such as distance function objects, distribution objects and an object containing useful static methods. The purpose of these objects will be elaborated within Naïve Bayes package design section. The utility object implemented useful functions not available within the Java math package.
+
+\subsection{Decision Tree Package}
+
+
+\subsection{Naïve Bayes Package}
+\subsection{Ensemble Package}
+\subsection{Neighbors Package}
 
 \section{Results}
+table of results ...
+graph of hyperparameter search ...
 
 \bibliographystyle{plain}
 \bibliography{references}
