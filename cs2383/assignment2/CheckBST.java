@@ -18,52 +18,22 @@ public class CheckBST {
     nodes2[6] = new Node(6, 14, 5, 0, 0);
     nodes2[7] = new Node(7, 18, 5, 0, 0);
 
-    System.out.println("Min value of Trees: " + minValue(nodes1, nodes1[1]));
-    System.out.println("Max value of Trees: " + maxValue(nodes1, nodes1[1]));
-
     System.out.println("Tree one is a BST: " + isBST(nodes1, nodes1[1]));
     System.out.println("Tree two is a BST: " + isBST(nodes2, nodes2[1]));
   }
 
   public static boolean isBST(Node[] nodes, Node root) {
+    return isBSTUtil(nodes, root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+  }
+
+  public static boolean isBSTUtil(Node[] nodes, Node root, int min, int max) {
     if(root == null) return true;
 
-    Node left = nodes[root.left];
-    if(root.data < maxValue(nodes, left)) return false;
-    if(!isBST(nodes, left)) return false;
+    if(root.data <= min || root.data >= max) return false;
 
-    Node right = nodes[root.right];
-    if(root.data > minValue(nodes, right)) return false;
-    if(!isBST(nodes, right)) return false;
+    if(!isBSTUtil(nodes, nodes[root.left], min, root.data)) return false;
+    if(!isBSTUtil(nodes, nodes[root.right], root.data, max)) return false;
 
     return true;
-  }
-
-  public static int minValue(Node[] nodes, Node root) {
-    if(root == null) return 100000000;
-
-    int minRight = minValue(nodes, nodes[root.right]);
-    int minLeft = minValue(nodes, nodes[root.left]);
-    if(minLeft < minRight && minLeft < root.data) {
-      return minLeft;
-    } else if(minRight < root.data) {
-      return minRight;
-    } else {
-      return root.data;
-    }
-  }
-
-  public static int maxValue(Node[] nodes, Node root) {
-    if(root == null) return -100000000;
-
-    int maxRight = maxValue(nodes, nodes[root.right]);
-    int maxLeft = maxValue(nodes, nodes[root.left]);
-    if(maxLeft > maxRight && maxLeft > root.data) {
-      return maxLeft;
-    } else if(maxRight > root.data) {
-      return maxRight;
-    } else {
-      return root.data;
-    }
   }
 }

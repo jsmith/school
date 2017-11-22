@@ -22,7 +22,7 @@ public class TreeOrder {
 
   public static void preOrder(Node root, Node[] nodes) {
     if(root != null) {
-      System.out.println(root.data + " ");
+      System.out.print(root.data + " ");
       preOrder(nodes[root.left], nodes);
       preOrder(nodes[root.right], nodes);
     }
@@ -31,7 +31,7 @@ public class TreeOrder {
   public static void inOrder(Node root, Node[] nodes) {
     if(root != null) {
       inOrder(nodes[root.left], nodes);
-      System.out.println(root.data + " ");
+      System.out.print(root.data + " ");
       inOrder(nodes[root.right], nodes);
     }
   }
@@ -40,7 +40,7 @@ public class TreeOrder {
     if(root != null) {
       postOrder(nodes[root.left], nodes);
       postOrder(nodes[root.right], nodes);
-      System.out.println(root.data + " ");
+      System.out.print(root.data + " ");
     }
   }
 }
