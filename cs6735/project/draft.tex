@@ -126,6 +126,7 @@ When generating images, problems often arise due to the generators difficulties 
 The evaluation procedure for generative adversarial networks remains an open debate as there exist no clear quantitative measurement to evaluate the models \citep{2017arXiv170100160G}. For example, models with high likelihood may produce poor samples and models with low likelihood may produce realistic samples. Several variations of the GANs examine the tradeoffs of divergence measures other than the original Kullback-Leibler divergence \citep{2015arXiv151101844T}. It can be shown that different metrics favor different models. Therefore, it is important to asses one's model within the context of the whole application \citep{2015arXiv151101844T}.
 
 \subsection{Discrete Data}
+GANs assume a model implementation that is differentiable due to it's use of back propagation. Therefore, this restricts their ability to generate discrete data.
 
 \section{Improvements}
 
