@@ -20,6 +20,7 @@
 * [Improved Techniques for Training GANs](https://arxiv.org/abs/1606.03498) - This paper examines several techniques for improving the training process of GANs.
 * [Wasserstein Generative Adversarial Networks](http://proceedings.mlr.press/v70/arjovsky17a.html) - This
 * [Learning to Discover Cross-Domain Relations with Generative Adversarial Networks](http://proceedings.mlr.press/v70/kim17a.html)
+* [Bidirectional GANs](https://arxiv.org/pdf/1605.09782.pdf)
 
 ## Outline
 ### Abstract

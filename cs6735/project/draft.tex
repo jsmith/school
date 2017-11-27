@@ -100,32 +100,52 @@ This following algorithm presents initial training algorithm used by Goodfellow 
 \end{algorithm}
 
 \section{Issues}
-Generative adversarial networks are often characterized by their instability. The training process of
+There exist several issues that characterize generative adversarial networks. Some are related design of GANs or their underlying network implementations. These issues lay at the forfront of GAN research.
 
+\subsection{Instability}
+Generative adversarial networks are often characterized by their instability \citep{2017arXiv170100160G}. The training process makes use of gradient descent which does not guarentee convergence to the Nash equilibrium, the game theory equilibrium that involves two competing players. This is different than network optimization which is common in disciminative models. When each network trains, even if the specified network improves, the other may regress. This sometimes leads to the scenario where each network repeatadly undos the other's progress. This problem is not specific to GANs, but to any game situations \citep{2017arXiv170100160G}. It was shown in the first paper that congergenve was guarenteed if updates could be made to the function space, but no theoretical justification was been found that guarentees convergence within the parameter space \citep{2014arXiv1406.2661G}. However, there is no theoretical proof that that these games should not converge \citep{2017arXiv170100160G}. Typically, adversarial networks often oscilatte between different kinds of samples without converging to an equilibrium.
+
+\subsection{Mode Collapse}
+Mode collapse occurs when several different latent space vectors $z$ map to the similiar outputs. For example, the generator may create two images that only differ by colour but were generated with very different latent vectors. Full mode collpase is rare; however, partial mode collapse always occurs and varies by intensity. This occurs ...
+
+$$G^* = min_Gmax_DV(F, D)$$
+
+$$G^* = max_Dmin_GV(F, D)$$
+
+\subsection{Image Quality}
 Shape, count, orientation
 
-\section{Improvements}
-Feature matching
-
-
+\subsection{Evaluation}
+\subsection{Discrete Data}
 
 \section{Model Variations}
-Deep Convolutional GAN
+Research within the field of deep generative modeling has increased exponentially since the debut of generative adversarial networks in 2014. Significant improvements are being made with image quality and new applitcations are being found every month.
 
-Wasserstein GAN to improve stability
+\begin{figure}
+\centering
+\includegraphics[scale=0.65]{cumulative_gans}
+\caption{The cumulative amount of papers written about generative adversarial networks. The graph shows the exponential growth of GANs within the past three years. Image maintined by Avinash Hindipur \citep{November2017GANZoo}.}
+\label{fig:Cumulative Number of GAN papers by Month}
+\end{figure}
 
-Reccurent GAN
-
-Conditinal GAN
-
-Growing GANs
+\subsection{Deep Convolutional GANs}
+\subsection{Wasserstein GANs}
+\subsection{Conditional GANs}
+\subsection{Progrssive GANs}
 
 \section{Research Frontiers}
 GANs are an exciting idea that are currently leading the frontier of deep generative models.
 
+\subsection{Divergence Measures}
+\subsection{Image Quality}
 Hiton's Capsule Network
+Progressive GANs
 
-Improving the stability of GANs
+\subsection{Semi-Supervised Learning}
+\subsection{Feature Learning}
+\subsection{Semi-Supervised Learning}
+\subsection{Reinforcement Learning}
+
 
 \section{Conclusion}
 Generative models are currently being applied to many problems \citep{genmodelingopenai}; however, they offer many more possibilities due to their ability to understand the data they are given.
