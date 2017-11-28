@@ -7,6 +7,7 @@
 
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{bm}
 \usepackage[options ]{algorithm2e}
 \usepackage{parskip}
 
@@ -110,7 +111,7 @@ Generative adversarial networks are often characterized by their instability \ci
 \subsection{Mode Collapse}
 Mode collapse occurs when the generator collapses several different latent space vectors $z$ map to the same outputs. Full mode collapse is rare; however, partial mode collapse always occurs and varies by intensity. For example, the generator may create two images that only differ by colour but were generated with very different latent vectors. This occurs when the capacity of the generator is superior to that of the discriminator. Backpropagation does not necessarily follow the minimax game mentioned earlier and may behave like the maximin version.
 
-$$G^* = max_{D}min_{G}V(F, D)$$
+$$G^* = \max_{D}\min_{G}V(F, D)$$
 
 When this occurs, the generator attempts to map every latent vector to the one $x$ variable the discriminator is most likely to guess is real. When training, one can only hope the behavior resembles the minimax version. It is often speculated that the root cause of the issue the particular divergence measure used. Specifically, it is often asserted that mode collapse is caused by the use of Jensen-Shannon divergence; however, the use of Kullback-Leibler divergence has be shown to worsen the problem \citep{2017arXiv170100160G}. As mode collapse is currently an unavoidable reality for GANs, their applications are limited to situations where it is acceptable to generate only a small number of distant samples \citep{2017arXiv170100160G}. A potential solution to this problem is discussed in the following section.
 
@@ -131,9 +132,17 @@ The evaluation procedure for generative adversarial networks remains an open deb
 GANs assume a model implementation that is differentiable due to it's use of back propagation. Therefore, this restricts their ability to generate discrete data. Goodfellow proposes several solutions such as algorithm modifications, discretization and the use of concrete distributions or Gumbel-softmax \citep{2017arXiv170100160G}.
 
 \section{Training Improvements}
+A substantial amount of research has been conducted within the past three years with regards to improving GAN training procedures. A paper released by Goodfellow approximately one year after the debut of GANs outlines several techniques that can be applied to improve the training process \citep{2016arXiv160603498S}. As previously mentioned, the optimal solution for GANs remains convergence of the Nash equilibrium of the minimax game; however, gradient descent attempts to find a local minima. The following techniques introduced by Goodfellow \textit{et al.} address the instability of GANs and attempt to increase the probability of convergence.
+
 \subsection{Feature Matching}
+Feature matching involves the definition of a new cost function for GANs such that they do not overtrain on the current discriminator \citep{2016arXiv160603498S}. Instead of optimizing on the output of the discriminator, the new objective requires the generator to minimize the difference between the expected value on some intermediate layer. The objective function can be described as $\Big|\Big|\mathbb{E}_{x\sim p_{data}(x)}\Big[f(x)\Big] - \mathbb{E}_{z\sim p_{z}(z)}\Big[f(G(z))\Big]\Big|\Big|_2^2$ where $f(x)$ is the output of the activation function of some layer. Experimental evidence has been gathered that demonstrates the usefulness of this technique, especially when the training process becomes instable \citep{2016arXiv160603498S}. Furthermore, feature matching is useful for semi-supervised GAN applications as will later be described in section \ref{sec:semisupervised}.
+
 \subsection{Minibatch Discrimination}
+Minibatch discrimination attempts to minimize the issues caused by mode collapse. This problem occurs as the discriminator processes each value $x$ independently of each other value. The gradient of each will point in the same direction thus leading to mode collapse. This technique involves the use of a minibatch in place of a single value to allow to discriminator to examine multiple data examples at one time. The discriminator is then able to examine the distance between each sample in conjunction with the samples themselves and look for abnormal minibatch distributions. Successful application of this technique allows for visually appealing images to be generated much quicker than by previous training techniques \citep{2016arXiv160603498S}. Preliminary results also show great reduction of mode collapse issues \citep{2017arXiv170100160G}.
+
 \subsection{Historical Averaging}
+Historical averaging introduces an extra term for each player's cost function such that they are penalized when choosing new parameters that differ from the historical mean value \citep{2016arXiv160603498S}. This new term $||\bm{\theta} - \frac{1}{t}\sum_{i=1}^{t}\bm{\theta}[i]||^2$ where $t$ is the total number of iterations performed and $\bm{\theta}[i]$ is the value of the parameters at iteration $i$. This technique has been demonstrated to help low dimensionality games reach an equilibrium where normal gradient descent has failed \citep{2016arXiv160603498S}.
+
 \subsection{Label Smoothing}
 \subsection{Virtual Batch Normalization}
 
@@ -142,8 +151,8 @@ Research within the field of deep generative modeling has increased exponentiall
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{cumulative_gans}
-\caption{The cumulative amount of papers written about generative adversarial networks. The graph shows the exponential growth of GANs within the past three years. Image maintined by Avinash Hindipur \citep{November2017GANZoo}.}
+\includegraphics[scale=0.45]{cumulative_gans}
+\caption{The cumulative amount of papers written about generative adversarial networks. The graph shows the exponential growth of GANs within the past three years. Image maintained by Avinash Hindipur \citep{November2017GANZoo}.}
 \label{fig:Cumulative Number of GAN papers by Month}
 \end{figure}
 
@@ -160,7 +169,7 @@ GANs are an exciting idea that are currently leading the frontier of deep genera
 Hiton's Capsule Network
 Progressive GANs
 
-\subsection{Semi-Supervised Learning}
+\subsection{Semi-Supervised Learning} \label{sec:semisupervised}
 \subsection{Feature Learning}
 \subsection{Semi-Supervised Learning}
 \subsection{Reinforcement Learning}
