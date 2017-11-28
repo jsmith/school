@@ -77,10 +77,9 @@ $$J^{(G)}(\theta_D,\theta\G) = -\frac{1}{2}\mathbb{E}_{z\sim p_{z}(z)}\Big[\exp(
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{costfunc}
-\caption{A comparison of the generator cost function for generative adversarial networks. When $D(G(z))$ is close to $0$, the gradient is saturated for both the minimax and maximum likelihood cost functions. This situation occurs when the discriminator $D$ confidently rejects the generated value $G(z)$ as fake. Therefore, the non-saturated heuristic cost function is the only one which works well in practice. Image retrieved from Goodfellow NIPs tutorial \citep{2017arXiv170100160G}.}
+\caption{A comparison of the generator cost function for generative adversarial networks. When $D(G(z))$ is close to $0$, the gradient is saturated for both the minimax and maximum likelihood cost functions. This situation occurs when the discriminator $D$ confidently rejects the generated value $G(z)$ as fake. Therefore, the non-saturated heuristic cost function is the only one which works well in practice. Furthermore, the maximum likelihood cost function may produce high variance due to the rapid decrease as $D(G(z))$ nears $1$. Image retrieved from Goodfellow NIPs tutorial \citep{2017arXiv170100160G}.}
 \label{fig:CostFunc}
 \end{figure}
-
 
 This following algorithm presents initial training algorithm used by Goodfellow \textit{et al.} when GANs were introduced in 2014 \citep{2014arXiv1406.2661G}. Many modifications have been made by various sources. The first step in the algorithm is to optimize the discriminator $D$. Initially, many thought it would be optimal to train $D$ to completion; however, as previously mentioned, this is still a controversial topic among researchers \citep{2017arXiv170100160G}. For the initial GAN experiments, this number was set to $1$ to reduce computation time.
 
@@ -129,12 +128,14 @@ When generating images, problems often arise due to the generators difficulties 
 The evaluation procedure for generative adversarial networks remains an open debate as there exist no clear quantitative measurement to evaluate the models \citep{2017arXiv170100160G}. For example, models with high likelihood may produce poor samples and models with low likelihood may produce realistic samples. Several variations of the GANs examine the tradeoffs of divergence measures other than the original Kullback-Leibler divergence \citep{2015arXiv151101844T}. It can be shown that different metrics favor different models. Therefore, it is important to asses one's model within the context of the whole application \citep{2015arXiv151101844T}.
 
 \subsection{Discrete Data}
-GANs assume a model implementation that is differentiable due to it's use of back propagation. Therefore, this restricts their ability to generate discrete data.
+GANs assume a model implementation that is differentiable due to it's use of back propagation. Therefore, this restricts their ability to generate discrete data. Goodfellow proposes several solutions such as algorithm modifications, discretization and the use of concrete distributions or Gumbel-softmax \citep{2017arXiv170100160G}.
 
-\section{Improvements}
-
-\subsection{Mini-Batch Features}
-
+\section{Training Improvements}
+\subsection{Feature Matching}
+\subsection{Minibatch Discrimination}
+\subsection{Historical Averaging}
+\subsection{Label Smoothing}
+\subsection{Virtual Batch Normalization}
 
 \section{Model Variations}
 Research within the field of deep generative modeling has increased exponentially since the debut of generative adversarial networks in 2014. Significant improvements are being made with image quality and new applications are being found every month.
