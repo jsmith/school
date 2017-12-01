@@ -131,6 +131,7 @@ The evaluation procedure for generative adversarial networks remains an open deb
 \subsection{Discrete Data}
 GANs assume a model implementation that is differentiable due to it's use of back propagation. Therefore, this restricts their ability to generate discrete data. Goodfellow proposes several solutions such as algorithm modifications, discretization and the use of concrete distributions or Gumbel-softmax \citep{2017arXiv170100160G}.
 
+
 \section{Training Improvements}
 A substantial amount of research has been conducted within the past three years with regards to improving GAN training procedures. A paper released by Goodfellow approximately one year after the debut of GANs outlines several techniques that can be applied to improve the training process \citep{2016arXiv160603498S}. As previously mentioned, the optimal solution for GANs remains convergence of the Nash equilibrium of the minimax game; however, gradient descent attempts to find a local minima. The following techniques introduced by Goodfellow \textit{et al.} address the instability of GANs and attempt to increase the probability of convergence.
 
@@ -144,9 +145,12 @@ Minibatch discrimination attempts to minimize the issues caused by mode collapse
 Historical averaging introduces an extra term for each player's cost function such that they are penalized when choosing new parameters that differ from the historical mean value \citep{2016arXiv160603498S}. This new term $||\bm{\theta} - \frac{1}{t}\sum_{i=1}^{t}\bm{\theta}[i]||^2$ where $t$ is the total number of iterations performed and $\bm{\theta}[i]$ is the value of the parameters at iteration $i$. This technique has been demonstrated to help low dimensionality games reach an equilibrium where normal gradient descent has failed \citep{2016arXiv160603498S}.
 
 \subsection{Label Smoothing}
-\subsection{Virtual Batch Normalization}
+Label smoothing was a technique first introduced in the 1980s which involves replacing the 0 and 1 targets with \textit{smoother} values such as 0.1 and 0.9 respectively \citep{2016arXiv160603498S}. This technqiue is used to improve the networks resistance to adversarial examples. Specifically, it is recommendended to use one-sided label smoothing by using 0.9 label instead of 1 for the real data. By altering the label for fake data, this may lead to problems when $p_{data}(x)$ nears $0$ and $p_{model}(x)$ becomes large for some sample $x$ \citep{2016arXiv160603498S}.
 
-\section{Model Variations}
+\subsection{Virtual Batch Normalization}
+Batch normalization is a technique which involves applying normalization for each training minibatch. This allows for much higher learning rates, more stable training and reduces problems associated with parameter initializtion \citep{2015arXiv150203167I}. This normalization technique was shown to successful for Deep Convolutional GANs; however, this causes a dependance relationship between the samples of the minibatch \citep{2016arXiv160603498S}...
+
+\section{Architecture Variations}
 Research within the field of deep generative modeling has increased exponentially since the debut of generative adversarial networks in 2014. Significant improvements are being made with image quality and new applications are being found every month.
 
 \begin{figure}
@@ -156,9 +160,9 @@ Research within the field of deep generative modeling has increased exponentiall
 \label{fig:Cumulative Number of GAN papers by Month}
 \end{figure}
 
-\subsection{Deep Convolutional GANs}
-\subsection{Wasserstein GANs}
-\subsection{Conditional GANs}
+\subsection{Fully Connected GANs}
+\subsection{Convolutional GANs}
+\subsection{Inference GANs}
 \subsection{Progrssive GANs}
 
 \section{Research Frontiers}
