@@ -3,7 +3,7 @@
 
 \title{Generative Adversarial Networks}
 \author{Jacob Smith}
-\date{December 12, 2017}
+\date{December 5, 2017}
 
 \usepackage{natbib}
 \usepackage{graphicx}
@@ -131,7 +131,6 @@ The evaluation procedure for generative adversarial networks remains an open deb
 \subsection{Discrete Data}
 GANs assume a model implementation that is differentiable due to it's use of back propagation. Therefore, this restricts their ability to generate discrete data. Goodfellow proposes several solutions such as algorithm modifications, discretization and the use of concrete distributions or Gumbel-softmax \citep{2017arXiv170100160G}.
 
-
 \section{Training Improvements}
 A substantial amount of research has been conducted within the past three years with regards to improving GAN training procedures. A paper released by Goodfellow approximately one year after the debut of GANs outlines several techniques that can be applied to improve the training process \citep{2016arXiv160603498S}. As previously mentioned, the optimal solution for GANs remains convergence of the Nash equilibrium of the minimax game; however, gradient descent attempts to find a local minima. The following techniques introduced by Goodfellow \textit{et al.} address the instability of GANs and attempt to increase the probability of convergence.
 
@@ -145,39 +144,54 @@ Minibatch discrimination attempts to minimize the issues caused by mode collapse
 Historical averaging introduces an extra term for each player's cost function such that they are penalized when choosing new parameters that differ from the historical mean value \citep{2016arXiv160603498S}. This new term $||\bm{\theta} - \frac{1}{t}\sum_{i=1}^{t}\bm{\theta}[i]||^2$ where $t$ is the total number of iterations performed and $\bm{\theta}[i]$ is the value of the parameters at iteration $i$. This technique has been demonstrated to help low dimensionality games reach an equilibrium where normal gradient descent has failed \citep{2016arXiv160603498S}.
 
 \subsection{Label Smoothing}
-Label smoothing was a technique first introduced in the 1980s which involves replacing the 0 and 1 targets with \textit{smoother} values such as 0.1 and 0.9 respectively \citep{2016arXiv160603498S}. This technqiue is used to improve the networks resistance to adversarial examples. Specifically, it is recommendended to use one-sided label smoothing by using 0.9 label instead of 1 for the real data. By altering the label for fake data, this may lead to problems when $p_{data}(x)$ nears $0$ and $p_{model}(x)$ becomes large for some sample $x$ \citep{2016arXiv160603498S}.
+Label smoothing was a technique first introduced in the 1980s which involves replacing the 0 and 1 targets with \textit{smoother} values such as 0.1 and 0.9 respectively \citep{2016arXiv160603498S}. This technique is used to improve the networks resistance to adversarial examples. Specifically, it is recommendended to use one-sided label smoothing by using 0.9 label instead of 1 for the real data. By altering the label for fake data, this may lead to problems when $p_{data}(x)$ nears $0$ and $p_{model}(x)$ becomes large for some sample $x$ \citep{2016arXiv160603498S}.
 
 \subsection{Virtual Batch Normalization}
-Batch normalization is a technique which involves applying normalization for each training minibatch. This allows for much higher learning rates, more stable training and reduces problems associated with parameter initializtion \citep{2015arXiv150203167I}. This normalization technique was shown to successful for Deep Convolutional GANs; however, this causes a dependance relationship between the samples of the minibatch \citep{2016arXiv160603498S}...
+Batch normalization is a technique which involves applying normalization for each training minibatch. This allows for much higher learning rates, more stable training and reduces problems associated with parameter initialization \citep{2015arXiv150203167I}. This normalization technique was shown to successful for Deep Convolutional GANs; however, it causes a dependence relationship between the samples of the minibatch \citep{2016arXiv160603498S}. When implementation virtual batch normalization, a reference batch of samples is randomly chosen at the start of training and used throughout to normalize the current sample. However, this technique is computationally expensive as it requires forwarding two minibatches.
 
 \section{Architecture Variations}
-Research within the field of deep generative modeling has increased exponentially since the debut of generative adversarial networks in 2014. Significant improvements are being made with image quality and new applications are being found every month.
+Research within the field of deep generative modeling has increased exponentially since the debut of generative adversarial networks in 2014. Significant improvements are being made with respect to image quality and training stability. Hundreds of papers have been released since 2014 as seen in figure \ref{fig:CumulativeNumberofGANPapersbyMonth} which propose numerous architecture variations.
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.45]{cumulative_gans}
 \caption{The cumulative amount of papers written about generative adversarial networks. The graph shows the exponential growth of GANs within the past three years. Image maintained by Avinash Hindipur \citep{November2017GANZoo}.}
-\label{fig:Cumulative Number of GAN papers by Month}
+\label{fig:CumulativeNumberofGANPapersbyMonth}
 \end{figure}
 
 \subsection{Fully Connected GANs}
+The first generative adversarial network paper by Goodfellow \textit{et al.} made use of relatively simple fully connected neural networks for the generator and discriminator models. These are networks where each neuron in one layer is connected to every neuron in the following layer. This design is able to generate simple images and useful for proof of concept; however, several other architectures have overtaken this implementation \citep{2017arXiv171007035C}.
+
 \subsection{Convolutional GANs}
+Although convolutional neural networks (CNNs) seem well suited for the image generation tasks associated with GANs, difficulties associated with training initially constrained the use of convolutional models for both the discriminator and generator \citep{2017arXiv171007035C}. When implementing standard CNNs, one is often is unable to generate the same level of capacity and representational power. One solution proposed by Denton \textit{et al.} made use of Laplacian pyramids (LAPGAN), a type of image representation which repeatedly smooths and downsamples an image forming a sort of pyramid of images. At each layer of the pyramid, a conditional convolutional GAN is trained given generator output of the above layer. Another solution to this problem was proposed by Radford \textit{et al.}  simply made alterations to the existing deep convolutional network architecture \citep{2015arXiv151106434R}. Max pooling is replaced with strided layers within the discriminator and fractionally-strided layers within the generator. Furthermore, LeakyReLUs are used for all layers of the discriminator in place of the standard ReLU non-linearity function. The fractionally strided convolutions replicate within the generator replicate the benefits of the progressive upscaling within the Laplacian pyramid. The strided layers allow both the generator and discriminator to learn both the down-sampling and up-sampling operators during training \citep{2017arXiv171007035C}. Their architecture, called DCGAN, has become the base model for most GANs today \citep{2017arXiv170100160G}.
+
+\subsection{Conditional GANs}
+Initially proposed by Goodfellow as a straightforward extension of the first GAN architecture \citep{2014arXiv1406.2661G}, Mirza \textit{et al.} successfully implemented the conditional generative model in late 2014 \citep{2014arXiv1411.1784M}. Conditional generative models are constructed by feeding the additional parameter $\bm{c}$ to both to generator $G(\bm{z}|\bm{c})$ and discriminator $D(\bm{x}|\bm{c})$ to \textit{condition} the GAN. These architectures are better suited for multi-modal output \citep{2017arXiv171007035C}. By conditioning the GAN, it is possible to control the data generation process. These additional input may be class labels or other items such as text or an image. In section \ref{sec:img2img}, we will see how conditional GANs may be applied to image translation tasks. The new objective function of a conditional GAN becomes:
+
+$$\min_{G}\max_{D}V(D, G) = \mathbb{E}_{x\sim p_{data}(x)}\Big[\log(D(\bm{x}|\bm{c}))\Big] + \mathbb{E}_{z\sim p_z(z)}\Big[\log(1-D(G(\bm{z}|\bm{c})))\Big]$$
+
 \subsection{Inference GANs}
-\subsection{Progrssive GANs}
+The first GAN architectures lacked methods to convert 
 
-\section{Research Frontiers}
+\subsection{Progressive GANs}
+
+\section{Applications}
 GANs are an exciting idea that are currently leading the frontier of deep generative models.
-
 \subsection{Divergence Measures}
 \subsection{Image Quality}
-Hiton's Capsule Network
+Hinton's Capsule Network
 Progressive GANs
-
 \subsection{Semi-Supervised Learning} \label{sec:semisupervised}
 \subsection{Feature Learning}
 \subsection{Semi-Supervised Learning}
 \subsection{Reinforcement Learning}
+\subsection{Image to Image Translation} \label{sec:img2img}
 
+
+\section{Research Frontiers}
+Evaluation, instability, mode collapse
+
+Reinforcement learning
 
 \section{Conclusion}
 Generative models are currently being applied to many problems \citep{genmodelingopenai}; however, they offer many more possibilities due to their ability to understand the data they are given.
