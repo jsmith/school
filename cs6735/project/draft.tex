@@ -186,7 +186,16 @@ Progressive GANs offer extend the DCGAN architecture by altering their training 
 \end{figure}
 
 \section{Latent Space}
-The latent space of the
+The generator model of a GAN must internalize a representation of the data they are trained on. This quality is shared with variatinal autoencoders word linguistic models such as \textit{word2vec} \citep{2017arXiv171007035C}. One interesting characteristic about the latent space is that it is typically of lower dimension than the training data \citep{2017arXiv171007035C}. This forces the model to effectively represent the training data by extracting only useful features. As long as the effects of mode collapse are minimal, the latent space can be highly structured \citep{2017arXiv171007035C}. Often, interpolations allow for semantic transformations. For example, movement of the latent vector in certain directions may alter rotation, produce colour changes or see the addition of attributes such as eyeglasses \citep{2017arXiv171007035C}.
+
+As mentioned in section \ref{sec:inferencegan}, it is possible to train an encoder to map a sample $\br{x}$ to a latent vector $\br{z}$. This is an extremely useful feature for exploring the latent space. One may discover \textit{concept vectors} such as "wearing glasses" or "wearing a hat" and apply them to the vectors associated with humans. This is a fascinating and practical property \citep{2017arXiv171007035C}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.45]{smile_concept_vector}
+\caption{The addition of the "smile" concept vector (far right) to a vector associated with a woman (far left). The images in-between were created through an interpolation of the two vectors. Example retrieved form Dumoulin \texit{et al.} \citep{2016arXiv160600704D}.}
+\label{fig:conceptvector}
+\end{figure}
 
 \section{Applications}
 Although GANs are a relatively new topic, many different applications have been discovered since their inception. Several of the reoccurring themes are elaborated within this section.
@@ -204,7 +213,9 @@ Image super-resolution is the process of generating a high resolution image from
 Image-to-image translation has shown astounding progress recently and offers many yet undiscovered applications \citep{2017arXiv170100160G}. This includes to process of translating from a source domain $X$ to the target domain $Y$. An example of this process can be visualized in figure \ref{fig:img2img}. Conditional networks are well suited for this task and are used within several different GAN architectures which attempt to solve this problem \citep{2016arXiv161107004I, 2017arXiv171111585W, 2017arXiv170310593Z}. Recent work by Zhu \textit{et al.} demonstrate the feasibility of unpaired image-to-image translation by introducing a cycle consistency loss to enforce $F(G(X)) ≈ X$ where $G$ is the mapper and $F$ is the inverse mapper \citep{2017arXiv170310593Z}. Furthermore, research recently released by Wang \textit{et al.} further improve the quality of synthesized images \citep{2017arXiv171111585W}. Generated images from semantic maps are now almost indistinguishable from real images.
 
 \subsection{Reinforcement Learning}
-Reinforcement learning offers another promising application for GANs.
+Modeling environments offers another promising application for GANs. This capability could potentially be used for reinforcement learning and motion planning. One possible method includes the use of generative models to predict possible futures \citep{2017arXiv170100160G}. The GAN would generate conditional distribution over future states given the current state and an hypothetical action. The agent would make multiple queries to the generator and then choose the action associated with the best possible future. This technique has already been applied by Finn and Levine in 2016 \citep{2016arXiv161000696F}.
+
+Generative models may also be used to maintain a record of past actions and visited locations to aid in future decisions. The connection between GANs and inverse reinforcement learning has also been investigated by Finn \textit{et al.} in 2016 \citep{2016arXiv161103852F}.
 
 \section{Conclusion}
 Generative models are currently being applied to many problems \citep{genmodelingopenai}; however, they offer many more possibilities due to their ability to understand the data they are given.
