@@ -172,33 +172,31 @@ Initially proposed by Goodfellow as a straightforward extension of the first GAN
 
 $$\min_{G}\max_{D}V(D, G) = \mathbb{E}_{x\sim p_{data}(x)}\Big[\log(D(\bm{x}|\bm{c}))\Big] + \mathbb{E}_{z\sim p_z(z)}\Big[\log(1-D(G(\bm{z}|\bm{c})))\Big]$$
 
-\subsection{Inference GANs}
-The first GAN architectures lacked the ability to map an sample $\bm{x}$ to the associated latent vector $\bm{z}$. This feature of GANs is often referred to as an inference mechanism \citep{2017arXiv171007035C}. In 2016, two new architecture were independently proposed which introduce an adversarial learned inference by proposing the addition of another generator network \citep{2016arXiv160509782D, 2016arXiv160600704D}. The paper by Dumoulin \textit{et al.} proposes a network which learns the mapping of $\bm{x}$ to $\bm{z}$ and generates a set of continuous variables. For example, if the vector $\bm{z}$ is of length $n$, then $n$ means and $n$ variances will be generated. This allows for a probability distribution for each value of $\bm{z}$. Furthermore, the discriminator is now trained upon both a sample $\bm{x}$ and latent space vector $\bm{z}$ and has to discriminate between a real and fake pairs. The reconstructed images remain of poor quality \citep{2017arXiv171007035C}.
+\subsection{Inference GANs} \label{sec:inferencegan}
+The first GAN architectures lacked the ability to map an sample $\bm{x}$ to the associated latent vector $\bm{z}$. This feature of GANs is often referred to as an inference mechanism \citep{2017arXiv171007035C}. In 2016, two new architecture were independently proposed which introduce an adversarial learned inference by proposing the addition of another generator network \citep{2016arXiv160509782D, 2016arXiv160600704D}. The paper by Dumoulin \textit{et al.} proposes a new generator network, referred to as an encoder, which learns the mapping of $\bm{x}$ to $\bm{z}$ and generates a set of continuous variables. For example, if the vector $\bm{z}$ is of length $n$, then $n$ means and $n$ variances will be generated. This allows for a probability distribution for each value of $\bm{z}$. Furthermore, the discriminator is now trained upon both a sample $\bm{x}$ and latent space vector $\bm{z}$ and has to discriminate between a real and fake pairs. The reconstructed images remain of poor quality \citep{2017arXiv171007035C}.
 
 \subsection{Progressive GANs}
 Progressive GANs offer extend the DCGAN architecture by altering their training process. Introduced in October 2017 by Karras \textit{et al.} \citep{2017arXiv171010196K}, these networks incrementally increase the number of convolutions within both the generator and discriminator. Each new convolution is \texit{blended in} and is added after the current GAN converges which permits the generator to progressively discover the image distribution. Combined with new normalization techniques, progressive GANs allow for much higher resolution images to be generated \citep{2017arXiv171010196K}. The experimental results offer promising new directions for GAN research and applications.
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.45]{progrssive_growing}
+\includegraphics[scale=0.45]{progressive_growing}
 \caption{The training process of progressively growing generative adversarial networks recently introduced by Karras \texit{et al.} \citep{2017arXiv171010196K}. The generator and discriminator begin at $4x4$ resolution and progressively grow generate and discriminate $1024x1024$ resolution images.}
-\label{fig:CumulativeNumberofGANPapersbyMonth}
+\label{fig:ProgressiveGrowingGAN}
 \end{figure}
 
 \section{Latent Space}
 \section{Applications}
-GANs are an exciting idea that are currently leading the frontier of deep generative models.
+Although GANs are a relatively new topic, many different applications have been discovered since their inception. Several of the reoccurring themes are elaborated within this section.
 
 \subsection{Semi-Supervised Learning} \label{sec:semisupervised}
+There exist several methods for training a classifier using a GAN. These methods all take advantage of the unsupervised aspect of GANs to implement semi-supervised learning and offer a quantitative method to rank different GAN models. One general transfer learning technique involves the use of discriminator within classification tasks as a feature extractor. A new machine learning model, such as a SVM, is subsequently able to be trained on the extracted features of some layer $l$ of the discriminator. Another transfer learning approach makes use of the inference GANs mentioned in section \ref{sec:inferencegan}. Another machine learning model is trained on the last three hidden layers of the of the encoder. These techniques have both received state-of-the-art classification results \citep{2017arXiv171007035C}.
+
+Another general approach to semi-supervised learning transforms the discriminator into a classifier of $k + 1$ classes where $k$ is the amount of real object classes. In this format, the $k + 1$ class is associated with a fake image. When a real image is given to the discriminator, it attempts to classify the sample as one of the k classes; however, when a generated or unlabeled image is given, the probabilities of the k classes are summed together to represent the probability of the image being real. Typical supervised models need more than $50,000$ labels whereas state of the art performance can be achieved on labeled datasets ranging from $20$ to $8,000$ in size \citep{2017arXiv170100160G}.
+
 \subsection{Image Generation}
 \subsection{Image to Image Translation} \label{sec:img2img}
 \subsection{Super Resolution}
-
-
-\section{Research Frontiers}
-Evaluation, instability, mode collapse
-\subsection{Divergence Measures}
-\subsection{Image Quality}
 \subsection{Reinforcement Learning}
 Reinforcement learning
 
