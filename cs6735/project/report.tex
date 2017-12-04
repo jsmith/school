@@ -96,16 +96,16 @@ The following algorithm presents the initial training algorithm as introduced by
     update the generator using its stochastic gradient\;
     $$\nabla_{\theta_g}\frac{1}{m}\sum_{i=1}^{m}[\log(1-D(G(z^{(i)})))]$$
   }
-  \caption{The initial generative adversarial network algorithm developed by Goodfellow \textit{et al.} in 2014 \citep{2014arXiv1406.2661G}. Multiple variations of this algorithm have since been produced. One of the benefits of adversarial networks is that they may be updated using back propagation.}
+  \caption{The initial generative adversarial network algorithm developed by Goodfellow \textit{et al.} in 2014 \citep{2014arXiv1406.2661G}. Multiple variations of this algorithm have since been produced. One of the benefits of adversarial networks is that they are able to make use of back propagation for training.}
 \end{algorithm}
 
 
 
 \section{Issues}
-There exist several issues that characterize generative adversarial networks. Some are related design of GANs or their underlying network implementations. These issues lay at the forefront of GAN research.
+There exist several issues that characterize GANs. Some are due to the architecture of GANs while others to implementations of the generator and descriminator. These issues lay at the forefront of GAN research.
 
 \subsection{Instability} \label{sec:instability}
-Generative adversarial networks are often characterized by their instability \citep{2017arXiv170100160G}. The training process makes use of gradient descent which does not guarantee convergence to the Nash equilibrium, the game theory equilibrium that involves two competing players. This training process for GANs is different than network optimization which is common in discriminative models. When either the generator or discriminator trains, even if that specific network improves, the other may regress. This sometimes leads to the scenario where each network repeatedly undo's the other's progress. This problem is not specific to GANs, but to any zero-sum game situations \citep{2017arXiv170100160G}.
+GANs are often characterized by their instability \citep{2017arXiv170100160G}. The training process makes use of gradient descent which does not guarantee convergence to the Nash equilibrium, the game theory equilibrium that involves two competing players. This training process for GANs is different than network optimization which is common in discriminative models. When either the generator or discriminator trains, even if that specific network improves, the other may regress. This sometimes leads to the scenario where each network repeatedly undo's the other's progress. This problem is not specific to GANs, but to any zero-sum game situations \citep{2017arXiv170100160G}.
 
 Goodfellow has demonstrated that convergence is guaranteed if updates are made directly to the function space; however, this is obviously not what occurs. During training, we only ever update the parameter space \citep{2014arXiv1406.2661G}. As of yet, no theoretical justifications have been found that guarantee convergence or non-convergence when updates are only made to the parameters \citep{2017arXiv170100160G}. In practice, adversarial networks often oscillate between different kinds of samples without converging to an equilibrium in a phenomenon called mode collapse.
 
@@ -127,7 +127,7 @@ When this occurs, the generator attempts to map every $z$ vector to the one $x$ 
 When generating images, problems often arise due to the generators difficulties with perspective, counting and structure \citep{2017arXiv170100160G}. For example, an generated animal may  have a 2D structure, misplaced limbs or too many of a specific body part. These issues arise due to the underlying model architecture, typically convolutional neural networks, and are not a direct problem of the adversarial network \citep{2017arXiv170100160G}. Furthermore, generated image resolution has remained relatively low; however, recent improvements outlined in section \ref{sec:proggans} show improvements with regard to resolution.
 
 \subsection{Evaluation}
-The evaluation procedure for generative adversarial networks remains an open debate as there exist no clear quantitative measurement to evaluate the models \citep{2017arXiv170100160G}. For example, models with high likelihood may produce unrealistic samples and models with low likelihood may produce realistic samples \citep{2017arXiv170100160G}. Several variations of the GANs examine the tradeoffs of divergence measures other than the original Kullback-Leibler divergence \citep{2015arXiv151101844T}. It has been shown that different metrics lead to different tradeoffs and different evaluations favor different models \citep{2015arXiv151101844T}. Therefore, it is important to asses one's model within the context of the whole application \citep{2015arXiv151101844T}.
+The evaluation procedure for GANs remains an open debate as there exist no clear quantitative measurement to evaluate the models \citep{2017arXiv170100160G}. For example, models with high likelihood may produce unrealistic samples and models with low likelihood may produce realistic samples \citep{2017arXiv170100160G}. Several variations of the GANs examine the tradeoffs of divergence measures other than the original Kullback-Leibler divergence \citep{2015arXiv151101844T}. It has been shown that different metrics lead to different tradeoffs and different evaluations favor different models \citep{2015arXiv151101844T}. Therefore, it is important to asses one's model within the context of the whole application \citep{2015arXiv151101844T}.
 
 \subsection{Discrete Data}
 GANs assume a model implementation that is differentiable due to it's use of back propagation. Therefore, this restricts their ability to generate discrete data. Goodfellow proposes several solutions such as algorithm modifications, discretization of outputs or the use of concrete distributions or Gumbel-softmax \citep{2017arXiv170100160G}.
@@ -155,17 +155,17 @@ Batch normalization is a technique that was first introduced in 2014 which invol
 
 
 \section{Architecture Variations}
-Research within the field of deep generative modeling has increased exponentially since the debut of generative adversarial networks in 2014. Significant improvements are being made with respect to image quality and training stability. Hundreds of papers have been released since 2014 (see figure \ref{fig:CumulativeNumberofGANPapersbyMonth}) which propose numerous architectural variations.
+Research within the field of deep generative modeling has increased exponentially since the debut of GANs in 2014. Significant improvements are being made with respect to image quality and training stability. Hundreds of papers have been released since 2014 (see figure \ref{fig:CumulativeNumberofGANPapersbyMonth}) which propose numerous architectural variations.
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.43]{cumulative_gans}
-\caption{The cumulative amount of papers written about generative adversarial networks. The graph shows the exponential growth of GANs within the past three years. Image maintained by Avinash Hindipur \citep{November2017GANZoo}.}
+\caption{The cumulative amount of papers written about generative adversarial networks by month. The graph shows the exponential growth of GANs within the past three years. Image maintained by Avinash Hindipur \citep{November2017GANZoo}.}
 \label{fig:CumulativeNumberofGANPapersbyMonth}
 \end{figure}
 
 \subsection{Fully Connected GANs}
-The first generative adversarial network paper by Goodfellow \textit{et al.} made use of relatively simple fully connected neural networks for the generator and discriminator models \citep{2017arXiv171007035C}. These are networks where each neuron in one layer is connected to every neuron in the following layer. This design is able to generate simple images and useful for proof of concept; however, several other architectures have overtaken this implementation \citep{2017arXiv171007035C}.
+The first GAN paper by Goodfellow \textit{et al.} made use of relatively simple fully connected neural networks for the generator and discriminator models \citep{2017arXiv171007035C}. These are networks where each neuron in one layer is connected to every neuron in the following layer. This design is able to generate simple images and useful for proof of concept; however, several other architectures have overtaken this implementation \citep{2017arXiv171007035C}.
 
 \subsection{Convolutional GANs}
 Although convolutional neural networks (CNNs) seem well suited for the image generation tasks associated with GANs, difficulties associated with training initially constrained the use of convolutional models for both the discriminator and generator \citep{2017arXiv171007035C}. When implementing CNNs within a GAN, one is often unable to train the discriminator and generator to the same level of capacity and representational power when compared to supervised CNN models \citep{2017arXiv171007035C}. One solution proposed by Denton \textit{et al.} made use of Laplacian pyramids (LAPGAN) to address this problem \citep{2015arXiv150605751D}. A Laplacian pyramid is a type of multi-scale signal representation which repeatedly smooths and downsamples an image to form a sort of pyramid of images. At each layer of the pyramid, a conditional convolutional GAN (see section \ref{sec:condgan}) is trained given the generator output of the above layer.
