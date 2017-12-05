@@ -18,10 +18,43 @@
 \section{Introduction}
 This report details the experimental study conducted for the CS6735 programming project. Six machine learning algorithms were implemented, including both regular and ensemble learning algorithms. Each was evaluated on five datasets from the UCI machine learning data repository using 10 times 5-fold cross validation. The technical details of the implementation will be described and the results will be analyzed.
 
+\section{Objectives}
+\begin{enumerate}
+  \item Implement the following machine learning algorithms:
+  \begin{enumerate}
+    \item ID3
+    \item Adaboost on ID3
+    \item Random Forest
+    \item Naïve Bayes
+    \item Adaboost on Naïve Bayes
+    \item K-nearest neighbors
+  \end{enumerate}
+  \item Evaluate the algorithms on the following datasets:
+  \begin{enumerate}
+    \item Brest Cancer Data
+    \item Car Data
+    \item Ecoli Data
+    \item Mushroom Data
+  \end{enumerate}
+  \item Create report of the experimental study including:
+  \begin{enumerate}
+    \item Description of the learning algorithms you implement.
+    \item Description of the datasets you use (number of examples, number of attribute, number of classes, type of attributes, etc.).
+    \item Technical details of your implementation: pre-processing of data sets (discretization, etc.), parameter setting, etc.
+    \item Design of your programming implementation (data structures, overall program structure).
+    \item Report and analysis of your experimental results using using 10 times 5-fold cross-validation (include mean, standard deviation of accuracies).
+    \item Comparison and discussion of the algorithms with respect to the experimental results.
+  \end{enumerate}
+\end{enumerate}
+
 \section{Algorithms}
 For this study, six different algorithms; however, only the five unique algorithms are described in this section. Both the ID3 decision tree and Naïve Bayes algorithms were applied to the adaboost ensemble algorithm as weak learners.
 
 \subsection{ID3}
+The Iterative Dichotomiser 3 (ID3) algorithm is a decision tree algorithm used to efficiently develop decision trees \cite{Quinlan:1986:IDT:637962.637969}. This algorithm was developed for situations where there are large amount of attributes and training sets which contain many attributes, but there was the need to be able to efficiently develop relatively well performing decision trees.
+
+The algorithm begins at the root node with a set of catigorical, labled data $S$.
+
 \subsection{Naïve Bayes}
 \subsection{Adaboost}
 \subsection{Random Forest}

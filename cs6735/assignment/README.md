@@ -9,3 +9,6 @@ The report assignment for the assignment.
 1. Report and analysis of your experimental results including:
 * Compare and discuss your algorithms (implementations) based on your experimental results
 * 10 times 5-fold cross-validation, and report the average accuracy and standard deviation
+
+References
+* [Introduction to Decision Trees](http://hunch.net/~coms-4771/quinlan.pdf)
