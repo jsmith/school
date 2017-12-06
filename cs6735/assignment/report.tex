@@ -29,10 +29,10 @@ This report details the experimental study conducted for the CS6735 programming 
   \item Implement the following machine learning algorithms:
   \begin{enumerate}
     \item ID3
-    \item Adaboost on ID3
+    \item AdaBoost on ID3
     \item Random Forest
     \item Naïve Bayes
-    \item Adaboost on Naïve Bayes
+    \item AdaBoost on Naïve Bayes
     \item K-nearest neighbors
   \end{enumerate}
   \item Evaluate the algorithms on the following datasets:
@@ -78,20 +78,20 @@ $$\hat{y}= \mathrm{argmax}_{k\in\{1,..K\}} P(v_k)\prod_{i=1}^mp\left(a_i|v_k\rig
 
 where $P$ is the probability, $p$ is the gaussian probability density function and $K$ is the number of distinct targets. In this equation, the first m attributes are continuous whereas the later are catigorical. During training, the data $S$ is split by lables into subsets ${S_1,...,S_n}$ where $n$ is the number of different classes. For each subset, we estimate the class probability $P(v_k)$. Subsequently, for each attribute value $a_i$ of each attribute $a$, we estimate $P(a_i|v_k)$ or $p$. We are not able to immediately calculate $p(a_i|v_k)$ as attribute $a$ is a continous attribute.
 
-\subsection{Adaboost} \label{adaboost}
-Adaboost is a boosting algorithm that was first introduced in 1995 by Freunb Schapire. This type of ensemble learning uses a set of weak learners to reduce bias and become a strong learner. It solves many of the difficulties associated with previous boosting algorithms \cite{Schapire:1999:BIB:1624312.1624417}.
+\subsection{AdaBoost} \label{adaboost}
+AdaBoost is a boosting algorithm that was first introduced in 1995 by Freunb Schapire. This type of ensemble learning uses a set of weak learners to reduce bias and become a strong learner. It solves many of the difficulties associated with previous boosting algorithms \cite{Schapire:1999:BIB:1624312.1624417}.
 
-The primary part of the algorithm is to maintain a weight value $w$ for every sample within the data $S$. This value increases when the sample is misclassified and decreases when the sample is correctly classified. The target values are assumed be to in the set ${+1, -1}$. The Adaboost algorithm is easily implemented on weak learners which are parameterized by sample weights. Neither Naïve Bayes or ID3 natively implement weighted training. Therefore, an alternative implementation was used where a subset of the training data is selected with replacement based on the weights. For example, if the weight vector for two samples is ${1, 2}$, the second sample is twice as likely to be picked each time.
+The primary part of the algorithm is to maintain a weight value $w$ for every sample within the data $S$. This value increases when the sample is misclassified and decreases when the sample is correctly classified. The target values are assumed be to in the set ${+1, -1}$. The AdaBoost algorithm is easily implemented on weak learners which are parameterized by sample weights. Neither Naïve Bayes or ID3 natively implement weighted training. Therefore, an alternative implementation was used where a subset of the training data is selected with replacement based on the weights. For example, if the weight vector for two samples is ${1, 2}$, the second sample is twice as likely to be picked each time.
 
 Initially, the weights are set to $\frac{1}{|S|}$. For a predefined number of iterations, a weak learner is trained on the a subset of the traning data. Predictions are made for each training sample and the error is calculated. Using the accuracy, a value $\alpha$ is calculated which represents the accuracy of the weak learner. This $\alpha$ value is used to update the weights and the weak learner, $\alpha$ pair is added to the list of previous weak learners. To make classification, there is a weighted vote between using the weak learners and their associated $\alpha$ values and the sign is used to make the final classification.
 
 To implement multiclass adaboost, $K$ adaboost models are trained where $K$ is the total number of distant classes. For each adaboost model, one target is selected as the $+1$ adaboost target and the other become the $-1$ target. The target value associated with the most positive prediction becomes the predicted class.
 
-\subsubsection{Adaboost on Naïve Bayes}
-Naïve Bayes is an inherently weak learner due to its assumption of conditional independence amongst attributes. This fact introduces a large amount of preference bias which makes a Naïve Bayes and ideal candidate for the Adaboost algorithm.
+\subsubsection{AdaBoost on Naïve Bayes}
+Naïve Bayes is an inherently weak learner due to its assumption of conditional independence amongst attributes. This fact introduces a large amount of preference bias which makes a Naïve Bayes and ideal candidate for the AdaBoost algorithm.
 
-\subsubsection{Adaboost on ID3}
-The ID3 algorithm does not introduce a large amount of preference bias and often overfitting if allowed to train to completion. Therefore, to implement Adaboost on ID3, the depth of the trees were limited to one level. This type of tree is known as a \ii{decision stump}.
+\subsubsection{AdaBoost on ID3}
+The ID3 algorithm does not introduce a large amount of preference bias and often overfitting if allowed to train to completion. Therefore, to implement AdaBoost on ID3, the depth of the trees were limited to one level. This type of tree is known as a \ii{decision stump}.
 
 \subsection{Random Forest}
 Random forest algorithm is a bagging algorithm which uses an ensemble of strong learners to reduce overfitting to the training set. This method contains many similarities to the adaboost algorithm as described in section \ref{adaboost}; however, no weights are used for random forests. For a predefined number of iterations, a subset of the of the training data is selected with replacement. The new training set is then used to train a decision tree to completion and added to tree is added to a list. To make a classification, each tree in the forest votes and the most common target value becomes the predicted class. As an extension of the base random forest algorithm, weights may be given to each decision tree based on their classification error during training; however, this extension was not added for this implementation.
@@ -322,11 +322,11 @@ Missing attribute values within the breast cancer dataset were replaced with the
 \subsection{Naïve Bayes}
 gaussian
 
-\subsection{Adaboost on Naïve Bayes}
+\subsection{AdaBoost on Naïve Bayes}
 number of learners
 
-\subsection{Adaboost on ID3}
-number of learenrs
+\subsection{AdaBoost on ID3}
+number of learners
 
 \subsection{Random Forest}
 number of trees
@@ -347,7 +347,7 @@ A Java machine learning framework was first created to ease the implementation o
   \item[] \bb{Util}: Utility functions used through the machine learning project.
 \end{enumerate}
 
-\subsection{dt}
+\subsection{tree}
 This package contains all of the objects associated with decision trees.
 
 \begin{enumerate}[leftmargin=*]
@@ -361,10 +361,10 @@ This package contains all of the objects associated with decision trees.
 This package contains all of the objects associated with enseble learners.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{Adaboost}:
-  \item[] \bb{AdaboostModel}:
-  \item[] \bb{Multi-Adaboost}:
-  \item[] \bb{Multi-AdaboostModel}:
+  \item[] \bb{AdaBoost}:
+  \item[] \bb{AdaBoostModel}:
+  \item[] \bb{Multi-AdaBoost}:
+  \item[] \bb{Multi-AdaBoostModel}:
   \item[] \bb{RandomForest}:
   \item[] \bb{RandomForstModel}:
 \end{enumerate}
@@ -407,7 +407,7 @@ This package contains distribution implementations for the Naïve Bayes classifi
   \item[] \bb{GaussianDistribution}:
 \end{enumerate}
 
-\subsection{nb}
+\subsection{bayes}
 This package contains all of the objects associated with Naïve Bayes.
 
 \begin{enumerate}[leftmargin=*]
@@ -434,11 +434,11 @@ This package contains all of the objects associated with k-nearest neighbors.
   \begin{tabular}{ |c|c|c|c|c|c| }
     \hline
     Breast Cancer           & Car      & Letter   & E. Coli  & Mushroom \\ \hline
-    Adaboost on ID3         & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
+    AdaBoost on ID3         & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
     ID3                     & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
     Random Forest           & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
     Naïve Bayes             & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
-    Adaboost on Naïve Bayes & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
+    AdaBoost on Naïve Bayes & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
     K-Nearest Neighbor      & 100.00\% & 100.00\% & 100.00\% & 100.00\% \\ \hline
   \end{tabular}
   \caption{Results of the six implemented algorithms on five UCI Machine Learning repositories. Accuracy calculated using 10 times 5-fold cross validation.}
