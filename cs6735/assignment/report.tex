@@ -132,18 +132,6 @@ Each algorithm was implemented on five different datasets from the UCI Machine L
 \section{Technical Details}
 Any missing attribute values were each replaced with the mode of the samples of the same class. No discretization occured as all base algorithms are able to handle continuous data. For all datasets, any sort of identification number or code attributes were removed. Within the E. Coli dataset, the lip and chg catigorical attributes were also removed as they provided minimal information. Furthermore, any string values were converted to integers. For example, the ``v-high'', ``high'', ``med'' and ``low'' attribute values would have been converted to 0, 1, 2, 3 respectively.
 
-
-Identification information was removed ...
-No discretization was performed ...
-Unknown variables from the breast cancer dataset were replaced ...
-Limitations placed on trees ...
-Distributions used for Naïve Bayes ...
-C4.5 continuous variable implementation ...
-Number of trees for random forest ... & size of datasets
-Number of weak learners for adaboost ... & size of datasets
-How many neighbors ...
-Transformed to integers
-
 \subsection{ID3}
 \begin{tabular}{ |c|c|c| }
   Dataset            & Max Level & Minimum # of Samples \\
@@ -171,28 +159,105 @@ k
 distance
 
 \section{Project Design}
-A Java machine learning framework was first created ...
-The external dependencies include JUnit for unit tests and slfj4 for logging. Both work independently of the code written for the machine learning algorithms. They functioned as tools to write code and may be completely removed if necessary ...
+A Java machine learning framework was first created to ease the implementation of the six learning algorithms. This framework uses JUnit for unit tests and slfj4 to control logging. Both work independently of the machine learning algorithms. The package hiarchy was modeled off ...
 
-An `Algorithm` interface and `Model` abstract class were created as the high level objects that all algorithms and models implement. This abstraction proved extremely useful for ensemble implementation and general code cleanliness. The main class where the algorithms are implemented on the datasets is extremely easy to read.
+\begin{enumerate}
+  \item \br{Algorithm}:
+  \item \br{Dataset}:
+  \item \br{Model}:
+  \item \br{KFold}: Implements the KFold cross validation algorithm.
+  \item \br{Report}: The object returned from a k-fold cross validation test....
+  \item \br{Util}: Utility functions used through the machine learning project.
+\end{enumerate}
 
-A `KFold` object was created which implements the cross validation algorithm. This object generates a `Report` on a given algorithm and dataset ...
+\subsection{dt}
+This package contains all of the objects associated with decision trees.
 
-\subsection{Math Package}
-Data was particularly difficult to handle. Whereas Java is a statically typed language, difficulties arose in handling both floating point and integer values. To manage this, a math package was created which implements useful data structures such as vectors and matrices. These object were used to abstract away from the underlying data structures. Furthermore, the `Vector` object provided many useful methods for vector arithmetic such as element-wise multiplication, division and exponents. These methods also support broadcasting, where a vector can be multiplied by a single number. These objects are used throughout the library in place of primitive arrays and ArrayLists and have were essential to the code quality. Often, methods it was necessary to have two associated objects held in one data structure. For example, there exists a method within the DataSet object which splits itself into two parts based on a pivot point. This method would preferably return a pair of datasets; however, many common data structures such as arrays, lists and maps seemed did not seem to adequate. To accomplish this task, a simple Tuple data structure was created.
+\begin{enumerate}
+  \item \br{Children}:
+  \item \br{ID3}:
+  \item \br{ID3Model}:
+  \item \br{Node}:
+\end{enumerate}
 
-Several other useful objects were implemented within the math package such as distance function objects, distribution objects and an object containing useful static methods. The purpose of these objects will be elaborated within Naïve Bayes package design section. The utility object implemented useful functions not available within the Java math package.
+\subsection{ensemble}
+This package contains all of the objects associated with enseble learners.
 
-\subsection{Decision Tree Package}
+\begin{enumerate}
+  \item \br{Adaboost}:
+  \item \br{AdaboostModel}:
+  \item \br{Multi-Adaboost}:
+  \item \br{Multi-AdaboostModel}:
+  \item \br{RandomForest}:
+  \item \br{RandomForstModel}:
+\end{enumerate}
 
+\subsection{exceptions}
+This package contains the common exceptions which occur the learning process.
 
-\subsection{Naïve Bayes Package}
-\subsection{Ensemble Package}
-\subsection{Neighbors Package}
+\begin{enumerate}
+  \item \br{AttributeException}:
+  \item \br{DataException}:
+  \item \br{FileException}:
+  \item \br{PredictionException}:
+\end{enumerate}
+
+\subsection{math}
+Data was particularly difficult to handle. Whereas Java is a statically typed language, difficulties arose in handling both floating point and integer values. To manage this, a math package was created which implements useful data structures such as vectors and matrices. These object were used to abstract away from the underlying data structures. Furthermore, the `Vector` object provided many useful methods for vector arithmetic such as element-wise multiplication, division and exponents. These methods also support broadcasting, where a vector can be multiplied by a single number. These objects are used throughout the library in place of primitive arrays and ArrayLists and have were essential to the code quality. Often, methods it was necessary to have two associated objects held in one data structure. For example, there exists a method within the DataSet object which splits itself into two parts based on a pivot point. This method would preferably return a pair of datasets; however, many common data structures such as arrays, lists and maps seemed did not seem to adequate. To accomplish this task, a simple Tuple data structure was created. Several other useful objects were implemented within the math package such as distance function objects, distribution objects and an object containing useful static methods. The purpose of these objects will be elaborated within Naïve Bayes package design section. The utility object implemented useful functions not available within the Java math package.
+
+\begin{enumerate}
+  \item \br{MathException}:
+  \item \br{Matrix}:
+  \item \br{Tuple}:
+  \item \br{Util}:
+  \item \br{Vector}:
+\end{enumerate}
+
+\subsubsection{distance}
+This package contains distance functions for the KNN classifier.
+
+\begin{enumerate}
+  \item \br{DistanceFunction}:
+  \item \br{Euclidian}:
+  \item \br{Hamming}:
+\end{enumerate}
+
+\subsubsection{distribution}
+This package contains distribution implementations for the Naive Bayes classifier.
+
+\begin{enumerate}
+  \item \br{Distribution}:
+  \item \br{GaussianDistribution}:
+\end{enumerate}
+
+\subsection{nb}
+This package contains all of the objects associated with Naive Bayes.
+
+\begin{enumerate}
+  \item \br{Attribute}:
+  \item \br{BayesException}:
+  \item \br{ClassSummary}:
+  \item \br{ContinuousAttribute}:
+  \item \br{DiscreteAttribute}:
+  \item \br{NaiveBayes}:
+  \item \br{NaiveBayesModel}:
+\end{enumerate}
+
+\subsection{neighbors}
+This package contains all of the objects associated with k-nearest neighbors.
+
+\begin{enumerate}
+  \item \br{KNN}:
+  \item \br{KNNModel}:
+  \item \br{KNNException}:
+\end{enumerate}
 
 \section{Results}
-table of results ...
-graph of hyperparameter search ...
+\begin{tabular}{ |c|c|c|c|c|c| }
+  ID3 & Adaboost on ID3 & Random Forest & Naive Bayes & Adaboost on Naive Bayes & K-Nearest Neighbor
+\end{tabular}
+
+graph of hyperparameter search?
 
 \bibliographystyle{plain}
 \bibliography{references}
