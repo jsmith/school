@@ -53,7 +53,7 @@ For this study, six different algorithms; however, only the five unique algorith
 \subsection{ID3}
 The Iterative Dichotomiser 3 (ID3) algorithm is a decision tree algorithm used to efficiently develop decision trees \cite{Quinlan:1986:IDT:637962.637969}. This algorithm was developed for situations where there are large amount of attributes and training sets which contain many attributes, but there was the need to be able to efficiently develop relatively well performing decision trees.
 
-The algorithm as described by Mitchell \cite{Mitchell:1997:ML:541177} was implmented. The operations begin at the root node with a set of catigorical, labled data $S$. The attribute $A$ which introduces the largest information gain is chosen to split on. This is an exhaustive process which checks all remaining attributes. This process imediatly stops if there are no possible subsets (identical samples have same class label) or the split is not statistically significant (positive information gain). If these stopping conditions are not met, the data $S$ is split using attribute $A$ into subsets ${S_1,...,S_n}$ where $n$ is the amount of different categories of attribute $A$. A new node is then created for each subset. If the entropy of a new node is $0$ or the sample count is $1$, then the node is turned into a leaf and the splitting operation ends. Furthermore, two additional early stopping conditions are implemented. Max tree level and minimum number of samples attributes are initially set at the start of training.
+The algorithm as described by Mitchell \cite{Mitchell:1997:ML:541177} was implmented for this assignment. The operations begin at the root node with a set of catigorical, labled data $S$. The attribute $A$ which introduces the largest information gain is chosen to split on. This is an exhaustive process which checks all remaining attributes. This process imediatly stops if there are no possible subsets (identical samples have same class label) or the split is not statistically significant (positive information gain). If these stopping conditions are not met, the data $S$ is split using attribute $A$ into subsets ${S_1,...,S_n}$ where $n$ is the amount of different categories of attribute $A$. A new node is then created for each subset. If the entropy of a new node is $0$ or the sample count is $1$, then the node is turned into a leaf and the splitting operation ends. Furthermore, two additional early stopping conditions are implemented. Max tree level and minimum number of samples attributes are initially set at the start of training.
 
 After the initial ID3 algorithm was implemented, furthure enhancements were made to allow for continuous data to be used. This enhancement was taken from the C4.5  as developed by Ross Quinlan \citep{c45algorithm}. Given a continuous attribute $A$, we temporarily sort the data $S$. After the data is sorted, we iteratively determine a threshhold to split the data as the maximize the information gain. To test potential threshholds, we find two sequential numbers which are not of the same category and split at the midway point of the two values. This enhancements saves an a large amount of time for each continuous attribute found within the datasets as descritization does not need to occur. Furthermore, this algorithm chooses the optimal threshhold to split the data which improves classification accuracy.
 
@@ -72,22 +72,67 @@ $$\hat{y}= \underset{k\;\in\;\{1,..K\}} {\mathrm{argmax}} \;\;P(v_k)\prod_{i=1}^
 
 where $P$ is the probability, $p$ is the gaussian probability density function and $K$ is the number of distinct targets. In this equation, the first m attributes are continous whereas the later are catigorical. During training, the data $S$ is split by lables into subsets ${S_1,...,S_n}$ where $n$ is the number of different classes. For each subset, we estimate the class probability $P(v_k)$. Subsequently, for each attribute value $a_i$ of each attribute $a$, we estimate $P(a_i|v_k)$ or $p$. We are not able to immidiately calculate $p(a_i|v_k)$ as attribute $a$ is a continous attribute.
 
-\subsection{Adaboost}
+\subsection{Adaboost} \label{adaboost}
+Adaboost is a boosting algorithm that was first introduced in 1995 by Freunb Schapire. This type of ensemble learning uses a set of weak learners to reduce bias and become a strong learner. It solves many of the difficulties associated with previous boosting algorithms \cite{Schapire:1999:BIB:1624312.1624417}.
+
+The primary part of the algorithm is to maintain a weight value $w$ for every sample within the data $S$. This value increases when the sample is misclassified and decreases when the sample is correctly classified. The target values are assumed be to in the set ${+1, -1}$. The Adaboost algorithm is easily implemented on weak learners which are parameterized by sample weights. Neither Naive Bayes or ID3 natively implement weighted training. Therefore, an alternative implementation was used where a subset of the training data is selected with replacement based on the weights. For example, if the weight vector for two samples is ${1, 2}$, the second sample is twice as likely to be picked each time.
+
+Initially, the weights are set to $\frac{1}{|S|}$. For a predefined number of iterations, a weak learner is trained on the a subset of the traning data. Predictions are made for each training sample and the error is calculated. Using the accuracy, a value $\alpha$ is calculated which represents the accuracy of the weak learner. This $\alpha$ value is used to update the weights and the weak learner, $\alpha$ pair is added to the list of previous weak learners. To make classification, there is a weighted vote between using the weak learners and their associated $\alpha$ values and the sign is used to make the final classification.
+
+To implement multiclass adaboost, $K$ adaboost models are trained where $K$ is the total number of distint classes. For each adaboost model, one target is selected as the $+1$ adaboost target and the other become the $-1$ target. The target value associated with the most positive prediction becomes the predicted class.
+
+\subsubsection{Adaboost on Naive Bayes}
+Naive Bayes is an inherently weak learner due to its assumption of conditional independance amongst attributes. This fact introduces a large amount of preference bias which makes a Naive Bayes and ideal candidate for the Adaboost algorithm.
+
+\subsubsection{Adaboost on ID3}
+The ID3 algorithm does not introduce a large amount of preference bias and often overfits if allowed to train to completion. Therefore, to implement Adaboost on ID3, the depth of the trees were limited to one level. This type of tree is known as a \textit{decision stump}.
+
 \subsection{Random Forest}
+Random forest algorithm is a bagging algorithm which uses an ensemble of strong learners to reduce overfititng to the training set. This method contains many similarities to the adaboost algorithm as described in section \ref{adaboost}; however, no weights are used for random forests. For a predifined number of iterations, a subset of the of the training data is selected with replacement. The new training set is then used to train a decision tree to completion and added to tree is added to a list. To make a classification, each tree in the forest votes and the most common target value becomes the predicted class. As an extension of the base random forest algorithm, weights may be given to each decision tree based on their classification error during training; however, this extension was not added for this implementation.
+
 \subsection{K-Nearest Neighbors}
+The K-Nearest Neighbor algorithm is an instance based learning algorithm which makes predictions by finding the $k$ nearest neighbors of a sample $x$ and using the most common class as the predicted class for that sample. This algorithm can be used with both catigorical and continuous data. For this implementation, Euclidian distance was used for continous variables and Hamming distance was used for catigorical data.
 
 \section{Data}
+Each algorithm was implemented on five different datasets from the UCI Machine Learning Repository.
+
 \subsection{Breast Cancer Data}
+\begin{enumerate}
+  \item Title: Wisconsin Diagnostic Breast Cancer
+  \item Date: November 1995
+  \item Number of Samples: 569
+  \item Number of Attributes: 10
+  \begin{tabular}{l c c c }
+    Description                  & Value     & Type
+    Sample Code Number           & id number & Discrete \\
+    Clump Thickness              & 1 - 10    & Discrete \\
+    Uniformity of Cell Size      & 1 - 10    & Discrete \\
+    Uniformity of Cell Shape     & 1 - 10    & Discrete \\
+    Marginal Adhesion            & 1 - 10    & Discrete \\
+    Single Epithelial Cell Size  & 1 - 10    & Discrete \\
+    Bare Nuclei                  & 1 - 10    & Discrete \\
+    Bland Chromatin              & 1 - 10    & Discrete \\
+    Normal Nucleoli              & 1 - 10    & Discrete \\
+    Mitoses                      & 1 - 10    & Discrete
+  \end{tabular}
+  \item Class Information
+  \begin{tabular}{l c c c }
+    Description & Value & Likelihood
+    benign      & 2     & 65.5\%
+    malignant   & 4     & 34.5\%
+  \end{tabular}
+  \item Missing Attributes: 16
+\end{enumerate}
+
 \subsection{Car Data}
-Transformed to integer values
-
 \subsection{E. Coli Data}
-Removed categorical values
-
 \subsection{Letter Recognition Data}
 \subsection{Mushroom Data}
 
 \section{Technical Details}
+Any missing attribute values were each replaced with the mode of the samples of the same class. No discretization occured as all base algorithms are able to handle continuous data. For all datasets, any sort of identification number or code attributes were removed. Within the E. Coli dataset, the lip and chg catigorical attributes were also removed as they provided minimal information. Furthermore, any string values were converted to integers. For example, the ``v-high'', ``high'', ``med'' and ``low'' attribute values would have been converted to 0, 1, 2, 3 respectively.
+
+
 Identification information was removed ...
 No discretization was performed ...
 Unknown variables from the breast cancer dataset were replaced ...
@@ -97,6 +142,33 @@ C4.5 continuous variable implementation ...
 Number of trees for random forest ... & size of datasets
 Number of weak learners for adaboost ... & size of datasets
 How many neighbors ...
+Transformed to integers
+
+\subsection{ID3}
+\begin{tabular}{ |c|c|c| }
+  Dataset            & Max Level & Minimum # of Samples \\
+  Breast Cancer      & None      & SOMETHING            \\
+  Car Cancer         & None      & SOMETHING            \\
+  Letter Recognition & None      & SOMETHING            \\
+  E. Coli            & None      & SOMETHING            \\
+  Mushroom           & None      & SOMETHING
+\end{tabular}
+
+\subsection{Naive Bayes}
+gaussian
+
+\subsection{Adaboost on Naive Bayes}
+number of learners
+
+\subsection{Adaboost on ID3}
+number of learenrs
+
+\subsection{Random Forest}
+number of trees
+
+\subsection{K-Nearest Neighbors}
+k
+distance
 
 \section{Project Design}
 A Java machine learning framework was first created ...
