@@ -53,14 +53,24 @@ For this study, six different algorithms; however, only the five unique algorith
 \subsection{ID3}
 The Iterative Dichotomiser 3 (ID3) algorithm is a decision tree algorithm used to efficiently develop decision trees \cite{Quinlan:1986:IDT:637962.637969}. This algorithm was developed for situations where there are large amount of attributes and training sets which contain many attributes, but there was the need to be able to efficiently develop relatively well performing decision trees.
 
-The algorithm as described by Mitchell \cite{Mitchell:1997:ML:541177} was implmented. The operations begin at the root node with a set of catigorical, labled data $S$. The attribute $A$ which introduces the largest information gain is chosen to split on. This is an exhaustive process which checks all remaining attributes. This process imediatly stops if there are no possible subsets (identical samples have same class label) or the split is not statistically significant (positive information gain). If these stopping conditions are not met, the data $S$ is split using attribute $A$ into subsets ${S1,...,SN}$ where $N$ is the amount of different categories of attribute $A$. A new node is then created for each subset. If the entropy of a new node is $0$ or the sample count is $1$, then the node is turned into a leaf and the splitting operation ends. Furthermore, two additional early stopping conditions are implemented. Max tree level and minimum number of samples attributes are initially set at the start of training.
+The algorithm as described by Mitchell \cite{Mitchell:1997:ML:541177} was implmented. The operations begin at the root node with a set of catigorical, labled data $S$. The attribute $A$ which introduces the largest information gain is chosen to split on. This is an exhaustive process which checks all remaining attributes. This process imediatly stops if there are no possible subsets (identical samples have same class label) or the split is not statistically significant (positive information gain). If these stopping conditions are not met, the data $S$ is split using attribute $A$ into subsets ${S_1,...,S_n}$ where $n$ is the amount of different categories of attribute $A$. A new node is then created for each subset. If the entropy of a new node is $0$ or the sample count is $1$, then the node is turned into a leaf and the splitting operation ends. Furthermore, two additional early stopping conditions are implemented. Max tree level and minimum number of samples attributes are initially set at the start of training.
 
 After the initial ID3 algorithm was implemented, furthure enhancements were made to allow for continuous data to be used. This enhancement was taken from the C4.5  as developed by Ross Quinlan \citep{c45algorithm}. Given a continuous attribute $A$, we temporarily sort the data $S$. After the data is sorted, we iteratively determine a threshhold to split the data as the maximize the information gain. To test potential threshholds, we find two sequential numbers which are not of the same category and split at the midway point of the two values. This enhancements saves an a large amount of time for each continuous attribute found within the datasets as descritization does not need to occur. Furthermore, this algorithm chooses the optimal threshhold to split the data which improves classification accuracy.
 
 \subsection{Naïve Bayes}
-The Naive Bayes algorithm is implemented as described in \cite{Mitchell:1997:ML:541177}. This algorithm is named due its assumption of conditional independance amougst each attribute.
+The Naive Bayes algorithm is implemented as described in \cite{Mitchell:1997:ML:541177}. This algorithm is named due its assumption of conditional independance amongst each attribute:
 
-\hat{y}= \underset{k\;\in\;\{1,..K\}} {\mathrm{argmax}} \;\;P(C_k)\prod_{i=1}^mp\left(x_i\;|\;C_k\right)\prod_{j=m}^nP\left(x_j\;|\;C_k\right)\;\;?
+$$P(a_1,...,a_n|v_j) = \prod_{i=1}^{n}P(a_i|v_j)$$
+
+and its application of Bayes thereom:
+
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+
+Naive Bayes is a practical learning algorithm, receives relatively good results given its preference bias and is easy to implement. This algorithm naturally handles both catigorical and continuous data (given a prior is assumed). For each continuous attribute, a Gaussian distribution was assumed. The final algorithm implemented was:
+
+$$\hat{y}= \underset{k\;\in\;\{1,..K\}} {\mathrm{argmax}} \;\;P(v_k)\prod_{i=1}^mp\left(a_i\;|\;v_k\right)\prod_{j=m}^nP\left(a_j\;|\;v_k\right)\;\;$$
+
+where $P$ is the probability, $p$ is the gaussian probability density function and $K$ is the number of distinct targets. In this equation, the first m attributes are continous whereas the later are catigorical. During training, the data $S$ is split by lables into subsets ${S_1,...,S_n}$ where $n$ is the number of different classes. For each subset, we estimate the class probability $P(v_k)$. Subsequently, for each attribute value $a_i$ of each attribute $a$, we estimate $P(a_i|v_k)$ or $p$. We are not able to immidiately calculate $p(a_i|v_k)$ as attribute $a$ is a continous attribute.
 
 \subsection{Adaboost}
 \subsection{Random Forest}
