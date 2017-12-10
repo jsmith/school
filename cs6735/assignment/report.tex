@@ -39,29 +39,29 @@ This report details the experimental study conducted for the CS6735 programming 
   \begin{enumerate}
     \item Brest Cancer Data
     \item Car Data
-    \item Ecoli Data
+    \item E Coli. Data
     \item Mushroom Data
   \end{enumerate}
-  \item Create report of the experimental study including:
+  \item Create a report of the experimental study including:
   \begin{enumerate}
     \item Description of the learning algorithms you implement.
     \item Description of the datasets you use (number of examples, number of attribute, number of classes, type of attributes, etc.).
     \item Technical details of your implementation: pre-processing of data sets (discretization, etc.), parameter setting, etc.
     \item Design of your programming implementation (data structures, overall program structure).
-    \item Report and analysis of your experimental results using using 10 times 5-fold cross-validation (include mean, standard deviation of accuracies).
+    \item Report and analysis of your experimental results using 10 times 5-fold cross-validation (include mean, standard deviation of accuracies).
     \item Comparison and discussion of the algorithms with respect to the experimental results.
   \end{enumerate}
 \end{enumerate}
 
 \section{Algorithms}
-For this study, six different algorithms; however, only the five unique algorithms are described in this section. Both the ID3 decision tree and Naïve Bayes algorithms were applied to the adaboost ensemble algorithm as weak learners.
+For this study, we used six different algorithms; however, only the five unique algorithms were implemented. Due to the design of the program, both the ID3 decision tree and Naïve Bayes algorithms could be given to the AdaBoost ensemble algorithm as a weak learner.
 
 \subsection{ID3}
-The Iterative Dichotomiser 3 (ID3) algorithm is a decision tree algorithm used to efficiently develop decision trees \cite{Quinlan:1986:IDT:637962.637969}. This algorithm was developed for situations where there are large amount of attributes and training sets which contain many attributes, but there was the need to be able to efficiently develop relatively well performing decision trees.
+The Iterative Dichotomiser 3 (ID3) algorithm is an algorithm used to efficiently create decision trees \cite{Quinlan:1986:IDT:637962.637969}. ID3 was developed for situations with large datasets and the need for the efficient creation of a decision tree.
 
-The algorithm as described by Mitchell \cite{Mitchell:1997:ML:541177} was implmented for this assignment. The operations begin at the root node with a set of catigorical, labled data $S$. The attribute $A$ which introduces the largest information gain is chosen to split on. This is an exhaustive process which checks all remaining attributes. This process imediatly stops if there are no possible subsets (identical samples have same class label) or the split is not statistically significant (positive information gain). If these stopping conditions are not met, the data $S$ is split using attribute $A$ into subsets ${S_1,...,S_n}$ where $n$ is the amount of different categories of attribute $A$. A new node is then created for each subset. If the entropy of a new node is $0$ or the sample count is $1$, then the node is turned into a leaf and the splitting operation ends. Furthermore, two additional early stopping conditions are implemented. Max tree level and minimum number of samples attributes are initially set at the start of training.
+Initially, the ID3 algorithm described by Thomas Mitchell \cite{Mitchell:1997:ML:541177} was implemented. It begins at the root node with a set of categorical, labeled data $S$. The attribute $a$ which introduces the largest information gain is chosen and the node splits on that attribute. Subsets ${S_1,...,S_n}$ are used to create $n$ children nodes where $n$ is the amount of distinct values for attribute $a$. This continues recursively until one of several terminating conditions are met. For example, the process ends if there are no more possible subsets, the split is not statistically significant (does not introduce positive information gain) or the entropy is $0$. Furthermore, two early stopping conditions were implemented including a max tree level and a minimum number of samples.
 
-After the initial ID3 algorithm was implemented, furthure enhancements were made to allow for continuous data to be used. This enhancement was taken from the C4.5  as developed by Ross Quinlan \citep{c45algorithm}. Given a continuous attribute $A$, we temporarily sort the data $S$. After the data is sorted, we iteratively determine a threshhold to split the data as the maximize the information gain. To test potential threshholds, we find two sequential numbers which are not of the same category and split at the midway point of the two values. This enhancements saves an a large amount of time for each continuous attribute found within the datasets as descritization does not need to occur. Furthermore, this algorithm chooses the optimal threshhold to split the data which improves classification accuracy.
+After this initial ID3 algorithm was implemented, further enhancements were made to allow for continuous data to be used. This enhancement was taken from the C4.5 as developed by Ross Quinlan \citep{c45algorithm}. Given a continuous attribute $a$, we temporarily sort the data $S$. After the data is sorted, we iteratively determine the threshold to split the data that maximizes the information gain. To test potential thresholds, we find two sequential numbers which are not of the same class and split at the midway point of the two values. This enhancements saves an a large amount of time for each continuous attribute found within the datasets as discretization does not need to occur. Furthermore, this algorithm chooses the optimal threshhold to split the data which improves classification accuracy.
 
 \subsection{Naïve Bayes}
 The Naïve Bayes algorithm is implemented as described in \cite{Mitchell:1997:ML:541177}. This algorithm is named due its assumption of conditional independence amongst each attribute:
@@ -85,16 +85,16 @@ The primary part of the algorithm is to maintain a weight value $w$ for every sa
 
 Initially, the weights are set to $\frac{1}{|S|}$. For a predefined number of iterations, a weak learner is trained on the a subset of the traning data. Predictions are made for each training sample and the error is calculated. Using the accuracy, a value $\alpha$ is calculated which represents the accuracy of the weak learner. This $\alpha$ value is used to update the weights and the weak learner, $\alpha$ pair is added to the list of previous weak learners. To make classification, there is a weighted vote between using the weak learners and their associated $\alpha$ values and the sign is used to make the final classification.
 
-To implement multiclass adaboost, $K$ adaboost models are trained where $K$ is the total number of distant classes. For each adaboost model, one target is selected as the $+1$ adaboost target and the other become the $-1$ target. The target value associated with the most positive prediction becomes the predicted class.
+To multiclass classification problems, the SAMME AdaBoost algorithm \cite{samme} was implemented. This algorithm sees the addition of $log(|v|-1)$, where $|v|$ is the number of classes, to the alpha value. Furthermore, the classification procedure calculates a map of the class and the total votes and returns the class with the highest vote.
 
 \subsubsection{AdaBoost on Naïve Bayes}
 Naïve Bayes is an inherently weak learner due to its assumption of conditional independence amongst attributes. This fact introduces a large amount of preference bias which makes a Naïve Bayes and ideal candidate for the AdaBoost algorithm.
 
 \subsubsection{AdaBoost on ID3}
-The ID3 algorithm does not introduce a large amount of preference bias and often overfitting if allowed to train to completion. Therefore, to implement AdaBoost on ID3, the depth of the trees were limited to one level. This type of tree is known as a \ii{decision stump}.
+The ID3 algorithm does not introduce a large amount of preference bias and may overfit if allowed to train to completion. Therefore, to implement AdaBoost on ID3, the depth of the trees was limited.
 
 \subsection{Random Forest}
-Random forest algorithm is a bagging algorithm which uses an ensemble of strong learners to reduce overfitting to the training set. This method contains many similarities to the adaboost algorithm as described in section \ref{adaboost}; however, no weights are used for random forests. For a predefined number of iterations, a subset of the of the training data is selected with replacement. The new training set is then used to train a decision tree to completion and added to tree is added to a list. To make a classification, each tree in the forest votes and the most common target value becomes the predicted class. As an extension of the base random forest algorithm, weights may be given to each decision tree based on their classification error during training; however, this extension was not added for this implementation.
+The random forest algorithm is a bagging algorithm which uses an ensemble of strong learners to reduce overfitting to the training set. This method contains many similarities to the adaboost algorithm as described in section \ref{adaboost}; however, no weights are used for random forests. For a predefined number of iterations, a subset of the of the training data is selected with replacement. The new training set is then used to train a decision tree to completion and added to tree is added to a list. To make a classification, each tree in the forest votes and the most common target value becomes the predicted class. As an extension of the base random forest algorithm, weights may be given to each decision tree based on their classification error during training; however, this extension was not added for this implementation.
 
 \subsection{K-Nearest Neighbors}
 The K-Nearest Neighbor algorithm is an instance based learning algorithm which makes predictions by finding the $k$ nearest neighbors of a sample $x$ and using the most common class as the predicted class for that sample. This algorithm can be used with both categorical and continuous data. For this implementation, Euclidian distance was used for continuous variables and Hamming distance was used for categorical data.
@@ -306,7 +306,7 @@ Each algorithm was implemented on five different datasets from the UCI Machine L
   \item[] \bb{Missing Attributes}: 2480 (all for attribute \#11)
 \end{itemize}
 
-\section{Technical Details}
+\section{Technical Details} \label{sec:details}
 Missing attribute values within both the breast cancer dataset and mushroom dataset treated as another category. Attempts were initially made to replace the missing values; however, no improvements with accuracy were observed. Furthermore, no discretization occurred as all base algorithms are able to handle continuous data. For each dataset, any sort of identification number or code attributes were removed. Within the E. Coli dataset, the lip and chg categorical attributes were also removed as they provided minimal information. Furthermore, any string values were converted to integers. For example, the ``v-high'', ``high'', ``med'' and ``low'' attribute values would have been converted to 0, 1, 2, 3 respectively.
 
 \subsection{ID3}
@@ -373,129 +373,137 @@ Missing attribute values within both the breast cancer dataset and mushroom data
 \end{tabular}
 
 \section{Project Design}
-A Java machine learning framework was first created to ease the implementation of the six learning algorithms. This framework uses JUnit for unit tests and slfj4 to control logging. Both work independently of the machine learning algorithms. The package hiarchy was modeled off ...
+A Java machine learning framework was first created to ease the implementation of the six learning algorithms. This framework uses JUnit for unit tests and slfj4 to control logging. Both work independently of the machine learning algorithms and may be completely removed without affecting the functionality of the code.
+
+\subsection{jml}
+This is the root package of the project and contains several useful objects which are used through the various sub-packages.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{Algorithm}:
-  \item[] \bb{Dataset}:
-  \item[] \bb{Model}:
-  \item[] \bb{KFold}: Implements the KFold cross validation algorithm.
-  \item[] \bb{Report}: The object returned from a k-fold cross validation test....
-  \item[] \bb{Util}: Utility functions used through the machine learning project.
+  \item[] \bb{Algorithm} An interface that all algorithms implement. These objects fit a Model to a DataSet.
+  \item[] \bb{Dataset} An object which abstracts away from the data and provides several useful behaviors such as splitting into subsets using both continuous or discrete attributes.
+  \item[] \bb{Model} An abstract classes which every trained model implements. Objects which extend this class must implement the predict method.
+  \item[] \bb{KFold} Implements the KFold cross validation algorithm. The object is initialized with set number of folds and is then able to generate reports given an algorithm and dataset.
+  \item[] \bb{Report} An object which summarizes the results of a particular algorithm on a particular dataset. A report contains a list of accuracies and can calculate information such as the mean accuracy of standard deviations.
+  \item[] \bb{Util} This object contains several useful static methods. These include reading from CSV files, converting primitive arrays to Lists and calculating entropy amongst others.
 \end{enumerate}
 
 \subsection{tree}
 This package contains all of the objects associated with decision trees.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{Children}:
-  \item[] \bb{ID3}:
-  \item[] \bb{ID3Model}:
-  \item[] \bb{Node}:
+  \item[] \bb{ID3} The implementation of the ID3 algorithm. Fits a DataSet to a tree of decision Nodes and creates a ID3Model. The algorithm is parameterized by the max level and minimum number of samples.
+  \item[] \bb{ID3Model} A trained ID3 model. It uses the trained decision tree to make classification given a sample of new data.
+  \item[] \bb{Node} A node within a decision tree. Contains the logic to choose the best continuous or discrete attribute to split on. Each node has an associated attribute
+  \item[] \bb{Children} A Pluggable Object which both ContinuousChildren and DiscreteChildren implement. This allows for the abstraction of most of the discrete and continuous variable logic associated with splitting and classifying.
+  \item[] \bb{ContinuousChildren} The children of a Node which split on a continuous attribute.
+  \item[] \bb{DiscreteChildren} The children of a Node which split on a discrete attribute.
 \end{enumerate}
 
 \subsection{ensemble}
-This package contains all of the objects associated with enseble learners.
+This package contains all of the objects associated with ensemble learners.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{AdaBoost}:
-  \item[] \bb{AdaBoostModel}:
-  \item[] \bb{Multi-AdaBoost}:
-  \item[] \bb{Multi-AdaBoostModel}:
-  \item[] \bb{RandomForest}:
-  \item[] \bb{RandomForstModel}:
+  \item[] \bb{AdaBoost} The implementation of the SAMME AdaBoost algorithm. This algorithm is able to handle both binary and multiclass classification problems and is parameterized by the number of weak learners, proportion of samples and base learning algorithm.
+  \item[] \bb{AdaBoostModel} A trained AdaBoost model. It classifies a new instance using a weighted vote mechanism and returns the most likely class.
+  \item[] \bb{RandomForest} The implementation of the Random Forest algorithm. This algorithm is parameterized by the number of strong learners, proportion of samples and base learning algorithm.
+  \item[] \bb{RandomForestModel} A trained Random Forest model. It classifies a new instances using a voting mechanism and returning the most common classification.
 \end{enumerate}
 
 \subsection{exceptions}
 This package contains the common exceptions which occur the learning process.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{AttributeException}:
-  \item[] \bb{DataException}:
-  \item[] \bb{FileException}:
-  \item[] \bb{PredictionException}:
+  \item[] \bb{AttributeException} This exception is thrown when an error arises due to the attribute types (continuous, discrete).
+  \item[] \bb{DataException} This exception is thrown when there is an error associated with the data.
+  \item[] \bb{FileException} This exception is thrown when there is an issue with the data file, particularly while reading CSV files.
+  \item[] \bb{PredictionException} This exception is thrown when an error occurs during classification.
 \end{enumerate}
 
 \subsection{math}
-Data was particularly difficult to handle. Whereas Java is a statically typed language, difficulties arose in handling both floating point and integer values. To manage this, a math package was created which implements useful data structures such as vectors and matrices. These object were used to abstract away from the underlying data structures. Furthermore, the `Vector` object provided many useful methods for vector arithmetic such as element-wise multiplication, division and exponents. These methods also support broadcasting, where a vector can be multiplied by a single number. These objects are used throughout the library in place of primitive arrays and ArrayLists and have were essential to the code quality. Often, methods it was necessary to have two associated objects held in one data structure. For example, there exists a method within the DataSet object which splits itself into two parts based on a pivot point. This method would preferably return a pair of datasets; however, many common data structures such as arrays, lists and maps seemed did not seem to adequate. To accomplish this task, a simple Tuple data structure was created. Several other useful objects were implemented within the math package such as distance function objects, distribution objects and an object containing useful static methods. The purpose of these objects will be elaborated within Naïve Bayes package design section. The utility object implemented useful functions not available within the Java math package.
+This package contains objects associated with mathematics. For
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{MathException}:
-  \item[] \bb{Matrix}:
-  \item[] \bb{Tuple}:
-  \item[] \bb{Util}:
-  \item[] \bb{Vector}:
+  \item[] \bb{MathException} This exception occurs when an error occurs during a mathematical operation.
+  \item[] \bb{Matrix} An object which representation of a matrix. It contains useful operations for manipulating matrices such as retrieving, modifying and adding rows and columns.
+  \item[] \bb{Tuple} A tuple object which uses Generics to hold two objects. This object is useful for moving associated objects throughout the code.
+  \item[] \bb{Util} A utility class that contains several useful mathematical operations such as logarithmic and exponential functions. For example, an $exp$ function is implemented which is parameterized by a Vector and returns a Vector.
+  \item[] \bb{Vector} is an object representation of a vector. Similar to the Matrix class, it contains several useful operation for manipulating its values. Furthermore, several vector arithmetic operations are implemented such as multiplication, addition and the dot product. The Vector class abstracts away from the underlying data representation.
 \end{enumerate}
 
 \subsubsection{distance}
 This package contains distance functions for the KNN classifier.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{DistanceFunction}:
-  \item[] \bb{Euclidian}:
-  \item[] \bb{Hamming}:
+  \item[] \bb{Distance} is an interface which all distance functions must implement.
+  \item[] \bb{Euclidian} An object which represents the Euclidian distance function $\sqrt{\sum_{i=1}^{n}(q_i-p_i)^2}$. This object can be used to calculate the Euclidian distance between two real valued Vectors while classifying an new instance in a KNN classifier.
+  \item[] \bb{Hamming} An object which represents the Hamming distance function $\sum_{i=1}^{n}f_i(q, p)$ where $f_i(q, p) = 0$ if $q_i = p_i$ and $0$ otherwise. This object can be used to calculate the Hamming distance between two discrete Vectors while classifying an new instance in a KNN classifier.
 \end{enumerate}
 
 \subsubsection{distribution}
 This package contains distribution implementations for the Naïve Bayes classifier.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{Distribution}:
-  \item[] \bb{GaussianDistribution}:
+  \item[] \bb{Distribution} is an interface which each distribution object must implement.
+  \item[] \bb{Gaussian} An object which reprints a Gaussian distribution. It is used be the Naïve Bayes classifier for continuous attributes.
 \end{enumerate}
 
 \subsection{bayes}
 This package contains all of the objects associated with Naïve Bayes.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{Attribute}:
-  \item[] \bb{BayesException}:
-  \item[] \bb{ClassSummary}:
-  \item[] \bb{ContinuousAttribute}:
-  \item[] \bb{DiscreteAttribute}:
-  \item[] \bb{NaïveBayes}:
-  \item[] \bb{NaïveBayesModel}:
+  \item[] \bb{Attribute} is an interface which the Continuous and Discrete attribute types must implement.
+  \item[] \bb{BayesException} is an RuntimeException which is thrown when no Distribution is supplied and there are continuous attributes within the DataSet.
+  \item[] \bb{ClassSummary} is an object created during the NaiveBayes learning process. It contains the class probability $P(v_k)$ and all of the necessary information to calculate either $p(a_i|v_k)$ or $P(a_j|v_k)$ given a new value.
+  \item[] \bb{Continuous} represents a continuous attribute. It is parameterized by a mean, standard deviation and Distribution. Given a new value, the value of the probability density function of the given distribution is calculated.
+  \item[] \bb{Discrete} represents a discrete attribute. It is parametrized by a map of conditional probabilities and the sum of the class length and probability of an unseen value. The parameters of the discrete attribute were carefully chosen for performance reasons.
+  \item[] \bb{NaïveBayes} is the implementation of the Naïve Bayes algorithm. It is optionally parameterized by a Distribution. The algorithm create a ClassSummary for each distinct class.
+  \item[] \bb{NaïveBayesModel} is a trained Naïve Bayes model. It classifies new samples by calculating the probability of each class and returning the most likely classification.
 \end{enumerate}
+
+$$\hat{y}= \mathrm{argmax}_{k\in\{1,..K\}} P(v_k)\prod_{i=1}^mp\left(a_i|v_k\right)\prod_{j=m}^nP\left(a_j|v_k\right)$$
 
 \subsection{neighbors}
 This package contains all of the objects associated with k-nearest neighbors.
 
 \begin{enumerate}[leftmargin=*]
-  \item[] \bb{KNN}:
-  \item[] \bb{KNNModel}:
-  \item[] \bb{KNNException}:
+  \item[] \bb{KNN} is the implementation of the k-nearest neighbor algorithm. It is parameterized by the number of neighbors to check. The learning process simply consist of providing the DataSet and parameters to a KNNModel.
+  \item[] \bb{KNNModel} is a trained KNN classifier. It classifies new samples by finding the k-closest neighbors and returning the most common classification.
+  \item[] \bb{KNNException} is the exception thrown when $k$ is greater than the data sample count.
 \end{enumerate}
 
 \section{Results}
 \begin{table}
   \begin{tabular}{ |c|c|c|c|c|c| }
     \hline
-    Algorithm               Breast Cancer   & Car      & Letter   & E. Coli  & Mushroom \\ \hline
-    ID3                     & 97.994\%      & 90.634\% & 81.909\% & 88.234\% & 99.998\% \\ \hline
-    Naïve Bayes             & 97.663\%      & 81.940\% & 79.455\% & 65.048\% & 95.952\% \\ \hline
-    AdaBoost on ID3         & 98.715\%      & 88.822\% & 83.389\% & 100.00\% & 99.446\% \\ \hline
-    AdaBoost on Naïve Bayes & 98.626\%      & 91.367\% & 77.725\% & 100.00\% & 99.744\% \\ \hline
-    Random Forest           & 97.592\%      & 91.175\% & 84.316\% & 100.00\% & 99.865\% \\ \hline
-    K-Nearest Neighbor      & 98.050\%      & 89.763\% & 87.886\% & 100.00\% & 99.826\% \\ \hline
+    Algorithm               & Breast Cancer & Car      & Letter   & E. Coli  & Mushroom \\ \hline
+    ID3                     & 97.994\%      & 90.634\% & 87.930\% & 79.678\% & 99.998\% \\ \hline
+    Naïve Bayes             & 97.663\%      & 81.940\% & 64.570\% & 80.556\% & 95.952\% \\ \hline
+    AdaBoost on ID3         & 98.715\%      & 88.822\% & 100000\% & 84.460\% & 99.446\% \\ \hline
+    AdaBoost on Naïve Bayes & 98.626\%      & 91.367\% & 100000\% & 78.803\% & 99.744\% \\ \hline
+    Random Forest           & 97.592\%      & 91.175\% & 91.949\% & 84.021\% & 99.865\% \\ \hline
+    K-Nearest Neighbor      & 98.050\%      & 89.763\% & 93.923\% & 87.779\% & 99.826\% \\ \hline
   \end{tabular}
   \caption{Results of the six implemented algorithms on five UCI Machine Learning repositories. Accuracy calculated using 10 times 5-fold cross validation.}
+  \label{table:accuracies}
 \end{table}
 
 \begin{table}
   \begin{tabular}{ |c|c|c|c|c|c| }
     \hline
     Algorithm               & Breast Cancer & Car      & Letter   & E. Coli  & Mushroom \\ \hline
-    ID3                     & 1.465\%       & 4.061\%  & 8.981\%  & 3.492\% & 0.017\%  \\ \hline
-    Naïve Bayes             & 1.678\%       & 3.373\%  & 10.388\% & 1.328\% & 2.128\%  \\ \hline
-    AdaBoost on ID3         & 1.216\%       & 3.085\%  & 6.678\%  & 100.00\% & 1.081\%  \\ \hline
-    AdaBoost on Naïve Bayes & 1.394\%       & 1.987\%  & 9.275\%  & 100.00\% & 0.652\%  \\ \hline
-    Random Forest           & 1.597\%       & 5.171\%  & 9.711\%  & 100.00\% & 0.702\%  \\ \hline
-    K-Nearest Neighbor      & 1.118\%       & 3.967\%  & 7.001\%  & 100.00\% & 0.433\%  \\ \hline
+    ID3                     & 1.465\%       & 4.061\%  & 3.392\%  & 8.952\%  & 0.017\%  \\ \hline
+    Naïve Bayes             & 1.678\%       & 3.373\%  & 1.357\% & 11.199\%  & 2.128\%  \\ \hline
+    AdaBoost on ID3         & 1.216\%       & 3.085\%  & 10000\%  & 8.246\% & 1.081\%  \\ \hline
+    AdaBoost on Naïve Bayes & 1.394\%       & 1.987\%  & 10000\%  & 8.802\% & 0.652\%  \\ \hline
+    Random Forest           & 1.597\%       & 5.171\%  & 2.622\%  & 8.325\% & 0.702\%  \\ \hline
+    K-Nearest Neighbor      & 1.118\%       & 3.967\%  & 2.284\%  & 8.089\% & 0.433\%  \\ \hline
   \end{tabular}
   \caption{Results of the six implemented algorithms on five UCI Machine Learning repositories. Accuracy calculated using 10 times 5-fold cross validation.}
 \end{table}
 
-graph of hyperparameter search?
+The ID3 algorithm generally outperformed the Naïve Bayes algorithm as seen in table \ref{table:accuracies}. This is especially true when considering the letter recognition dataset. One possibility for this discrepancy is the type of distribution used for continuous attributes. No other probability density functions were experimented with. Furthermore, the letter recognition dataset likely expresses high correlation amongst the attributes. However, the two algorithms perform identically for the E Coli. and breast cancer datasets.
+
+The AdaBoost algorithm when using either ID3 or Naïve Bayes as a base model either improves or maintains the same accuracy as their base models. For example, AdaBoost on ID3 only improves the classification accuracy for E. Coli and breast cancer datasets. Additionally, AdaBoost on Naïve Bayes only improved the classification accuracy on the breast cancer and car datasets. The random forest algorithm also either improved or maintained the same accuracy as their base models. I believe the classification accuracy for each ensemble algorithm and dataset pair could be improved given more time for hyperparameter tuning. The larger datasets proved difficult for experimentation as they required much larger training times. In section \ref{sec:details}, we see that both the mushroom and letter recognition datasets tend to have much lower learner counts than their counterparts. Optimization was considered during the algorithm implementations; however, training time was not drastically reduced.
 
 \bibliographystyle{plain}
 \bibliography{references}
