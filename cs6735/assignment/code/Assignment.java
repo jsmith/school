@@ -55,7 +55,7 @@ public class Assignment {
         algorithms.add(new ID3(ID3.MAX_LEVEL_NONE, 1));
         algorithms.add(new NaiveBayes());
         algorithms.add(new AdaBoost(new ID3(1), 100, 0.5));
-        algorithms.add(new AdaBoost(new NaiveBayes(), 100, 0.7));
+        algorithms.add(new AdaBoost(new NaiveBayes(), 100, 0.1));
         algorithms.add(new RandomForest(new ID3(), 120, 0.7));
         algorithms.add(new KNN(1, new Hamming()));
         datasetsAndAlgorithms.add(new Tuple<>(loadBreastCancerData(Assignment.class), algorithms));

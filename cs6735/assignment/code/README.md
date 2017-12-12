@@ -12,7 +12,7 @@ Training on the `breast-cancer-wisconsin.data`, `car.data` and `ecoli.data` data
 * Multithreaded: This will run every iteration of one dataset/algorithm pair at the same time (default `false`)
 * Number of iterations: This is the number of cross validation algorithms that will be implemented (default `10`)
 
-*An example of how to use the arguments is provided in the script files.*
+*Examples of how to use the arguments are provided in the script files.*
 
 ## Other Information
 If you want to only run some algorithms, simply comment out those you do not wish to run in `Assignment.java`.
