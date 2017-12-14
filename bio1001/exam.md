@@ -84,7 +84,7 @@ Includes *prophase*, *metaphase*, *anaphase* and *telophase*.
 Chromosomes condense and *mitotic spindle* forms
 
 ### Prometaphase
-Fragmentation of the nuclear envelope and microtubules attach to the newly formed *kinetochore* (located at the center of chromosomes).
+Fragmentation of the nuclear envelope and microtubules attach to the newly formed *kinetochore* (located at the *centromere* of chromosomes).
 
 The nuclear envelope is pulled apart by the dyenin motors on the MT of the centrosomes. The *lamina* pulls away (dense birillar network inside the nucleus) and the remenants float around the centrosomes are migrate to the ER.
 
@@ -164,3 +164,75 @@ differentiate?	How	are	they	able	to	remain	in	the
 undifferentiated	state?
 • Understand	the	applications	(potential)	of	stem	cells	in
 research	and	health
+
+# Lecture 26: Sexual Reproduction
+Includes two parents passing half of their genes to their offspring. *Meiosis* halves the chomosome number to produce gametes. Sexual reproduction incrases genetic *variation*.
+
+## Process
+### Interphase
+1. Chromosomes condense and seperate.
+2. Chromosomes replicate and pair with their sister chromatids and form *tetrads*.
+3. Crossig over occurs at *chiasmata* (site of crossing over) when sisters cross-over with their pairs.
+
+### Meiosis I
+3. Homologous chromoes seperate such that the sister chromatids stay attached.
+
+### Meioisis II
+4. Sister chromatids seperate into two individual cells
+
+## Genetic Variaion
+1. Independant Assortment: Which chromosomes go to which cells is random (223 = 8,388,608)
+2. Crossing over in Prophase 1 increases variation.
+3. Random Fertilization: There are a lot of possibilities
+
+## Key Words
+* *Somatic Cell*: any cell other than a gamete
+* *Fertilization*: union of gametes to produce a zygote
+
+## Learning Objective
+Offspring acquire genes from their parents by inheriting
+chromosomes
+• Meiosis reduces the number of chromosome sets by half
+• Sexual reproduction produces genetic variation by the
+independent assortment of chromosomes at
+Metaphase I, crossing over in Prophase, and by random
+fusion of gametes
+• Genetic variation contributes to evolution and faster
+adaptation to environmental change
+
+# Lecture 27: Mendel
+Concepts:
+- Allele
+- Dominance
+- True Breeding
+- Mono and Di-hybrid cross
+- genotype
+- phenotype
+
+## Experiments
+- Character: A heritable feature
+- Trait: Variation of a character
+- Phenotype: The physical appearence of a character
+
+## Law of Segregation
+Alleles randomly segregate into gametes. Mendel used *monohybrid cross* (corrsing parents who differ by one trait). Mendel also used *dihybrid cross* (crossing parents who differ by two traits).
+
+## Incomplete Dominance
+Heterozygotes have intermediate phenotype.
+
+## Law of Independant Assortment
+Mendel used dihybrid cross to show that genes for differing characters assort independently of each other.
+
+# Lecture 28: Asexual Reproduction
+One parent, each offspring is genetically identical, rare for multicellular organisms but common for unicellular organisms.
+
+## Unicellular
+1. Binary Fission: Symetrical division
+2. Budding: Assymmetrical division followed by growth
+
+## Multicellular
+1. Vegatative Reproduction
+2. Parthenogenesis: Egg develops without fertilization. This occurs through meiosis. The chromosomes double twice to form 8 chromosoems. The cell divides but only one is used in the embryo stage. The others are *polar bodies*.
+
+## Why does Asexual Reproduction Work?
+Organisms may use *gene conversion* to accumulate favourable genes or to eliminate detrimental mutations.
