@@ -1,0 +1,166 @@
+# Lecture 23: Eukaryotic Cytoskeleton
+The *cytoskeleton* is composed of intermediate protein fibers called *filaments*, *microfilaments* and *microtubules*.
+
+The cytoskeleton determines cell shape, is key to cell division and aids in cell *motility* (the ability for the cell to move itself spontaneously while consuming energy).
+
+## Microfilaments
+The key component of *microfilaments* (also known as *actin filaments*) is a protein called *actin*. *Actin* monomers (*actin filaments*) polymerize into two interwined filaments. These are the narrowest cytoskeleton fiber. They are also directional.
+
+Actin serves as the tract for the *motor protein* called *myosin* within the cell. A ring made of actin pinches the cell apart during division. Actin can also assemble / dissasemble quickly which is important for cell motility. Finally, actin is important in the structure of the cell.
+
+## Intermediate Filaments
+*Intermediate filaments* (*IF*) are another cytoskeleton made up of multiple strands of interwound fibrous proteins. The compoenents depend on the type of cell (skin cells IF are made up of *keratin*). Proteins assemble into filaments which assemble into supercoiled cables.
+
+Intermediate filaments provide cell strength, resist tension, achor cell compoenents and provide cell adhesion.
+
+A protein resulting from the *gigaxonin gene* is required for recycling and degredation of the intermediate filaments.
+
+## Microtubules
+*Microtubeles* are made up of α & β-tublin (one after the other). It is a hollow structure made up of 13 tubline filaments. Like microfilaments, microtubules also have directionality and can grow and shrink quickly.
+
+*Microtubeles* provide structual support, provide tracks for *kinesins* and *dyneins* which transport cesicles (and other stuff) around the interior of the cell. Most importantly, microtubules assemble into a structure known as a *spindle* to pull the chomosomes apart.
+
+*Microtubeles* also play key roles for the structure of:
+- *Flagella*
+- *Cilia*
+- *Centrosomes*
+
+## Centrosomes
+*Centrosomes* are little balls with two *centrioles* inside. They have numerous pores which the - end of the microtubele anchors itself to.
+
+## Motor Proteins
+*Motor proteins* function in:
+- Mouvement of the organelles
+- Mouvement of macromolecules
+- Contraction
+- Amoeboid movements
+
+They use ATP for walking along the cytoskeleton.
+
+*Kinesins* walk from - to +. Dynein walk from + to -. They all contain ATPase feet and "cargo" binding location.
+
+## Learning Objective
+The cytoskeleton is a diverse network of protein
+fibers that organizes structures and activities in the
+cell. The cytoskeleton is a dynamic, constantly
+changing structure.
+• Know the different components of the cytoskeleton
+and understand their composition, assembly and
+function.
+• Know the key protein classes involved in actively
+moving vesicles and organelles in the cell, where
+they get their energy, and the mechanism of action.
+
+# Lecture 24: Cell Cycle
+Phases:
+- G0: Resting
+- G1: Cell Growth & normal metabolism
+- S: Synthesis phase (replication of chromosomes)
+- G2: Growth and preperation for cell division
+- M: mitotic phase
+
+## Interphase
+Includes G1, S, G2.
+
+### G1 Phase
+* Cell grows larger
+* Organelles are copied
+* Create the molecular building blocks they will need later
+
+### S Phase
+- Chromosome move apart
+- Chromosomes duplicate
+- Chromosomes are pulled apart into two cells
+
+### G2 Phase
+- Simliar to G1
+- Centrosomes are formed
+- Reorganization occurs
+
+## M Phase
+Includes *prophase*, *metaphase*, *anaphase* and *telophase*.
+
+### Prophase
+Chromosomes condense and *mitotic spindle* forms
+
+### Prometaphase
+Fragmentation of the nuclear envelope and microtubules attach to the newly formed *kinetochore* (located at the center of chromosomes).
+
+The nuclear envelope is pulled apart by the dyenin motors on the MT of the centrosomes. The *lamina* pulls away (dense birillar network inside the nucleus) and the remenants float around the centrosomes are migrate to the ER.
+
+### Metaphase
+Chromosomes align in the middle at the *metaphase plate* and the centrosomes go to the oppsite ends.
+
+### Anaphase
+Seperation of the sister *chromatids*. The cell elongates.
+
+### Telophase
+- Nuclear envelope reforms
+- *Cleavage furrow* forms between seperated cells
+
+## Kinetochore & Microtubeles
+*Kinetochores* are proteins which attach to chromosomes to act as attachment points for MT. Chromatids will move along the MT to the ends of the cell. *Non-kinetochore microtubeles* overlap and allow motor proteins to walk along the opposite microtubele and elongate the cell.
+
+## Cytokinesis
+This occurs at the metaphase plate. A ring made of MF and the myosin motor protein contract and forms a cleavage furrow.
+
+## Cell Checkpoints
+- G1 checkpoint: Cell big enough? Enough nutrients? DNA damage?
+- G2 checkpoint: DNA replication complete? DNA damage? Cell big enough?
+- M checkpoint: Spindle checkpoint
+
+The cell may be able to repair itself or it will undergo *apoptosis*.
+
+## Cyclin / CDK
+*Cyclin-dependant kinases* (*CDK*) is present throughout the cell cycle but not active. CDK is activated by binding specific cyclin. The concentration of cyclin varies according to stage of the cell cycle. It increases before checkpoints and decreases after passing. It is a molecular mechanism to regulate the cell cycle.
+
+## Learning Objective
+Know and understand the general process of the cell
+cycle, mitosis and cell division. Stages and what is
+happening at these stages.
+• Movement of chromosomes during mitosis requires
+microtubules and motor proteins. Understand how
+this works.
+• Understand the role of microfilaments and myosin in
+the function of the contractile ring and cytokinesis
+• Understand the role of cyclins and CDK’s in
+regulating the cell cycle.
+
+# Lecture 25: Stem  Cells
+Stem cells have the ability to renew themsevles. They have escaped the *Hayflick limit*. They are unspecialized, undifferentiated cells.
+
+## Hiarchy
+1. Topipotent: Can give rise to embryo/placental & body cells
+2. Pluripotent: Can give rise to any body cells
+3. Multipotent: Blood, muscle, nerve, bone and other tissue stem cells.
+
+## Ebryonic Stem Cells
+*Ebryonic stem cells* are from a 5 day pre-implantation stage embryo. The code from the inner cells of the *Blastocyst* (which form the body cells) and are *pluripotent*.
+
+They form the:
+- *Endoderm*: Gut/liver/Lung (inside stuff)
+- *Mesoderm*: Muscle, blood, bone
+- *Ectoderm*: Brain & skin
+- *Germline*: Sperm & Egg
+
+## Adult (Somatic) Stem Cells
+Rare cells located in different tissues. They are *multipotent*. They are important for regeneration and repair of functions.
+
+### Skeletal Stem Cells (Satellite Cells)
+There are two types of division:
+- Symetrical: Stem cells generates another stem cell
+- Assymmetrical: Stem cells produces precursor cell (differentiation)
+
+## Induced Pluripotent Stem Cells
+Adult differentiated stem cells -> stem cell (*de-differentiation*). Induced by infecting skin cells with retrovirus containing stem cell master regulatory genes.
+
+They could be used as treatments.
+
+## Learning Objective
+Understand	the	different	types	of	stem	cells	and	their
+potential	in	terms	of	differentiation.
+• Understand	the	function	of	adult	stem	cells? How	do	they
+differentiate?	How	are	they	able	to	remain	in	the
+undifferentiated	state?
+• Understand	the	applications	(potential)	of	stem	cells	in
+research	and	health
