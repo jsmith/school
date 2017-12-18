@@ -196,8 +196,8 @@ Includes two parents passing half of their genes to their offspring. **Meiosis**
 3. Random Fertilization: There are a lot of possibilities
 
 ## Key Words
-** **Somatic Cell**: any cell other than a gamete
-** **Fertilization**: union of gametes to produce a zygote
+* **Somatic Cell**: any cell other than a gamete
+* **Fertilization**: union of gametes to produce a zygote
 
 ## Learning Objective
 Offspring acquire genes from their parents by inheriting
@@ -222,7 +222,7 @@ Concepts:
 ## Experiments
 - Character: A heritable feature
 - Trait: Variation of a character
-- Phenotype: The physical appearence of a character
+- Phenotype: The physical appearance of a character
 
 ## Law of Segregation
 Alleles randomly segregate into gametes. Mendel used **monohybrid cross** (corrsing parents who differ by one trait). Mendel also used **dihybrid cross** (crossing parents who differ by two traits).

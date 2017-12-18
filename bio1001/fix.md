@@ -10,4 +10,5 @@
 1. lytic - having to do with lysis
 1. lysis - destruction
 1. ase - designating an enzyme
-2. ose - designating a sugar
+1. ose - designating a sugar
+1. statis - refers to having a state of balance, stability or equilibrium

@@ -2,10 +2,10 @@
 Proteins have many functions and are fundamental aspects of the cell.
 
 ## The Building Blocks
-For proteins, the monomers are the **amino acids** and the polymers are called ** s**, **polypeptides** and **proteins**.  
+For proteins, the monomers are the **amino acids** and the polymers are called **peptides**, **polypeptides** and **proteins**.  
 
 ## Structure of Amino Acid
-The structure of an amino acid contains an amino, carboxyl and R groups. The aspect that distinguishes one amino acid from another is the **side chain** (the R group) which consist of hydrocarbons, oxygen's, carboxyl groups or other amino groups.
+The structure of an amino acid contains an amino, carboxyl and R groups. The aspect that distinguishes one amino acid from another is the **side chain** (the R group) which consist of hydrocarbons, oxygen's, carboxyl groups or other amino groups. An amino acid has a **c-terminus** and **n-terminus**. When a protein is translated from a mRNA, it is created from the **n-terminus** to **c-terminus**.
 
 ## Types of Amino Acids
 There are 20 types of **amino acids**, which only differ in the R group. These groups are sometimes hydrophobic, hydrophilic or carry a charge at the cellular pH.
@@ -52,8 +52,8 @@ Most cases of Alzheimer's are not inherited; however, some forms of the disease 
 
 # Lecture 9: Nucleic Acids
 There are two types of **nucleic acids** including:
-** **Deoxyribonucleic acid** (**DNA**)
-** **Ribonucleic Acid** (**RNA**)
+* **Deoxyribonucleic acid** (**DNA**)
+* **Ribonucleic Acid** (**RNA**)
 
 The functions of DNA including the storage of hereditary information and to act as protein blueprints. The functions of RNA include the transmission of instructions for making proteins, regulating the synthesis of proteins and helping directly in the synthesis of proteins. The flow of genetic information is DNA -> mRNA -> Protein with help of **Transfer RNA** (**tRNA**), **Ribosomal RNA** (**rRNA**) and **Regulatory RNA**.
 

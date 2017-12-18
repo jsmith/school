@@ -5,18 +5,18 @@ Different cells and tissues have different functions. Therefore, they need to ex
 Gene regulation occurs at several levels of gene expression.
 
 ### Genes
-** Chromatin Packing
-** Transcription initiation
+* Chromatin Packing
+* Transcription initiation
 
 ### RNA
-** RNA Stability
-** RNA Processing
-** Translation Initiation
-** Translation Termination
+* RNA Stability
+* RNA Processing
+* Translation Initiation
+* Translation Termination
 
 ### Polypeptide
-** Protein modification
-** Protein Stability / Activation
+* Protein modification
+* Protein Stability / Activation
 
 ## Biochemical Pathways
 Synthesis or degradation of cellular substances usually requires several steps. A substance may use several enzymes before it becomes the final product. A **biological pathway** is a series of actions among molecules in a cell that leads to a certain product or change within the cell. These enzymes must be present at the same time, meaning all the genes that encode these proteins must be turned on.
@@ -159,23 +159,23 @@ After beer is fermented, it is chilled, causing the proteins to precipitate and 
 When an individual looses weight, they use up fat storage in their body. The weight itself is primarily lost from CO2 and sweat/urine.
 
 ## Metabolism of Glucose
-** Glycolysis produces 2 ATP & NADH
-** Fermentation remove 2 NADH
-** TCA produces 2 ATP & FADH2 and 8 NADH
-** Oxidative Phosphorylation produces 26-28 ATP
+* Glycolysis produces 2 ATP & NADH
+* Fermentation remove 2 NADH
+* TCA produces 2 ATP & FADH2 and 8 NADH
+* Oxidative Phosphorylation produces 26-28 ATP
 
 ## Energy Systems for Exercise
 All cells have muscle cells have ATP, but only enough to last around 3 seconds of intense exercise.
 
-** **Creatine phosphate** is a high energy density molecule that can be broken down by cells to form ATP. This will provide you with 8-10 seconds of working your muscles at a high rate. **Creatine phosphate** + ADP -> **creatine** + ATP
-** **Glycolysis-fermentation** is the glycolysis fermentation cycle. This cycle does not take any oxygen and therefore can provide energy for up to 90 seconds.
-** **Glycolysis-TCA-Oxidative Phosphorylation** is the usual energy cycle. Within two minutes of exercise, the body starts supplying muscles with more oxygen.
+* **Creatine phosphate** is a high energy density molecule that can be broken down by cells to form ATP. This will provide you with 8-10 seconds of working your muscles at a high rate. **Creatine phosphate** + ADP -> **creatine** + ATP
+* **Glycolysis-fermentation** is the glycolysis fermentation cycle. This cycle does not take any oxygen and therefore can provide energy for up to 90 seconds.
+* **Glycolysis-TCA-Oxidative Phosphorylation** is the usual energy cycle. Within two minutes of exercise, the body starts supplying muscles with more oxygen.
 
 The body stores energy in multiple forms. These types of molecules enter the aerobic cycle at different locations. This list includes:
-** Glucose in cells & food
-** Glycogen from liver
-** Fat reserves
-** Protein
+* Glucose in cells & food
+* Glycogen from liver
+* Fat reserves
+* Protein
 
 # Lecture 21: Photosynthesis
 **Photosynthesis** is the process by which plants, algae and some bacteria use sunlight to drive the synthesis of organic molecules, usually from carbon dioxide and water.
@@ -204,9 +204,9 @@ This cycle takes 3CO2, 9 ATP & 6 NADPH as input and produces 1 **G3P**, 6 NADP+ 
 ## Light Absorbing Pigment Molecules
 When light is absorbed, electrons transfer to higher orbitals. To release that energy, there are several options:
 
-** Release photon
-** Donate electron to electron acceptor
-** Send light to another pigment molecule
+* Release photon
+* Donate electron to electron acceptor
+* Send light to another pigment molecule
 
 ## Photosystem
 Within the membranes of thylakoids, there exist **light-harvesting complexes** that bind chloroplasts and carotenoids. They absorb light and direct **excitation energy** through the use of **pigment molecules** into **reaction centers**. A pair of special **chlorophyll a** molecules are at the center within the reaction centers. These chlorophylls lose electrons when they absorb excitation energy and as such is a strong **oxidant**, a molecule that gains electrons & is reduced in a chemical reaction. The electrons from the chlorophyll are sent to the **primary electron acceptor**.
@@ -221,30 +221,30 @@ The human genome is packed into **chromosomes**. To sequence a genome, one cuts 
 Unique sequences make up over %45 percent of the genome whereas 55% of the genome is repetitive sequences. **Dispersed repeats**, also know as **mobile genetic elements**, make up 45% where as **tandem repeats** make up 10%. **Multigene families** consist of two or more nearly identical genes.
 
 Dispersed Repeats:
-** Retrotransposons (LTR and Non-LTR)
-** Transposons
+* Retrotransposons (LTR and Non-LTR)
+* Transposons
 
 Tandem Repeats:
-** rDNA
-** Telomeres
-** Short Tandem Repeats (Satellite DNA)
+* rDNA
+* Telomeres
+* Short Tandem Repeats (Satellite DNA)
 
 ## Mobile Genetic Elements
 **Mobile genetic elements** are a type of DNA that can move around in the genome.
 
 **Retrotransposons** are the most abundant type of repetitive element. They copy themselves through the use of an RNA intermediary (a copy and paste mechanism). The most common type of **Non-LTR** (**Non-long terminal repeat**) retrotransposon in humans for are:
 
-** LINE (**Long Interspersed Elements**) are long sequences and extremely abundant (~20% of the genome). They are completely autonomous.
-** SINE (**Short Interspersed Elements**) are small sequences and also extremely abundant (%13 of the genome). They are non autonomous. **Alu** elements are the most common type of SINE
+* LINE (**Long Interspersed Elements**) are long sequences and extremely abundant (~20% of the genome). They are completely autonomous.
+* SINE (**Short Interspersed Elements**) are small sequences and also extremely abundant (%13 of the genome). They are non autonomous. **Alu** elements are the most common type of SINE
 
 **Endogenous retroviruses** (**ERVs**) are the most important type of **LTRs** (**long terminal repeats**). They look very similar to a typical **retrovirus**. They contain an LTR, core structural protein, viral protease, reverse transcriptase and viral envelope. ERVs likely entered the genome as a retrovirus and stayed.
 
 **Transposons** are a less common type of **MGE** and only take up 3% of the genome. They are excised from the genome and placed in a new location (cut & paste).  
 
 ## Tandem Repeats
-** **Ribosomal DNA clusters**:
-** **Telomeres**: 3 nucleotide repeat (x100 - x1000) found. **Telomerase** uses RNA templates to extend telomeres. They protect the ends of chromosomes.
-** **Short Tandem Repeats**: 3% of DNA is short repeated sequences (1 - several hundred nucleotides in length). They are often used for **DNA fingerprinting**.
+* **Ribosomal DNA clusters**:
+* **Telomeres**: 3 nucleotide repeat (x100 - x1000) found. **Telomerase** uses RNA templates to extend telomeres. They protect the ends of chromosomes.
+* **Short Tandem Repeats**: 3% of DNA is short repeated sequences (1 - several hundred nucleotides in length). They are often used for **DNA fingerprinting**.
 
 ## Recap
 Non-coding DNA accounts for the differences in DNA size between eukaryotes. It is composed of dispersed repeats (retrotransposons, ERVs, transposons) + tandem repeats(rDNA, satellite DNA, telomeres). Understand what they are and how the work. MGEs contribute to evolutionary diversification through the use of genetic mutations, changes in genome expression, gene duplication, chromosome rearrangement, etc. Read p. 472 to undertand how this works.
