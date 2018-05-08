@@ -10,3 +10,10 @@
 *.gz
 *.blg
 *.bbl
+
+# Pycharm
+workspace.xml
+
+# CLion
+cmake-build-debug
+*.out
