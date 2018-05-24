@@ -1,0 +1,20 @@
+/usr/bin/make -f /home/jacob/git/school/cs2263/assignment1/Makefile testall
+gcc -g -Wall -Wshadow  -c mymatrix.c
+gcc -g -Wall -Wshadow  -c matrix.c
+gcc -g -Wall -Wshadow mymatrix.o matrix.o -o matrix
+valgrind --tool=memcheck --leak-check=full --log-file=log0 ./matrix multiplication input0 output0
+Running the multiplication command!
+Reading from input0 and outputting results to output0
+diff -q output0 expected0
+valgrind --tool=memcheck --leak-check=full --log-file=log1 ./matrix multiplication input1 output1
+Running the multiplication command!
+Reading from input1 and outputting results to output1
+diff -q output1 expected1
+valgrind --tool=memcheck --leak-check=full --log-file=log2 ./matrix addition input2 output2
+Running the addition command!
+Reading from input2 and outputting results to output2
+diff -q output2 expected2
+valgrind --tool=memcheck --leak-check=full --log-file=log3 ./matrix addition input3 output3
+Running the addition command!
+Reading from input3 and outputting results to output3
+diff -q output3 expected3

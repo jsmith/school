@@ -1,3 +1,7 @@
+//
+// Jacob Smith 47118500
+//
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -5,28 +9,29 @@
 #define MULTIPLY "multiplication"
 #define ADD "addition"
 
-void initializeArray(struct matrix* m, FILE* fp) {
+/**
+ * Allocates and reads in a matrix.
+ *
+ * @param m The matrix.
+ * @param fp The file object.
+ */
+void readMatrix(struct Matrix *m, FILE *fp) {
     fscanf(fp, "%d %d", &m->r, &m->c);
-    m->data = (int**)malloc(sizeof(int*) * m->r);
-
+    initializeMatrix(m);
     for(int i = 0; i < m->r; i++) {
-        m->data[i] = (int*)malloc(sizeof(int) * m->c);
-
-        for(int j = 0; j < m->c; j++) {
+        for (int j = 0; j < m->c; j++) {
             fscanf(fp, "%d", &(m->data[i][j]));
         }
     }
 }
 
-void deconstructMatrix(struct matrix* m) {
-    for(int i = 0; i < m->r; i++) {
-        free(m->data[i]);
-    }
-
-    free(m->data);
-}
-
-void writeMatrix(struct matrix* m, FILE* fp) {
+/**
+ * Writes a matrix to a file in the specified format.
+ *
+ * @param m The matrix.
+ * @param fp The file object.
+ */
+void writeMatrix(struct Matrix* m, FILE* fp) {
     fprintf(fp, "%d %d\n", m->r, m->c);
     for(int i = 0; i < m->r; i++) {
         for(int j = 0; j < (m->c-1); j++) {
@@ -36,6 +41,13 @@ void writeMatrix(struct matrix* m, FILE* fp) {
     }
 }
 
+/**
+ * Opens a file and exits if an error occurs.
+ *
+ * @param fp The file pointer to place the file.
+ * @param file The file name to read in.
+ * @param code The code to use when opening the file.
+ */
 void open(FILE** fp, char* file, char* code) {
     if(((*fp) = fopen(file, code)) == NULL) {
         printf("Input file %s does not exist\n", file);
@@ -45,7 +57,7 @@ void open(FILE** fp, char* file, char* code) {
 
 int main(int argc, char *argv[]) {
     if(argc != 4) {
-        printf("Expected three arguments from the command line. Ex. `matrix multiplication input.txt output.txt`");
+        printf("Expected three arguments from the command line. Ex. `matrix multiplication input0.txt output.txt`");
         exit(1);
     }
 
@@ -53,6 +65,8 @@ int main(int argc, char *argv[]) {
     if(strcmp(command, MULTIPLY) != 0 && strcmp(command, ADD) != 0) {
         printf("The first command must be either %s or %s. %s is invalid!\n", MULTIPLY, ADD, command);
         exit(1);
+    } else {
+        printf("Running the %s command!\n", command);
     }
 
     char *input = argv[2];
@@ -62,29 +76,47 @@ int main(int argc, char *argv[]) {
     FILE *fp;
     open(&fp, input, "r");
 
-    struct matrix m1;
-    initializeArray(&m1, fp);
+    struct Matrix m1;
+    readMatrix(&m1, fp);
 
-    struct matrix m2;
-    initializeArray(&m2, fp);
+    struct Matrix m2;
+    readMatrix(&m2, fp);
     fclose(fp);
 
 
-    int end_r, end_c;
-    struct matrix* result;
+    // Here we check the command and validate the input data. I would usually do that in a function; however, c does
+    // not support error handling so it's easiest to validate the data before it is given to the function. This way
+    // we can still free the other memory we've allocated.
+    struct Matrix* result;
+    int result_initialized = 0;
     if(!strcmp(command, MULTIPLY)) {
-        result = matrix_mult(&m1, &m2);
+        if(m1.c != m2.r) {
+            printf("The column count of the first should equal the row count of the second: %d vs %d\n", m1.c, m2.r);
+        } else {
+            result = matrix_mult(&m1, &m2);
+            result_initialized = 1;
+        }
     } else {
-        result = matrix_add(&m1, &m2);
+        if(m1.r != m2.r) {
+            printf("The row count of the first should equal the row count of the second: %d vs %d\n", m1.r, m2.r);
+        } else if(m1.c != m2.c) {
+            printf("The column count of the first should equal the column count of the second: %d vs %d\n", m1.c, m2.c);
+        } else {
+            result = matrix_add(&m1, &m2);
+            result_initialized = 1;
+        }
     }
-
-
-    open(&fp, output, "w+"); // overwrite file with w+
-    writeMatrix(result, fp);
-    fclose(fp);
 
     deconstructMatrix(&m1);
     deconstructMatrix(&m2);
-    deconstructMatrix(result);
-    free(result);
+
+    // Only free if we've actually allocated memory!
+    if(result_initialized) {
+        open(&fp, output, "w+"); // overwrite file with w+
+        writeMatrix(result, fp);
+        fclose(fp);
+
+        deconstructMatrix(result);
+        free(result);
+    }
 }
