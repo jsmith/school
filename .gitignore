@@ -18,6 +18,7 @@ workspace.xml
 # CLion
 cmake-build-debug
 *.out
+*.o
 
 # Other
 *.zip
