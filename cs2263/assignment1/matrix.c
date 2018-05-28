@@ -13,75 +13,45 @@
  * Allocates and reads in a matrix.
  *
  * @param m The matrix.
- * @param fp The file object.
  */
-void readMatrix(struct Matrix *m, FILE *fp) {
-    fscanf(fp, "%d %d", &m->r, &m->c);
+void readMatrix(struct Matrix *m) {
+    scanf("%d %d", &m->r, &m->c);
     initializeMatrix(m);
     for(int i = 0; i < m->r; i++) {
         for (int j = 0; j < m->c; j++) {
-            fscanf(fp, "%d", &(m->data[i][j]));
+            scanf("%d", &(m->data[i][j]));
         }
     }
 }
 
 /**
- * Writes a matrix to a file in the specified format.
+ * Writes a matrix in the specified format.
  *
  * @param m The matrix.
- * @param fp The file object.
  */
-void writeMatrix(struct Matrix* m, FILE* fp) {
-    fprintf(fp, "%d %d\n", m->r, m->c);
-    for(int i = 0; i < m->r; i++) {
-        for(int j = 0; j < (m->c-1); j++) {
-            fprintf(fp, "%d ", m->data[i][j]);
+void writeMatrix(struct Matrix* m) {
+    printf("%d %d\n", m->r, m->c);
+    for (int i = 0; i < m->r; i++) {
+        for (int j = 0; j < (m->c - 1); j++) {
+            printf("%d ", m->data[i][j]);
         }
-        fprintf(fp, "%d\n", m->data[i][m->c-1]); // don't write a space at the end of the columns
-    }
-}
-
-/**
- * Opens a file and exits if an error occurs.
- *
- * @param fp The file pointer to place the file.
- * @param file The file name to read in.
- * @param code The code to use when opening the file.
- */
-void open(FILE** fp, char* file, char* code) {
-    if(((*fp) = fopen(file, code)) == NULL) {
-        printf("Input file %s does not exist\n", file);
-        exit(1);
+        printf("%d\n", m->data[i][m->c - 1]); // write a newline at the end of the columns
     }
 }
 
 int main(int argc, char *argv[]) {
-    if(argc != 4) {
-        printf("Expected three arguments from the command line. Ex. `matrix multiplication input0.txt output.txt`");
-        exit(1);
-    }
-
-    char *command = argv[1];
+    char command[20];
+    scanf("%s", command);
     if(strcmp(command, MULTIPLY) != 0 && strcmp(command, ADD) != 0) {
-        printf("The first command must be either %s or %s. %s is invalid!\n", MULTIPLY, ADD, command);
+        printf("The command must be either %s or %s. %s is invalid!\n", MULTIPLY, ADD, command);
         exit(1);
-    } else {
-        printf("Running the %s command!\n", command);
     }
-
-    char *input = argv[2];
-    char *output = argv[3];
-    printf("Reading from %s and outputting results to %s\n", input, output);
-
-    FILE *fp;
-    open(&fp, input, "r");
 
     struct Matrix m1;
-    readMatrix(&m1, fp);
+    readMatrix(&m1);
 
     struct Matrix m2;
-    readMatrix(&m2, fp);
-    fclose(fp);
+    readMatrix(&m2);
 
 
     // Here we check the command and validate the input data. I would usually do that in a function; however, c does
@@ -112,9 +82,7 @@ int main(int argc, char *argv[]) {
 
     // Only free if we've actually allocated memory!
     if(result_initialized) {
-        open(&fp, output, "w+"); // overwrite file with w+
-        writeMatrix(result, fp);
-        fclose(fp);
+        writeMatrix(result);
 
         deconstructMatrix(result);
         free(result);
