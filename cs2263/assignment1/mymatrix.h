@@ -6,7 +6,7 @@
 #define MYMATRIX_H
 
 /**
- * The matrix structure to simplify logic.
+ * The matrix structure to simplify logic. This means that we do not need to pass rows and columns as arguments.
  */
 struct Matrix {
     int r;
