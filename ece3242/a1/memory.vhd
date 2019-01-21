@@ -7,8 +7,8 @@
 --------------------------------------------------------
 
 library	ieee;
-use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
+use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;   
 use work.MP_lib.all;
 
@@ -31,31 +31,47 @@ begin
 	write: process(clock, rst, Mre, address, data_in)
 	begin				-- program to generate 10 fabonacci number	 
 		if rst='1' then		
-			tmp_ram <= (0 => x"3000",	   		-- R0 <- #0			mov R0, #0
-						1 => x"3101",			-- R1 <- #1			mov R1, #1
-						2 => x"3234",			-- R2 <- #52		mov R2, #52
-						3 => x"3301",			-- R3 <- #1			mov R3, #1
-						4 => x"1032",			-- M[50] <- R0 		mov M[50], R0
-						5 => x"1133",			-- M[51] <- R1 		mov M[51], R1
-						6 => x"1164",			-- M[100]<- R1		mov M[100], R1
-						7 => x"4100",			-- R1 <- R1 + R0	add R1, R0
-						8 => x"0064",			-- R0 <- M[100]		mov R0, M[100]
-						9 => x"2210",			-- M[R2] <- R1 		mov M[R2], R1
-						10 => x"4230",			-- R2 <- R2 + R3 	add R2, R3
-						11 => x"043B",			-- R4 <- M[59]		mov R4, M[59]
-						12 => x"6406",  		-- R4=0: PC<- #6	jz R4, #6
-				
-						13 => x"7032",			-- output<- M[50]   mov obuf_out,M[50]
-						14 => x"7033",			-- output<- M[51]   mov obuf_out,M[51]
-						15 => x"7034",			-- output<- M[52]   mov obuf_out,M[52]
-						16 => x"7035",			-- output<- M[53]   mov obuf_out,M[53]
-						17 => x"7036",			-- output<- M[54]   mov obuf_out,M[54]
-						18 => x"7037",			-- output<- M[55]   mov obuf_out,M[55]
-						19 => x"7038",			-- output<- M[56]   mov obuf_out,M[56]
-						20 => x"7039",			-- output<- M[57]   mov obuf_out,M[57]
-						21 => x"703A",			-- output<- M[58]   mov obuf_out,M[58]
-						22 => x"703B",			-- output<- M[59]   mov obuf_out,M[59]			
-						23 => x"F000",			-- halt
+			tmp_ram <= (
+                        -- Do initial setup.
+                        0 => x"3001",	   		-- R0 <- #1                 Initial y(n - 2)
+						1 => x"3103",			-- R1 <- #3                 Initial y(1)
+						2 => x"3252",			-- R2 <- #82                Pointer to output location
+                        3 => x"3301",			-- R3 <- #1                 Constant 1
+                        4 => x"3501",			-- R5 <- #1                 Counter (n)
+                        5 => x"3681",			-- R6 <- #1                 Constant -1
+                        6 => x"3681",			-- R7 <- #1                 x (set to 1 for now)
+						7 => x"1050",			-- M[80] <- R0              Set first value
+						8 => x"1151",			-- M[81] <- R1              Set the second value
+
+                        -- Start the actual program
+                        9 => x"1164",			-- M[100]<- R1              Temporarily store R1
+                        10 => x"4530",			-- R5 <- R5 + 1 (R3)        Increment n
+                        11 => x"8160",			-- R1 <- R1 * -1            Get -y(n-1)
+                        12 => x"4100",			-- R1 <- R1 + R0            Add y(n-2) to -y(n-1)
+                        13 => x"3402",			-- R4 <- 2                  Set R4 to 2
+                        14 => x"8470",			-- R4 <- 2 (R4) * x (R7)    Multiply 2 by x
+                        15 => x"8450",			-- R4 <- 2x (R4) * n (R5)   Multiply 2x by n
+                        16 => x"4140",			-- R1 <- R1 + R4            Add 2xn to -y(n-1) + y(n-2)
+						17 => x"0064",			-- R0 <- M[100]             Set y(n-1) to y(n-2)
+						18 => x"2210",			-- M[R2] <- R1              Store value
+						19 => x"4230",			-- R2 <- R2 + 1 (R3)        Increment pointer
+						20 => x"0859",			-- R8 <- M[89]              Get value from mem location 89
+						21 => x"6809",  		-- if R8 != 0: PC <- 9      Loop if end is not reached
+
+                        -- Display the output
+						22 => x"7050",			-- output <- M[80]
+						23 => x"7051",			-- output <- M[81]
+						24 => x"7052",			-- output <- M[82]
+						25 => x"7053",			-- output <- M[83]
+						26 => x"7054",			-- output <- M[84]
+						27 => x"7055",			-- output <- M[85]
+						28 => x"7056",			-- output <- M[86]
+						29 => x"7057",			-- output <- M[87]
+						30 => x"7058",			-- output <- M[88]
+                        31 => x"7059",			-- output <- M[89]
+                        
+                        -- Stop execution.
+						32 => x"F000",			-- halt
 						others => x"0000");
 		else
 			if (clock'event and clock = '1') then
