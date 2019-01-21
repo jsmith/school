@@ -1,0 +1,48 @@
+m255
+K3
+z0
+13
+cModel Technology
+dF:\ECG\Courses\ECE3242\Assignments\2016\SimpleCompArch\simulation\qsim
+vSimpleCompArch
+Z0 !s110 1484341113
+!i10b 1
+!s100 S[=;m7PZ9C9Llo>Zk]oV:0
+IghaVHJ<YHIThZ@X?YQV0I0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dF:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/simulation/qsim
+w1484341109
+8SimpleCompArch.vo
+FSimpleCompArch.vo
+L0 32
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1484341110.000000
+!s107 SimpleCompArch.vo|
+!s90 -work|work|SimpleCompArch.vo|
+!i113 1
+Z4 o-work work
+n@simple@comp@arch
+vSimpleCompArch_vlg_vec_tst
+R0
+!i10b 1
+!s100 ^3`LT0=lk]A5QnBIm^LXU2
+IGG1W<lYO9S9zGEoZj9AjE3
+R1
+R2
+w1484341105
+8SimSimpleCompArch.vwf.vt
+FSimSimpleCompArch.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+!s108 1484341113.000000
+!s107 SimSimpleCompArch.vwf.vt|
+!s90 -work|work|SimSimpleCompArch.vwf.vt|
+!i113 1
+R4
+n@simple@comp@arch_vlg_vec_tst

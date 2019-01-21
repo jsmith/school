@@ -1,0 +1,36 @@
+# do SimpleCompArch.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:58:30 on Jan 13,2017
+# vlog -work work SimpleCompArch.vo 
+# -- Compiling module SimpleCompArch
+# 
+# Top level modules:
+# 	SimpleCompArch
+# End time: 16:58:33 on Jan 13,2017, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:58:33 on Jan 13,2017
+# vlog -work work SimSimpleCompArch.vwf.vt 
+# -- Compiling module SimpleCompArch_vlg_vec_tst
+# 
+# Top level modules:
+# 	SimpleCompArch_vlg_vec_tst
+# End time: 16:58:33 on Jan 13,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.SimpleCompArch_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 16:58:33 on Jan 13,2017
+# Loading work.SimpleCompArch_vlg_vec_tst
+# Loading work.SimpleCompArch
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: Design size of 21125 statements exceeds ModelSim Altera Starter recommended capacity.
+# Expect performance to be adversely affected.
+# ** Note: $finish    : SimSimpleCompArch.vwf.vt(79)
+#    Time: 7 us  Iteration: 0  Instance: /SimpleCompArch_vlg_vec_tst
+# End time: 16:59:06 on Jan 13,2017, Elapsed time: 0:00:33
+# Errors: 0, Warnings: 1

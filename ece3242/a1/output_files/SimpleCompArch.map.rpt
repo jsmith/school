@@ -1,0 +1,705 @@
+Analysis & Synthesis report for SimpleCompArch
+Fri Jan 13 16:57:59 2017
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0|bigmux:U3"
+ 16. Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jan 13 16:57:59 2017           ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
+; Revision Name                      ; SimpleCompArch                                  ;
+; Top-level Entity Name              ; SimpleCompArch                                  ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 7,875                                           ;
+;     Total combinational functions  ; 3,661                                           ;
+;     Dedicated logic registers      ; 4,463                                           ;
+; Total registers                    ; 4463                                            ;
+; Total pins                         ; 97                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; SimpleCompArch     ; SimpleCompArch     ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; On                 ; Off                ;
+; Maximum processors allowed for parallel compilation                        ; All                ;                    ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
+;     Processor 5            ;   0.2%      ;
+;     Processor 6            ;   0.2%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+; smallmux.vhd                     ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/smallmux.vhd       ;         ;
+; SimpleCompArch.vhd               ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/SimpleCompArch.vhd ;         ;
+; reg_file.vhd                     ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/reg_file.vhd       ;         ;
+; PC.vhd                           ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/PC.vhd             ;         ;
+; obuf.vhd                         ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/obuf.vhd           ;         ;
+; MP_lib.vhd                       ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/MP_lib.vhd         ;         ;
+; memory.vhd                       ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/memory.vhd         ;         ;
+; IR.vhd                           ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd             ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/datapath.vhd       ;         ;
+; ctrl_unit.vhd                    ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/ctrl_unit.vhd      ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/CPU.vhd            ;         ;
+; controller.vhd                   ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/controller.vhd     ;         ;
+; bigmux.vhd                       ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/bigmux.vhd         ;         ;
+; alu.vhd                          ; yes             ; User VHDL File  ; F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/alu.vhd            ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 7,875         ;
+;                                             ;               ;
+; Total combinational functions               ; 3661          ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 3160          ;
+;     -- 3 input functions                    ; 325           ;
+;     -- <=2 input functions                  ; 176           ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 3638          ;
+;     -- arithmetic mode                      ; 23            ;
+;                                             ;               ;
+; Total registers                             ; 4463          ;
+;     -- Dedicated logic registers            ; 4463          ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 97            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; sys_clk~input ;
+; Maximum fan-out                             ; 4463          ;
+; Total fan-out                               ; 31858         ;
+; Average fan-out                             ; 3.83          ;
++---------------------------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name    ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+----------------+--------------+
+; |SimpleCompArch            ; 3661 (0)          ; 4463 (0)     ; 0           ; 0            ; 0       ; 0         ; 97   ; 0            ; |SimpleCompArch                                         ; SimpleCompArch ; work         ;
+;    |CPU:Unit1|             ; 531 (0)           ; 351 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1                               ; CPU            ; work         ;
+;       |ctrl_unit:Unit0|    ; 87 (0)            ; 63 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0               ; ctrl_unit      ; work         ;
+;          |IR:U2|           ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|IR:U2         ; IR             ; work         ;
+;          |PC:U1|           ; 11 (11)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|PC:U1         ; PC             ; work         ;
+;          |bigmux:U3|       ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3     ; bigmux         ; work         ;
+;          |controller:U0|   ; 44 (44)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0 ; controller     ; work         ;
+;       |datapath:Unit1|     ; 444 (0)           ; 288 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1                ; datapath       ; work         ;
+;          |alu:U3|          ; 76 (76)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|alu:U3         ; alu            ; work         ;
+;          |reg_file:U2|     ; 344 (344)         ; 288 (288)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2    ; reg_file       ; work         ;
+;          |smallmux:U1|     ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1    ; smallmux       ; work         ;
+;    |memory:Unit2|          ; 3130 (3130)       ; 4112 (4112)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SimpleCompArch|memory:Unit2                            ; memory         ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|controller:U0|state                                                                                                                                                                                                                                                                                  ;
++------------+------------+-----------+-----------+-----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+----------+-----------+-----------+----------+------------+----------+
+; Name       ; state.S11a ; state.S11 ; state.S10 ; state.S9b ; state.S9a ; state.S9 ; state.S8b ; state.S8a ; state.S8 ; state.S7b ; state.S7a ; state.S7 ; state.S6a ; state.S6 ; state.S5b ; state.S5a ; state.S5 ; state.S4b ; state.S4a ; state.S4 ; state.S3b ; state.S3a ; state.S3 ; state.S2 ; state.S1b ; state.S1a ; state.S1 ; state.Sdly ; state.S0 ;
++------------+------------+-----------+-----------+-----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+----------+-----------+-----------+----------+------------+----------+
+; state.S0   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 0        ;
+; state.Sdly ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 1          ; 1        ;
+; state.S1   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 1        ; 0          ; 1        ;
+; state.S1a  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 1         ; 0        ; 0          ; 1        ;
+; state.S1b  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 1         ; 0         ; 0        ; 0          ; 1        ;
+; state.S2   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 1        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S3   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 1        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S3a  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 1         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S3b  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 1         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S4   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 1        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S4a  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 1         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S4b  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 1         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S5   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 1        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S5a  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 1         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S5b  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 1         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S6   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 1        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S6a  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 1         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S7   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 1        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S7a  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 1         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S7b  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 1         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S8   ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 1        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S8a  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 1         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S8b  ; 0          ; 0         ; 0         ; 0         ; 0         ; 0        ; 1         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S9   ; 0          ; 0         ; 0         ; 0         ; 0         ; 1        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S9a  ; 0          ; 0         ; 0         ; 0         ; 1         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S9b  ; 0          ; 0         ; 0         ; 1         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S10  ; 0          ; 0         ; 1         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S11  ; 0          ; 1         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
+; state.S11a ; 1          ; 0         ; 0         ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0         ; 0         ; 0        ; 0        ; 0         ; 0         ; 0        ; 0          ; 1        ;
++------------+------------+-----------+-----------+-----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+-----------+-----------+----------+----------+-----------+-----------+----------+------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                              ;
++-----------------------------------------------------+---------------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                               ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------------------------------+------------------------+
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[0]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[8]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[1]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[9]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[2]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[10]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[3]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[11]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[4]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[5]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[6]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[7]         ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[4]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[5]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[6]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[7]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[0]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[1]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[2]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[3]            ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[12]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[13]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[14]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[15]           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|IRld_ctrl ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                                                   ;                        ;
++-----------------------------------------------------+---------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                       ;
++------------------------------------------------------------+---------------------------------------------+
+; Register name                                              ; Reason for Removal                          ;
++------------------------------------------------------------+---------------------------------------------+
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.S10          ; Lost fanout                                 ;
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.Sdly         ; Stuck at GND due to stuck port data_in      ;
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[0]     ; Stuck at VCC due to stuck port clock_enable ;
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[1..30] ; Stuck at GND due to stuck port clock_enable ;
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[31]    ; Stuck at VCC due to stuck port clock_enable ;
+; CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[8..15]              ; Lost fanout                                 ;
+; Total Number of Removed Registers = 42                     ;                                             ;
++------------------------------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                               ;
++----------------------------------------------------+---------------------------+----------------------------------------------------------+
+; Register name                                      ; Reason for Removal        ; Registers Removed due to This Register                   ;
++----------------------------------------------------+---------------------------+----------------------------------------------------------+
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|state.Sdly ; Stuck at GND              ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[0],  ;
+;                                                    ; due to stuck port data_in ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[1],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[2],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[3],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[4],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[5],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[6],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[7],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[8],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[9],  ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[10], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[11], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[12], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[13], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[14], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[15], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[16], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[17], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[18], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[19], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[20], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[21], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[22], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[23], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[24], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[25], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[26], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[27], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[28], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[29], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[30], ;
+;                                                    ;                           ; CPU:Unit1|ctrl_unit:Unit0|controller:U0|maccesdelay[31]  ;
++----------------------------------------------------+---------------------------+----------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4463  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 4447  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4424  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------+
+; Inverted Register Statistics                                 ;
++----------------------------------------------------+---------+
+; Inverted Register                                  ; Fan out ;
++----------------------------------------------------+---------+
+; CPU:Unit1|ctrl_unit:Unit0|controller:U0|Ms_ctrl[1] ; 15      ;
+; memory:Unit2|tmp_ram[20][0]                        ; 1       ;
+; memory:Unit2|tmp_ram[18][0]                        ; 1       ;
+; memory:Unit2|tmp_ram[16][0]                        ; 1       ;
+; memory:Unit2|tmp_ram[22][0]                        ; 1       ;
+; memory:Unit2|tmp_ram[11][0]                        ; 1       ;
+; memory:Unit2|tmp_ram[5][0]                         ; 1       ;
+; memory:Unit2|tmp_ram[1][0]                         ; 1       ;
+; memory:Unit2|tmp_ram[3][0]                         ; 1       ;
+; memory:Unit2|tmp_ram[14][0]                        ; 1       ;
+; memory:Unit2|tmp_ram[13][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[11][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[14][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[12][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[18][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[21][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[5][1]                         ; 1       ;
+; memory:Unit2|tmp_ram[4][1]                         ; 1       ;
+; memory:Unit2|tmp_ram[17][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[22][1]                        ; 1       ;
+; memory:Unit2|tmp_ram[17][2]                        ; 1       ;
+; memory:Unit2|tmp_ram[18][2]                        ; 1       ;
+; memory:Unit2|tmp_ram[16][2]                        ; 1       ;
+; memory:Unit2|tmp_ram[6][2]                         ; 1       ;
+; memory:Unit2|tmp_ram[15][2]                        ; 1       ;
+; memory:Unit2|tmp_ram[2][2]                         ; 1       ;
+; memory:Unit2|tmp_ram[8][2]                         ; 1       ;
+; memory:Unit2|tmp_ram[12][2]                        ; 1       ;
+; memory:Unit2|tmp_ram[20][3]                        ; 1       ;
+; memory:Unit2|tmp_ram[21][3]                        ; 1       ;
+; memory:Unit2|tmp_ram[11][3]                        ; 1       ;
+; memory:Unit2|tmp_ram[19][3]                        ; 1       ;
+; memory:Unit2|tmp_ram[22][3]                        ; 1       ;
+; memory:Unit2|tmp_ram[13][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[9][4]                         ; 1       ;
+; memory:Unit2|tmp_ram[19][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[18][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[2][4]                         ; 1       ;
+; memory:Unit2|tmp_ram[22][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[5][4]                         ; 1       ;
+; memory:Unit2|tmp_ram[20][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[16][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[4][4]                         ; 1       ;
+; memory:Unit2|tmp_ram[21][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[17][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[15][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[14][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[11][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[10][4]                        ; 1       ;
+; memory:Unit2|tmp_ram[13][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[11][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[10][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[8][5]                         ; 1       ;
+; memory:Unit2|tmp_ram[15][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[14][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[22][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[18][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[20][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[16][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[5][5]                         ; 1       ;
+; memory:Unit2|tmp_ram[6][5]                         ; 1       ;
+; memory:Unit2|tmp_ram[4][5]                         ; 1       ;
+; memory:Unit2|tmp_ram[2][5]                         ; 1       ;
+; memory:Unit2|tmp_ram[19][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[21][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[17][5]                        ; 1       ;
+; memory:Unit2|tmp_ram[6][6]                         ; 1       ;
+; memory:Unit2|tmp_ram[8][6]                         ; 1       ;
+; memory:Unit2|tmp_ram[6][8]                         ; 1       ;
+; memory:Unit2|tmp_ram[5][8]                         ; 1       ;
+; memory:Unit2|tmp_ram[1][8]                         ; 1       ;
+; memory:Unit2|tmp_ram[7][8]                         ; 1       ;
+; memory:Unit2|tmp_ram[3][8]                         ; 1       ;
+; memory:Unit2|tmp_ram[9][9]                         ; 1       ;
+; memory:Unit2|tmp_ram[10][9]                        ; 1       ;
+; memory:Unit2|tmp_ram[3][9]                         ; 1       ;
+; memory:Unit2|tmp_ram[2][9]                         ; 1       ;
+; memory:Unit2|tmp_ram[11][10]                       ; 1       ;
+; memory:Unit2|tmp_ram[12][10]                       ; 1       ;
+; memory:Unit2|tmp_ram[13][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[23][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[19][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[3][12]                        ; 1       ;
+; memory:Unit2|tmp_ram[21][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[17][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[5][12]                        ; 1       ;
+; memory:Unit2|tmp_ram[1][12]                        ; 1       ;
+; memory:Unit2|tmp_ram[15][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[6][12]                        ; 1       ;
+; memory:Unit2|tmp_ram[20][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[4][12]                        ; 1       ;
+; memory:Unit2|tmp_ram[22][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[16][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[2][12]                        ; 1       ;
+; memory:Unit2|tmp_ram[0][12]                        ; 1       ;
+; memory:Unit2|tmp_ram[18][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[14][12]                       ; 1       ;
+; memory:Unit2|tmp_ram[15][13]                       ; 1       ;
+; memory:Unit2|tmp_ram[14][13]                       ; 1       ;
+; memory:Unit2|tmp_ram[22][13]                       ; 1       ;
+; Total number of inverted registers = 130*          ;         ;
++----------------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[11]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|PC:U1|tmp_PC[0]    ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2|RFr1[4] ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|reg_file:U2|RFr2[8] ;
+; 256:1              ; 16 bits   ; 2720 LEs      ; 2720 LEs             ; 0 LEs                  ; Yes        ; |SimpleCompArch|memory:Unit2|data_out[10]                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1|Mux4    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|smallmux:U1|Mux13   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|datapath:Unit1|alu:U3|Mux15        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux8     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |SimpleCompArch|CPU:Unit1|ctrl_unit:Unit0|bigmux:U3|Mux14    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0|bigmux:U3" ;
++-----------+-------+----------+----------------------------------+
+; Port      ; Type  ; Severity ; Details                          ;
++-----------+-------+----------+----------------------------------+
+; id[15..4] ; Input ; Info     ; Stuck at GND                     ;
++-----------+-------+----------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:Unit1|ctrl_unit:Unit0"                                                                     ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; maddr_in[15..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 97                          ;
+; cycloneiii_ff         ; 4463                        ;
+;     CLR               ; 39                          ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 4400                        ;
+;     ENA CLR SLD       ; 8                           ;
+; cycloneiii_io_obuf    ; 16                          ;
+; cycloneiii_lcell_comb ; 3661                        ;
+;     arith             ; 23                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 15                          ;
+;     normal            ; 3638                        ;
+;         1 data inputs ; 129                         ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 310                         ;
+;         4 data inputs ; 3160                        ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 6.55                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:25     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+    Info: Processing started: Fri Jan 13 16:57:11 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SimpleCompArch -c SimpleCompArch
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file smallmux.vhd
+    Info (12022): Found design unit 1: smallmux-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/smallmux.vhd Line: 22
+    Info (12023): Found entity 1: smallmux File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/smallmux.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file simplecomparch.vhd
+    Info (12022): Found design unit 1: SimpleCompArch-rtl File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/SimpleCompArch.vhd Line: 36
+    Info (12023): Found entity 1: SimpleCompArch File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/SimpleCompArch.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file reg_file.vhd
+    Info (12022): Found design unit 1: reg_file-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/reg_file.vhd Line: 31
+    Info (12023): Found entity 1: reg_file File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/reg_file.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: PC-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/PC.vhd Line: 24
+    Info (12023): Found entity 1: PC File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/PC.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file obuf.vhd
+    Info (12022): Found design unit 1: obuf-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/obuf.vhd Line: 21
+    Info (12023): Found entity 1: obuf File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/obuf.vhd Line: 14
+Info (12021): Found 2 design units, including 0 entities, in source file mp_lib.vhd
+    Info (12022): Found design unit 1: MP_lib File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/MP_lib.vhd Line: 6
+    Info (12022): Found design unit 2: MP_lib-body File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/MP_lib.vhd Line: 204
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/memory.vhd Line: 26
+    Info (12023): Found entity 1: memory File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/memory.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file ir.vhd
+    Info (12022): Found design unit 1: IR-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 22
+    Info (12023): Found entity 1: IR File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
+    Info (12022): Found design unit 1: datapath-struct File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/datapath.vhd Line: 37
+    Info (12023): Found entity 1: datapath File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/datapath.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file ctrl_unit.vhd
+    Info (12022): Found design unit 1: ctrl_unit-struct File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/ctrl_unit.vhd Line: 39
+    Info (12023): Found entity 1: ctrl_unit File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/ctrl_unit.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
+    Info (12022): Found design unit 1: CPU-structure File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/CPU.vhd Line: 36
+    Info (12023): Found entity 1: CPU File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/CPU.vhd Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file controller.vhd
+    Info (12022): Found design unit 1: controller-fsm File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/controller.vhd Line: 39
+    Info (12023): Found entity 1: controller File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/controller.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file bigmux.vhd
+    Info (12022): Found design unit 1: bigmux-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/bigmux.vhd Line: 23
+    Info (12023): Found entity 1: bigmux File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/bigmux.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-behv File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/alu.vhd Line: 25
+    Info (12023): Found entity 1: alu File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/alu.vhd Line: 15
+Info (12127): Elaborating entity "SimpleCompArch" for the top level hierarchy
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:Unit1" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/SimpleCompArch.vhd Line: 48
+Info (12128): Elaborating entity "ctrl_unit" for hierarchy "CPU:Unit1|ctrl_unit:Unit0" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/CPU.vhd Line: 53
+Info (12128): Elaborating entity "controller" for hierarchy "CPU:Unit1|ctrl_unit:Unit0|controller:U0" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/ctrl_unit.vhd Line: 52
+Warning (10540): VHDL Signal Declaration warning at controller.vhd(46): used explicit default value for signal "usedelay" because signal was never assigned a value File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/controller.vhd Line: 46
+Info (12128): Elaborating entity "PC" for hierarchy "CPU:Unit1|ctrl_unit:Unit0|PC:U1" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/ctrl_unit.vhd Line: 56
+Info (12128): Elaborating entity "IR" for hierarchy "CPU:Unit1|ctrl_unit:Unit0|IR:U2" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/ctrl_unit.vhd Line: 57
+Warning (10631): VHDL Process Statement warning at IR.vhd(25): inferring latch(es) for signal or variable "IRout", which holds its previous value in one or more paths through the process File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Warning (10631): VHDL Process Statement warning at IR.vhd(25): inferring latch(es) for signal or variable "dir_addr", which holds its previous value in one or more paths through the process File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[0]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[1]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[2]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[3]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[4]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[5]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[6]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[7]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[8]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[9]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[10]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[11]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[12]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[13]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[14]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "dir_addr[15]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[0]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[1]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[2]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[3]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[4]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[5]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[6]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[7]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[8]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[9]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[10]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[11]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[12]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[13]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[14]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (10041): Inferred latch for "IRout[15]" at IR.vhd(25) File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (12128): Elaborating entity "bigmux" for hierarchy "CPU:Unit1|ctrl_unit:Unit0|bigmux:U3" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/ctrl_unit.vhd Line: 58
+Info (12128): Elaborating entity "datapath" for hierarchy "CPU:Unit1|datapath:Unit1" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/CPU.vhd Line: 55
+Info (12128): Elaborating entity "smallmux" for hierarchy "CPU:Unit1|datapath:Unit1|smallmux:U1" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/datapath.vhd Line: 44
+Info (12128): Elaborating entity "reg_file" for hierarchy "CPU:Unit1|datapath:Unit1|reg_file:U2" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/datapath.vhd Line: 46
+Info (12128): Elaborating entity "alu" for hierarchy "CPU:Unit1|datapath:Unit1|alu:U3" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/datapath.vhd Line: 50
+Info (12128): Elaborating entity "memory" for hierarchy "memory:Unit2" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/SimpleCompArch.vhd Line: 52
+Info (12128): Elaborating entity "obuf" for hierarchy "obuf:Unit3" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/SimpleCompArch.vhd Line: 53
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[0]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[0]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[1]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[1]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[2]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[2]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[3]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[3]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[4]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[4]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[5]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[5]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[6]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[6]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+    Info (13026): Duplicate LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|IRout[7]" merged with LATCH primitive "CPU:Unit1|ctrl_unit:Unit0|IR:U2|dir_addr[7]" File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/IR.vhd Line: 25
+Info (13000): Registers with preset signals will power-up high File: F:/ECG/Courses/ECE3242/Assignments/2016/SimpleCompArch2016/controller.vhd Line: 53
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 9 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 8012 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 95 output pins
+    Info (21061): Implemented 7915 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 945 megabytes
+    Info: Processing ended: Fri Jan 13 16:57:59 2017
+    Info: Elapsed time: 00:00:48
+    Info: Total CPU time (on all processors): 00:01:14
+
+

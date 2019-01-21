@@ -1,0 +1,397 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sys_output[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[8]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[9]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[10]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[11]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[12]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[13]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[14]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_output[15]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "D_rfout_bus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFwa[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFwa[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFwa[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFwa[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr1a[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr1a[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr1a[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr1a[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr2a[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr2a[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr2a[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr2a[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFwe",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr1e",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFr2e",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_RFs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_ALUs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_ALUs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_PCld",
+					"strict" : false
+				},
+				{
+					"name" : "D_jpz",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdout_bus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mdin_bus[15]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "D_mem_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "D_Mre",
+					"strict" : false
+				},
+				{
+					"name" : "D_Mwe",
+					"strict" : false
+				},
+				{
+					"name" : "sys_clk",
+					"strict" : false
+				},
+				{
+					"name" : "sys_rst",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
