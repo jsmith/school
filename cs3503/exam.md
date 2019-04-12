@@ -414,3 +414,357 @@ Planning
 - Modeling use cases, processes and data
 - Develop alternatives for management
 - Developing Requirements Specification
+
+### Alternatives
+- A good/better strategy
+- Helps managements choose the best plan
+- Cost vs functionality, level of automation
+
+### Requirements Specification
+Based on all of the work, the specifications using:
+- Processes (use cases)
+- Data flows (DFD)
+- Data storage (ERD)
+
+### Design (Copied)
+- How to structure it?
+- Architecture Plan, based on non-functional requirements
+- Hardware and software specification
+- Physical (process/data model)
+- Interface design
+- System Acquisition Strategy
+- Developing a System Specification
+
+### Design Mistakes
+- Reducing design time
+- Feature creep
+- Silver bullet syndrome (dont' assume extreme ROI)
+- Switching tools mid-project
+
+## Architecture Design
+- List where architecture designs come from
+- Explain how architecture designs are derived
+
+### Architectural Design
+Concerns big picture choices:
+- Software architecture
+- Hardware architecture
+- Network architecture
+- Technologies & tools
+
+### Software System Functions
+- Data storage
+- Data access layer
+- Application layer
+- Presentation layer
+
+### Client-Server Architectures
+- Balances processing among devices
+- Can scale
+- Flexibility of hardware/software using common protocols
+
+### N-tiered Architecture
+- Three tiered including storage, application, and display
+- Thick, thin, ultra-thin client
+- Mobile application architecture
+- Network implications
+
+### Modern Architectures
+- Virtualization
+- Cloud computing
+- Micro-services
+- Serverless
+
+### Non-Functional Requirements
+1. Operational
+- Technical environment
+- Systems integration
+- Maintainability
+
+2. Performance
+- Speed
+- Capacity
+- Availability
+
+3. Security
+- Regulatory
+- Access control
+- System value
+- Encryption & authorization
+
+4. Cultural & Political
+- multi-lingual
+- Unstated norms (date format)
+- Customizability
+- Legal
+
+### Hardware & Software Specifications
+- Software: OS, Application (DB), Languages
+- Hardware: Components
+- Consider reviews, corporate standard, vendor information
+
+## Program Design
+- Translate logical DFDs to physical DFDs
+- Explain the parts/purpose of structure chart
+- Recognize program specifications
+
+### Design
+Program
+- Architectural design
+- Designing processes
+
+Data
+- ER diagrams
+- Schemas
+
+Interface
+
+Results in Program Design Document
+
+### Designing Processes
+- DFDs (logical -> physical)
+- Structure charts
+- Program specifications
+
+### Physical DFDs
+- DFDs map data flow from source through processes to sinks.
+- Leave much to be desired :(
+
+Making them more actionable:
+- Associate technologies
+- Identify human/machine boundaries
+- Add non-business processes
+- Update the DFD document
+- Update document(s) in CASE repository??
+
+### Associate Technology
+Identify tech used to carry/hold data:
+- Data stores (MySQL table, file, Redis)
+- Data flows (MySQL record, file, HTML content)
+- Processes (Python, HTML display output)
+
+### Human/Machine Boundary
+- Which processes are done by who? Look at cost/efficiency.
+- Draw boundary in DFD
+
+### Structure Charts
+- Hierarchical model of a program and it's modules
+- Methodology identifies -> communication in/out of module, conditional execution of modules, repeated execution of modules.
+
+### Program Specifications
+Environment
+- Module name
+- Purpose
+- Language
+
+Internal
+- Other program elements it interacts with
+- Input names, types
+- Output names, types
+- Pseudocode
+
+## Crap & Heuristics UI
+Contrast
+• Avoid having items on a page be similar
+• If they are not the same then make them very different
+
+Repetition
+• Repeat visual elements of the design throughout the piece
+• i.e. shape, texture, spatial relationships, line thickness, sizes, etc.
+
+Alignment
+• Nothing should be arbitrarily placed
+• Every element should have some visual connection with another element on the page
+
+Proximity
+• Items relating to each other should be grouped close together
+• Helps organize information and reduces clutter
+
+## Waterfall Paper Airplanes
+- List the major steps in the waterfall methodology
+
+### Steps
+• Requirements
+• Design
+• Implementation
+• Testing
+• Maintenance
+
+### Roles
+Analyst (business, systems)
+• product fulfills customer requirements
+• delivered on time and in budget
+
+Developer 
+• design and development of required components
+
+Tester 
+• determines fit for use
+• validates functionality
+
+## Introduction to Agile
+- List the features of an agile process
+- Generally describe the process
+- List the development characteristics best suited for agile development
+
+### Manifesto
+- Individuals and interactions
+- Working software
+- Customer collaboration
+- Responding to change
+
+### How Do We Get There
+- Continuous delivery
+- Ability to welcome requirement changes
+- Tight delivery cycle
+- Ability to incorporate business ppl into the development process
+- Give ppl responsibilities
+- Use working software the measure of success
+
+### What Do We Get
+- Committed/self-organizing teams
+- Sustainable development pace
+- Continuous attention to good design
+- Working software at short intervals
+
+### Assumptions
+- Changing requirements
+- Responsible/motivating developers
+- Customers who want engagement
+
+### When To Use
+- YES -> Unclear requirements
+- YES -> Short schedule
+- MAYBE -> Reliability
+- MAYBE -> Schedule visibility
+- NO -> Complex
+- NO -> Unfamiliar tech
+
+## Structuring An Agile Project
+- Describe the difference between agile and scrum
+
+Agile promotes a project management system that encourages frequent inspection and adaption.
+
+
+### Agile Life Cycle
+- Feasibility: (Business) Project Plan
+- Road map: Build product backlog, determine feature/story/task priority & time complexity, develop plan & cost estimates, establish team
+- Setup: Hardware, software, tools, processes, high-level architecture, and process models
+- Development: Requirements -> design -> implementation -> QA
+- Pre-release: Final acceptance testing, documentation, training, deployment
+- Production: Operate support systems, identify defects & enhancements
+
+### Scrum
+scrum < agile
+
+Scrum (like kanbam) is a method for development iterations.
+
+https://www.nutcache.com/blog/confusing-scrum-with-agile-heres-what-you-need-to-know/
+
+## Scrum Roles & Processes
+- Describe scrum
+- List the roles & responsibilities in a Scrum team
+- Describe the Scrum events
+- Describe the Scrum artifacts
+- Describe the importance of Scrum's identify and adapt pattern
+
+### Scrum
+- Framework for adaptively addressing complex problems
+- Allows for a range of processes and techniques
+- Applicable outside software development
+
+### Theory
+- Transparency: All aspects must be known, discussions should be open, common understanding of processes and terms (eg "done")
+- Inspection: Artifacts & processes visited frequently?
+- Adaption: If inspection turns up an unacceptable variance an adjustment needs to be made quickly, inspection/adaption cycle can happen within each event (planning, daily scrum, review, retrospective)
+
+### Values
+"When the values of commitment, courage, focus,
+openness and respect are embodied and lived by
+the Scrum Team, the Scrum pillars of transparency,
+inspection, and adaptation come to life and build
+trust for everyone. The Scrum Team members learn
+and explore those values as they work with the
+Scrum roles, events, and artifacts"
+
+### Team Roles
+There is a cooperative structure with no hierarchy. Direct and consistent interaction occurs.
+
+- Developers: 3 < # DEV < 12, do increments towards "done", self-organizing, no lead developer, no sub-teams, cross functional, takes cues from PO
+- Scrum Master: leads Scrum process, manages events, facilitates understanding of goals and management of backlog with PO, coaches development team, removes development obstacles, ambassador of Scrum process
+- PO: Represents the business, manages the product backlog (business priorities, next iteration items, visibility & clarity & transparency), maximizes the value of the product and team
+
+### Events
+All events allow for introspection & adaption.
+
+- Sprint process: time-boxed, can be cancelled but not altered
+- Sprint planning: short planning session for sprint process, based on backlog, sprint size based on developer experience, should work towards goals defined by the PO, method to work towards "done" defined by the developers
+- Daily scrum: daily fifteen-minute meeting for development team, used to plan for the next day of work, identifies progress/plan/impediments, Scrum master hosted
+- Sprint review: Half-day event for one month sprint, not a status meeting, PO declares items "done", developers discuss what went well/bad & how to improve, PO discusses project backlog, discusses next steps, review timeline/budget
+- Sprint retrospective: Introspective review of the team and how to improve, review ppl/relationships/processes/tools, major things that went well/bad, plan for improvement
+
+### Artifacts
+- Product backlog: Living artifacts, possible increments that could be worked on, could be feature/function/requirement/enchancement/fix, could be at various stages of completion (description, priority, time estimate, status, value)
+- Sprint backlog: Created by developers, subset of product backlog
+- Progress monitoring: backlogs show progress, burn down chart, transparent, highly visible
+
+### Product Backlog Entries
+- Managed by PO with input from others
+- Description is usually represented by a user story
+- Order conveys dependence
+- Priority -> dependency, value
+- Effort estimation (story points) using different scales
+- Intended to establish relative value
+- Entry status to describe what is "done" vs. "not done"
+
+## Introduction To Lean
+- List the features of the lean process
+- Generally describe the lean process
+
+### What is Lean
+- Set of procedures developed for your organization based on the results of experiments
+
+### Principles
+- Eliminate waste: Remove tasks switching, unnecessary things, waiting, defects, management activities. Software development -> building the wrong thing, task switching, waiting, mismanaging the backlog, reworking, unnecessarily complex
+- Amplify learning: iteration of work, communicate results, test as close to development as possible, feedback & reflection
+- Decide as later & as fast as possible: only do requirements/design when item needs to be built, deliver value as close to the definition as possible
+- Empower the team: give the development team authority, give them coaching to do so
+- Build integrity in: Build checks into the process, automate all tedious tasks
+- See the whole: Keep the big picture in mind
+
+### Process
+1. Identify value: who is the customer, who is the person who ultimately uses the product of service
+2. Map value stream: Identify value stream for each product and challenge all wasted steps
+3. Create flow: Make the product flow continuously, identify bottlenecks, consider batch vs. continuous flow
+4. Establish pull: Introduce pull between all steps where continuous flow is possible, consider pull vs. push processes
+5. Seek perfection: keep evaluating the value stream, look for tuning opportunities
+
+## Guest Agile
+Read: https://lms.unb.ca/d2l/le/content/144256/viewContent/1565795/View
+
+## Introduction to DevOps
+- Describe the problem that DevOps solves
+
+### Before
+The cycle `code -> test -> deploy -> monitor -> maintain` was fairly fixed. Not much iteration.
+
+### Now
+Agile introduces benefits. Continuous integration and continuous deployment allow for quicker releases. New code can be deployed immediately upon sign-off.
+
+
+### Challenges
+Agile allows us to continuously deliver value to users. Greater chance for things to go wrong. Need QA for deployment process.
+
+### Enter DevOps
+- Integrate developer + operations team
+- Aim to reduce friction and improve the deployment process.
+- Uses lean/agile principles.
+
+### Tools
+- Standardization: processes (how things travel through deployment, timing), tools/tech (hardware, OS, packages, versions, software configuration)
+- Automation: script everything, use schedulers & triggers
+- Feedback: monitor & improve :)
+
+### Impact of The Cloud
+- Made DevOps much easier
+- Virtualization
