@@ -4,8 +4,14 @@
 // 3. Which register is the above to items located?
 // 4. What does DAC0_C0 |= 0xC0 do?
 
-void uart_init() {
+// Steps:
+// 1. GPIO has 3 steps
+// 2. ADC has 4 steps
+// 3. UART has 7 steps
+// 4. DAC has 4 steps
+// 4. FTM has 4 steps
 
+void uart_init() {
 	SIM_SCGC6 |= SIM_SCGC6_UART_MASK;
 	SIM_SCGC5 |= SIM_SCGC6_PORTB_MASK | SIM_SCGC6_PORTE_MASK;
 
@@ -30,48 +36,38 @@ void uart_put_char(char c) {
 }
 
 char uart_get_char() {
-    	while (!(UART0_S1 & UART_S1_RDEF)) {}
+    	while (!(UART0_S1 & UART_S1_RDRF)) {}
     	return UART0_D;
 }
 
 void adc_init() {
     	// TURN ON the clocks
    	SIM_SCGC4 |= SIM_SCGC4_ADC0_MASK;
-	SIM_SCGC6 | SIM_SCGC6_PORTE_MASK;
-	
-	// connect the ports
-	PORTE_PCR26 |= PORT_PCR_MUX(1);
-
-	// configure the adc
-	// divide clock by 0, short time sample, diff == 0, use bus clock
-	ADC0_CFF1 |= 0b0101000;
+	SIM_SCGC6 |= SIM_SCGC6_PORTE_MASK;
 }
 
 double adc_read() {
-	ADC0_SC1A |= ADC_SC1A_ADCH(17); // we are using ADC0 17
-	while (!(ADC0_SC1A & ADC_SC1A_COCO));
-	RETURN ((double)ADC0_RA) / pow(2, 10) * 3.3;
+	ADC0_SC1A |= ADC_SC1A_ADCH(17); // we are using ADC0_SE17
+	while (!(ADC0_SC1A & ADC_SC1A_COCO_MASK));
+	RETURN ((double)ADC0_RA) / pow(2, 12) * 3.3;
 }
 
 void dac_init() {
 	// turn on the clock
     	SIM_SCGC7 |= SIM_SCGC7_DAC0;
-	SIM_SCGC5 |= SIM_SCGC5_PORTE;	
-
-	// select the port
-	PORTE_PCR25 |= PORT_PCR_MUX(1);
+	SIM_SCGC5 |= SIM_SCGC5_PORTE;
 
 	DAC0_C0 |= 0xC0;
 }
 
 void dac_write(double value) {
-	short val = value * pow(2, 12) / 3.3;
+	short val = value * 3.3 / pow(2, 12);
 	DAC0_DATOL |= val & 0xFF;
 	DAC0_DATOH |= (val >> 8) & 0xF;
 }
 
 void gpio_init() {
-    	SIM_SCGC2 |= SIM_SCGC2_PORTC_MASK;
+    	SIM_SCGC5 |= SIM_SCGC6_PORTC_MASK;
 	
 	PORTC_PCR10 = PORT_PCR_MUX(3);
 	PORTC_PCR11 = PORT_PCR_MUX(3);
@@ -91,11 +87,41 @@ void gpio_write(short value) {
 }
 
 void ftm_init() {
-    //
+    	// Init the clock
+	SIM_SCGC6 |= SIM_SCGC6_FTM0_MASK;
+
+	// Disable write protection
+	FTM0_MODE |= FTM_MODE_WPDIS_MASK;
+
+	// Turn on the system clock
+	FTM0_SC |= FTM_SC_CLKS(1);
+	
+	// set the mod
+	FTM0_MOD = 0xFFFF;
+
 }
 
 void ftm_delay(double seconds) {
-    //
+    	int n = seconds * FREQ;
+	int count = 0;
+
+	// Reset overflow
+	FTM0_SC &= ~FTM_SC_TOF_MASK;
+
+	// Writing any value resets the timer
+	// Reset count to 0
+	FTM0_CNT = 0;
+
+	while(count + FTM0_CNT < n) {
+		if (FTM0_SC & FTM_SC_TOF_MASK) {
+			count += MODO;
+			// Writing 0 to TOF to clear bit
+			FTM0_SC &= ~FTM_SC_TOF_MASK;
+		}
+	}
+
+	uart_print("Done delaying.\n\r");
+
 }
 
 
