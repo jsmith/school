@@ -21,6 +21,10 @@ public class ShakespeareServer {
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         DataOutputStream out = new DataOutputStream(connection.getOutputStream());
 
+        int lineSeparatorBytes = System.getProperty("line.separator").getBytes().length;
+
+        long start = System.currentTimeMillis();
+        int bytes = 0;
         String line;
         while ((line = in.readLine()) != null) {
           if (line.equals("Done")) {
@@ -30,11 +34,16 @@ public class ShakespeareServer {
             break;
           }
 
+          bytes += line.getBytes().length + lineSeparatorBytes;
           System.out.println(line);
         }
+        long end = System.currentTimeMillis();
 
         out.close();
         in.close();
+        connection.close();
+
+        System.out.println("File transfer contained " + bytes + " bytes and took " + (end - start) + "ms");
       }
     } catch(IOException e) {
       System.out.println("Unknown error: " + e);
