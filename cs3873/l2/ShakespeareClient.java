@@ -14,6 +14,11 @@ import java.io.DataOutputStream;
 public class ShakespeareClient {
   private static int PORT = 6789;
 
+  /**
+   * The goal of this method is to open up a TCP socket connection with a server and transfer a Shakespeare poem over 
+   * the connection. Once finished, it prints out the total # of bytes sent and the time spent to transfer the contents
+   * of the file.
+   */
   public static void main(String[] args) {
     String file = "./PoemShakespeare.txt";
     try (BufferedReader reader = new BufferedReader(new FileReader(file))) {

@@ -12,10 +12,13 @@ import java.io.IOException;
 public class ShakespeareServer {
   private static int PORT = 6789;
 
+  /**
+   * The goal of this method is to open up a server socket, accept incoming connections, read in a Shakespeare poem 
+   * line by line and then to restart when finished.
+   */
   public static void main(String[] args) throws Exception {
     System.out.println("Creating a server at localhost:" + ShakespeareServer.PORT);
     ServerSocket socket = new ServerSocket(ShakespeareServer.PORT);
-    
 
 		try {
       while (true) {
