@@ -1,3 +1,8 @@
+/**
+ * I warrant that this is my own work.
+ * Jacob Smith (3534295)
+ */ 
+
 import java.net.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
