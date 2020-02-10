@@ -22,12 +22,19 @@ public class ShakespeareClient {
       DataOutputStream out = new DataOutputStream(socket.getOutputStream());
       BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
+      int lineSeparatorBytes = System.getProperty("line.separator").getBytes().length;
+
       System.out.println("Starting to send poem from " + file);
+      int bytes = 0;
       String line;
+      long start = System.currentTimeMillis();
       while ((line = reader.readLine()) != null) {
         // note that '\n' is removed during parsing
         out.writeBytes(line + "\n");
+        bytes += line.getBytes().length + lineSeparatorBytes;
       }
+      long end = System.currentTimeMillis();
+
       out.writeBytes("Done\n");
 		  String bye = in.readLine();
 
@@ -35,11 +42,12 @@ public class ShakespeareClient {
       out.close();
       socket.close();
 
-      if (bye.equals("Bye")) {
-        System.out.println("The server said Bye :)");
-      } else {
-        System.out.println("The server is rude! It said: " + bye);
+      if (!bye.equals("Bye")) {
+        System.out.println("The didn't say Bye :( It said: " + bye);
+        return;
       }
+
+      System.out.println("The file transfer contained " + bytes + " bytes and took " + (end - start) + "ms");
     } catch (FileNotFoundException e) {
       System.out.println("Unable to read poem from " + file);
     } catch (IOException e) {
