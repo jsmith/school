@@ -144,7 +144,7 @@ public class CPRGui extends JFrame implements ActionListener {
 		
 		// Add Components to Panels
 		getContentPane().add("Center", main);
-		
+
 		main.add(top, "North");
 		main.add(center, "Center");
 		main.add(left,"West");
@@ -158,7 +158,7 @@ public class CPRGui extends JFrame implements ActionListener {
 		
 		buttons.add(browse);
 		buttons.add(update);
-		
+
 		leftScroll = new JScrollPane(propList);
 		left.add(runOption,"South");
 		left.add(authorList,"North");

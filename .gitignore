@@ -1,6 +1,7 @@
 # General
 *.class
 *.exe
+.DS_Store
 
 # Latex
 *.aux
