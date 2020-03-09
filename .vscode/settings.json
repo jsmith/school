@@ -12,5 +12,17 @@
         "gpio",
         "microcontrollers",
         "modifiability"
-    ]
+    ],
+    "files.associations": {
+      "lib.h": "c",
+      "assert.h": "c",
+      "__config": "c",
+      "cstring": "c",
+      "algorithm": "c",
+      "chrono": "c",
+      "limits": "c",
+      "ratio": "c",
+      "list.h": "c"
+    },
+    "C_Cpp.loggingLevel": "Debug"
 }

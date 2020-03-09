@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Compile",
+      "command": "/usr/bin/gcc",
+      "args": [
+        "${workspaceFolder}/cs3413/lib.c",
+        "${workspaceFolder}/cs3413/list.c",
+        "${workspaceFolder}/cs3413/a1.c",
+        "-o",
+        "${workspaceFolder}/cs3413/a1.out"
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      }
+    }
+  ],
+  "version": "2.0.0"
+}

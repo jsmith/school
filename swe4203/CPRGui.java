@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.table.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import org.eclipse.swt.browser.Browser;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -51,8 +50,7 @@ public class CPRGui extends JFrame implements ActionListener {
     private DefaultTableModel tableModel = new DefaultTableModel();
     private DefaultTableModel displayModel = new DefaultTableModel();
     private DefaultComboBoxModel authorModel = new DefaultComboBoxModel();
-	private Browser browser;
-	
+
 	private JTextField debug = new JTextField(60);
 	
 	// Public GUI Components
@@ -343,7 +341,7 @@ public class CPRGui extends JFrame implements ActionListener {
 	
 	// Run matrix comparison
 	public void getMatrix() {
-		ArrayList<Proposal> propMatrix = currCompareProposals;
+		ArrayList<Proposal> propMatrix = new ArrayList<Proposal>(currCompareProposals);
 		propMatrix.add(0,currProposal);
 		int rows = currCompareProposals.size()+1;
 		int cols = rows;

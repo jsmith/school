@@ -52,6 +52,8 @@ public class ShakespeareClient {
         return;
       }
 
+      // Beware, this bytes count may not be exact but it is certainly close
+      // Is it not the easiest to get an exact byte count that was sent using a DataOutputStream
       System.out.println("The file transfer contained " + bytes + " bytes and took " + (end - start) + "ms");
     } catch (FileNotFoundException e) {
       System.out.println("Unable to read poem from " + file);
