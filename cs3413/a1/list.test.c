@@ -1,8 +1,6 @@
-#include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 #include "list.h"
-#include <assert.h>
 
 void testIntArray() {
   IntArray *a = initIntArray(10);

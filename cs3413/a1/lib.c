@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <string.h>
 #include <unistd.h>
-#include <assert.h>
 #include <ctype.h>
 #include <errno.h>
 #include <limits.h>
@@ -21,17 +20,17 @@ bool file_exist(char *fileName) {
 ReadResult *readFile(char* fileName) {
   ReadResult *s = malloc(sizeof *s);
   if (!file_exist(fileName)) {
-    s->result = "not-found";
+    s->status = READ_RESULT_NOT_FOUND;
     return s;
   }
 
   FILE* file = fopen(fileName, "r");
   if (!file) {
-    s->result = "error";
+    s->status = READ_RESULT_ERROR;
     return s;
   }
 
-  s->result = "success";
+  s->status = READ_RESULT_SUCCESS;
 
   fseek(file, 0, SEEK_END);
   long length = ftell(file);
@@ -75,15 +74,7 @@ CharArray* readFromStdin() {
   return a;
 }
 
-/* 
- * Convert string s to int out.
- *
- * @param out The converted int. Cannot be NULL.
- * @param s Input string to be converted.
- * @param base Base to interpret string in. Same range as strtol (2 to 36).
- * @return Indicates if the operation succeeded, or why it failed.
- */
-StrintToIntError str2int(int *out, char *s, int base) {
+StringToIntError str2int(int *out, char *s, int base) {
   char *end;
   if (s[0] == '\0' || isspace(s[0])) {
     return STR2INT_INCONVERTIBLE;

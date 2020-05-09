@@ -12,5 +12,17 @@ add_executable(a1
     list.c
     lib.h
     list.h
+
 )
 
+add_executable(list.test
+    list.c
+    list.h
+    list.test.c
+)
+
+add_executable(lib.test
+    lib.c
+    lib.h
+    lib.test.c
+)

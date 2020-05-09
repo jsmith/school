@@ -1,6 +1,11 @@
 #ifndef LIST_H_
 #define LIST_H_
 
+/**
+ * Nice utility array types for strings, chars and ints. These all use techniques
+ * to dynamically resize while maintaining a O(1) append time.
+ */
+
 typedef struct {
   int* array;
   int used;
