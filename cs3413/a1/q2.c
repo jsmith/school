@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
       running = deque(running);
 
       // Now we can enqueue the finished processor in the idle queue
-      idleQueue = appendIdle(idleQueue, nowIdle);
+      idleQueue = appendQueue(idleQueue, nowIdle);
       numCPUsFinished++;
     }
 
