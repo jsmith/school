@@ -41,7 +41,7 @@ Job* createJob(char* name, char process, int arrival, int duration) {
   return  job;
 }
 
-int processStdin(JobQueue* jobs) {
+void processStdin(JobQueue* jobs) {
     freopen("../input.txt", "r", stdin); // Only use for testing
 
   char inputLine[100];
@@ -51,7 +51,7 @@ int processStdin(JobQueue* jobs) {
     StringArray* words = split(inputLine, '\t');
     if (words->used != 4) {
       printf("Parsed the incorrect # of lines: %d", words->used);
-      return 1;
+      exit(1);
     }
 
     char* name = words->array[0];
@@ -63,8 +63,6 @@ int processStdin(JobQueue* jobs) {
     append(jobs, job);
     freeStringArray(words);
   }
-
-  return 0;
 }
 
 User* createUser(char* name) {
@@ -110,4 +108,92 @@ void printSummary(UserQueue* users) {
     printf("%s\t%d\n", user->name, user->endTime);
     user = user->next;
   }
+}
+
+int printIdleProcessors(Processor* queue, int time, int n) {
+  if (n <= 0) {
+    return n;
+  }
+
+  if (queue == NULL) {
+    return n;
+  }
+
+  n = printIdleProcessors(queue->next, time, n);
+  if (n <= 0) {
+    return n;
+  }
+
+  printf("%d\tCPU %d IDLE\n", time, queue->id);
+  return n - 1;
+}
+
+Processor* createProcessor(int id) {
+  Processor* processor = (Processor*)malloc(sizeof(Processor));
+  processor->next = NULL;
+  processor->endTime = -1;
+  processor->thread = NULL;
+  processor->id = id;
+  return processor;
+}
+
+void freeProcessors(Processor* processor) {
+  if (processor == NULL) {
+    return;
+  }
+
+  freeProcessors(processor->next);
+  free(processor);
+}
+
+Processor* insert(Processor* queue, Processor* processor) {
+  if (queue == NULL) {
+    return processor;
+  }
+
+  Processor* previous = NULL;
+  Processor* current = queue;
+  while (current != NULL && current->endTime < processor->endTime) {
+    previous = current;
+    current = current->next;
+  }
+
+  if (current == NULL) {
+    // if it goes at the end
+    previous->next = processor;
+  } else if (previous == NULL) {
+    // if it goes at the start
+    processor->next = current;
+    queue = processor;
+  } else {
+    // else if it goes in the middle
+    previous->next = processor;
+    processor->next = current;
+  }
+
+  return queue;
+}
+
+/**
+ * Append the processor to the end of the queue
+ */
+Processor* appendQueue(Processor* queue, Processor* processor) {
+  if (queue == NULL) {
+    return processor;
+  }
+
+  while (queue->next != NULL) {
+    queue = queue->next;
+  }
+
+  queue->next = processor;
+  return queue;
+}
+
+Processor* deque(Processor* queue) {
+  // Dequeue from the processing queue
+  Processor* front = queue;
+  queue = queue->next;
+  front->next = NULL; // important since stack/queue are sharing "next" pointers
+  return queue;
 }

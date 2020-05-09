@@ -26,6 +26,16 @@ add_executable(q2
         common.h
 )
 
+add_executable(q3
+        q3.c
+        lib.c
+        list.c
+        lib.h
+        list.h
+        common.c
+        common.h
+)
+
 add_executable(list.test
         list.c
         list.h

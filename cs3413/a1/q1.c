@@ -7,12 +7,7 @@
 
 int main() {
   JobQueue jobs = { .first = NULL };
-//  freopen("../input.txt", "r", stdin); // Only use for testing
-
-  int result = processStdin(&jobs);
-  if (result != 0) {
-    return result;
-  }
+  processStdin(&jobs);
 
   printf("Time\tJob\n");
 
