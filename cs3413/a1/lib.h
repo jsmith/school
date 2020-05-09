@@ -3,13 +3,6 @@
 #include "list.h"
 
 typedef enum {
-  STR2INT_SUCCESS,
-  STR2INT_OVERFLOW,
-  STR2INT_UNDERFLOW,
-  STR2INT_INCONVERTIBLE
-} StringToIntError;
-
-typedef enum {
   READ_RESULT_SUCCESS,
   READ_RESULT_ERROR,
   READ_RESULT_NOT_FOUND,
@@ -27,14 +20,12 @@ StringArray* split(char* target, char c);
 CharArray* readFromStdin();
 
 /*
- * Convert string s to int out.
+ * Convert string s to int out. Exits if it fails to convert.
  *
- * @param out The converted int. Cannot be NULL.
  * @param s Input string to be converted.
- * @param base Base to interpret string in. Same range as strtol (2 to 36).
- * @return Indicates if the operation succeeded, or why it failed.
+ * @return The int.
  */
-StringToIntError str2int(int *out, char *s, int base);
+int str2int(char *s);
 
 int min(int a, int b);
 int max(int a, int b);

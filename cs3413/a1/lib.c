@@ -74,25 +74,28 @@ CharArray* readFromStdin() {
   return a;
 }
 
-StringToIntError str2int(int *out, char *s, int base) {
+int str2int(char *s) {
   char *end;
   if (s[0] == '\0' || isspace(s[0])) {
-    return STR2INT_INCONVERTIBLE;
+    printf("Unable to convert \"%s\" to a string", s);
+    exit(1);
   }
 
   errno = 0;
-  long l = strtol(s, &end, base);
+  long l = strtol(s, &end, 10);
   /* Both checks are needed because INT_MAX == LONG_MAX is possible. */
   if (l > INT_MAX || (errno == ERANGE && l == LONG_MAX)) {
-    return STR2INT_OVERFLOW;
+    printf("Overflow detected \"%s\"", s);
+    exit(1);
   } else if (l < INT_MIN || (errno == ERANGE && l == LONG_MIN)) {
-    return STR2INT_UNDERFLOW;
+    printf("Underflow detected \"%s\"", s);
+    exit(1);
   } else if (*end != '\0') {
-    return STR2INT_INCONVERTIBLE;
+    printf("Unable to convert \"%s\" to a string", s);
+    exit(1);
   }
 
-  *out = l;
-  return STR2INT_SUCCESS;
+  return (int)l;
 }
 
 int min(int a, int b) {
