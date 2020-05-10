@@ -42,7 +42,7 @@ Job* createJob(char* name, char process, int arrival, int duration) {
 }
 
 void processStdin(JobQueue* jobs) {
-    freopen("../input.txt", "r", stdin); // Only use for testing
+  // freopen("../input_complex.txt", "r", stdin); // Only use for testing
 
   char inputLine[100];
   fgets(inputLine, sizeof(inputLine), stdin); // eat up the first line of the input
@@ -182,11 +182,12 @@ Processor* appendQueue(Processor* queue, Processor* processor) {
     return processor;
   }
 
-  while (queue->next != NULL) {
-    queue = queue->next;
+  Processor* current = queue;
+  while (current->next != NULL) {
+    current = current->next;
   }
 
-  queue->next = processor;
+  current->next = processor;
   return queue;
 }
 

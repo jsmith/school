@@ -33,6 +33,9 @@ void* run(void* arg) {
     pthread_mutex_unlock(&jobsMutex);
 
     if (job->arrival > time) {
+      if (time != 0) {
+        printf("%d\tCPU %d IDLE\n", time, id);
+      }
       // printf("%d sleeping for %d\n", id, job->arrival - time);
       sleep(job->arrival - time);
     }
@@ -46,15 +49,15 @@ void* run(void* arg) {
     user->endTime = max(endTime, user->endTime); // the max is very important
     pthread_mutex_unlock(&userMutex);
 
-    // Sleep first
-    // printf("Thread %d sleeping for %d @ %d to process %c\n", id, job->duration, time, job->process);
-    sleep(job->duration);
-
     // Now print out the thread information
     printf("%d\tCPU %d %c\n", time, id, job->process);
 
+    // And then sleep
+    // printf("Thread %d sleeping for %d @ %d to process %c\n", id, job->duration, time, job->process);
+    sleep(job->duration);
     time = endTime;
 
+    // make sure to free the job since we are done with it
     free(job);
   }
 

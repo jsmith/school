@@ -15,13 +15,16 @@ int main() {
   UserQueue users = { .first = NULL };
   Job* current = jobs.first;
   while (current != NULL) {
-    if (time == 0) {
-      printf("%d\t%c\n", current->arrival, current->process);
-      time = current->arrival + current->duration;
-    } else {
-      printf("%d\t%c\n", time, current->process);
-      time = time + current->duration;
+    if (time < current->arrival) {
+      if (time != 0) {
+        printf("%d\tIDLE\n", time);
+      }
+
+      time = current->arrival;
     }
+
+    printf("%d\t%c\n", time, current->process);
+    time = time + current->duration;
 
     User* user = findUserOrAppend(&users, current->name);
     user->endTime = time;
