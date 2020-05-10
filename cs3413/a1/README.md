@@ -6,6 +6,9 @@
 First, build the appropriate question:
 ```shell
 # Use one of the following commands to compile the code.
+# Note that I did this on OSX which may be different than your environment
+# In particular, I didn't add the `-pthread` flag which you may need to add to compile q3
+# From my testing, my programs behave the same whether they are using linux or osx pthreads
 make q1
 make q2
 make q3
@@ -13,7 +16,7 @@ make q3
 
 And then run:
 ```
-./a.out
+./a.out < input.txt
 ```
 
 ## Assumptions
