@@ -15,8 +15,12 @@ make q3
 ```
 
 And then run:
-```
+```shell
+# for q1
 ./a.out < input.txt
+
+# or for q2 and q3
+./a.out 2 < input.txt
 ```
 
 ## Assumptions
@@ -29,4 +33,4 @@ And then run:
 ## Algorithm Explanations
 1. Simply iterate through the list of jobs. Keep a `time` variable but always set the `time` to the maximum of `time` and `job->arrival`. Use a linked list of users to keep track of the end time of their last job.
 2. Keep two queues of processors. One is the idle queue and the other is the running queue. The running queue is a priority queue ordered by end time. Also keep a `time` variable but this time increment it by one each loop to simulate a CPU cycle. During each cycle, check if any processors have completed their jobs and add all idle processors back to the idle queue. Finally, check for any CPUs that were previously running but are now idle and print that they are idling. Next, during the same cycle, check for jobs that have arrived. Use any idle processors to complete those jobs. Again, use a linked list of users to keep track of the end time of their last job.
-3. Create `n` threads which first grab a job from the queue, sleep if the job hasn't arrived yet, print out the information about the job and then sleep for the duration of the job. Again, use a linked list of users to keep track of the end time of their last job.
+3. Create `n` threads which first grab a job from the queue, sleep if the job hasn't arrived yet, print out the information about the job and then sleep for the duration of the job. Again, use a linked list of users to keep track of the end time of their last job. Note that the order of processors may differ (this is just the nature of `pthread_create` I think)!
