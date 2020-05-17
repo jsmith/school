@@ -1,6 +1,8 @@
-// Jacob Smith
+//
+// Created by Jacob Smith on 2020-05-16.
 // CS 3413
 // Assignment 2
+//
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -64,18 +66,14 @@ void free_ciphers(Cipher* cipher) {
 }
 
 void* perform_cipher(void* arg) {
-  // cipher_num will start at 0
   Cipher* cipher = (Cipher*)arg;
   // we multiply 2 since each pipe has two file descriptors
   int* input = FD + cipher->cipher_id * 2;
-  int* output = input + 2;
+  int* output = input + 2; // add two to find the output file descriptor
 
   char line[MAX_LINE_LENGTH];
   while (1) {
-    int r = read_pipe(input, line, MAX_LINE_LENGTH);
-    if (r == 0) {
-      continue;
-    }
+    read_pipe(input, line, MAX_LINE_LENGTH);
 
     for (int j = 0; j < SIZE; j++) {
       line[j] = mod(line[j] + cipher->value, NUM_CHARS); // NOLINT(bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions)
@@ -83,6 +81,7 @@ void* perform_cipher(void* arg) {
 
     write_pipe(output, line, SIZE + 1);
 
+    // Terminate if an empty string is encountered
     if (SIZE == 0) {
       break;
     }
@@ -127,7 +126,7 @@ int main(int argc, char** argv) {
     current = cipher;
   }
 
-  freopen("../q1_input_simple_ish.txt", "r", stdin); // Only use for testing
+  // freopen("../q1_input_simple_ish.txt", "r", stdin); // Only use for testing
 
   char line[MAX_LINE_LENGTH];
   int* output = FD;
@@ -135,6 +134,9 @@ int main(int argc, char** argv) {
   while (1) {
     char* result = fgets(line, sizeof(line), stdin);
     if (result == NULL) {
+      // This may seem a bit weird but an empty string is how I indicate to my threads to terminate
+      // Thus, I create an empty string, push it through the ciphers which each push it to the next cipher
+      // and then each cipher thread terminates
       line[0] = '\0';
     }
 
@@ -153,6 +155,7 @@ int main(int argc, char** argv) {
       line[j] = line[j] + CHAR_MIN; // NOLINT(bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions)
     }
 
+    // If the line is an empty string... terminate!
     if (SIZE == 0) {
       break;
     }

@@ -1,3 +1,0 @@
-Jacob is the best C programmer!
-This is another line of text!
-Is this the third line of text?

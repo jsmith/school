@@ -3,6 +3,8 @@
 #pragma ide diagnostic ignored "cert-msc30-c"
 //
 // Created by Jacob Smith on 2020-05-16.
+// CS 3413
+// Assignment 2
 //
 #include <stdio.h>
 #include <stdlib.h>
@@ -175,7 +177,7 @@ int main(int argc, char** argv) {
     free(seller);
   }
 
-  if (max == -1) {
+  if (max <= 0) {
     printf("No tickets sold! Check your inputs :)\n");
   } else {
     printf("Top seller is %d having sold %d tickets in total.\n", max_seller_id, max);
