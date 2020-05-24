@@ -1,0 +1,5 @@
+Car	Direction	Arrival	Duration
+Jim	N	2	5
+Mary	N	6	5
+Sue	S	8	5
+Mark	N	10	5

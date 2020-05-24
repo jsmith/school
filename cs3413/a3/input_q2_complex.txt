@@ -1,0 +1,7 @@
+Car	Direction	Arrival	Duration
+Jim	N	0	5
+Mary	S	6	2
+Sara	N	6	2
+Sue	S	11	2
+Sam	S	11	2
+Lola	N	20	2

@@ -1,0 +1,5 @@
+User	Process	Arrival	Duration	Priority
+Jim	A	2	10	4
+Mary	B	2	16	7
+Jimbo	C	18	16	10
+JoJo	D	46	2	1
