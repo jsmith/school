@@ -8,6 +8,8 @@
 #include "list.h"
 #include "cv.h"
 
+static bool debug = false;
+
 typedef struct Car {
   char name[NAME_BUFFER_SIZE];
   char direction;
@@ -40,7 +42,7 @@ void append(CarQueue* queue, Car* car) {
  * @param cars The cars.
  */
 void processStdinQ2(CarQueue* cars) {
-  freopen("../input_q2_complex.txt", "r", stdin); // Only use for testing
+  if (debug) freopen("../input_q2_complex.txt", "r", stdin); // Only use for testing
 
   char inputLine[100];
   fgets(inputLine, sizeof(inputLine), stdin); // eat up the first line of the input
@@ -66,7 +68,6 @@ void processStdinQ2(CarQueue* cars) {
   }
 }
 
-static bool debug = false;
 static CV* waiting;
 static CV* driving;
 // How many drivers have finished
