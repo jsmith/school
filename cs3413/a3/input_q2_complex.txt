@@ -4,4 +4,6 @@ Mary	S	6	2
 Sara	N	6	2
 Sue	S	11	2
 Sam	S	11	2
-Lola	N	20	2
+Lola	N	20	4
+Lulu	N	21	2
+Laxx	S	24	2

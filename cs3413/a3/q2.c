@@ -8,7 +8,7 @@
 #include "list.h"
 #include "cv.h"
 
-static bool debug = false;
+static bool debug = true;
 
 typedef struct Car {
   char name[NAME_BUFFER_SIZE];
