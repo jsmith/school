@@ -164,7 +164,7 @@ Fragments refer to the unallocated left over memory. So, it is the smallest and 
 */
 
 int main(int argc, char** argv) {
-  if (DEBUG) freopen("../input_q1_simple.txt", "r", stdin); // Only use for testing
+  // if (DEBUG) freopen("../input_q1_simple.txt", "r", stdin); // Only use for testing
 
   int f_flag = 0;
   int b_flag = 0;

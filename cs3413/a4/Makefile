@@ -5,4 +5,4 @@ q1:
 	gcc -std=c99 list.h list.c common.h common.c q1.c
 
 q2:
-	gcc -std=c99 list.h list.c common.h common.c cv.c cv.h q2.c
+	gcc -std=c99 list.h list.c common.h common.c q2.c
