@@ -183,7 +183,7 @@ int main(int argc, char** argv) {
   }
 
   printf("\nSummary\n");
-  printf("Page Faults: %d", page_faults);
+  printf("Page Faults: %d\n", page_faults);
 
   free_frames(stack.top);
 }

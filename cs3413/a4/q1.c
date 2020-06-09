@@ -5,7 +5,7 @@
 #include "common.h"
 #include "list.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 typedef struct Allocation {
   int process;
