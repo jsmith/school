@@ -39,6 +39,19 @@ int get_end(Allocation* allocation, int total_size) {
   else return allocation->start;
 }
 
+void print_allocations(Allocation* allocation) {
+  printf("[");
+  while (allocation != NULL) {
+    printf("%d -> %d", allocation->start, allocation->end);
+    if (allocation->next != NULL) {
+      printf(", ");
+    }
+
+    allocation = allocation->next;
+  }
+  printf("]\n");
+}
+
 /**
  *
  * @param memory The memory object.
@@ -48,17 +61,18 @@ int get_end(Allocation* allocation, int total_size) {
  * @return 1 if we failed to satisfy the request else 0.
  */
 int satisfy_request(Memory* memory, Algorithm algorithm, int requested_size, int process) {
+  // print_allocations(memory->allocations);
   Allocation* saved_previous = NULL;
   int saved_block_size = -1;
   Allocation* previous = NULL;
   Allocation* current = memory->allocations;
   while (1) {
     int end = get_end(current, memory->size);
-
     int start = get_start(previous);
     int fragment_size = end - start;
     if (requested_size <= fragment_size) {
-      if (saved_previous == NULL) {
+      // If -1 that means that we haven't saved anything yet
+      if (saved_block_size == -1) {
         if (DEBUG) printf("Found an initial memory section: %d -> %d\n", start, end);
         saved_previous = previous;
         saved_block_size = fragment_size;
@@ -102,17 +116,19 @@ int satisfy_request(Memory* memory, Algorithm algorithm, int requested_size, int
   }
 
   Allocation* allocation = malloc(sizeof(Allocation));
-  allocation->next = current;
+  allocation->next = NULL;
   allocation->process = process;
 
-  allocation->start = get_start(previous);
+  allocation->start = get_start(saved_previous);
   allocation->end = allocation->start + requested_size;
   if (DEBUG) printf("Allocated memory block %d -> %d\n", allocation->start, allocation->end);
 
-  if (previous == NULL) {
+  if (saved_previous == NULL) {
+    allocation->next = memory->allocations;
     memory->allocations = allocation;
   } else {
-    previous->next = allocation;
+    allocation->next = saved_previous->next;
+    saved_previous->next = allocation;
   }
 
   return 0;
@@ -135,6 +151,7 @@ Allocation* terminate_process(Memory* memory, int process) {
       continue;
     }
 
+    if (DEBUG) printf("Freed memory block %d -> %d\n", current->start, current->end);
     if (previous == NULL) {
       memory->allocations = current->next;
     } else {
@@ -164,7 +181,7 @@ Fragments refer to the unallocated left over memory. So, it is the smallest and 
 */
 
 int main(int argc, char** argv) {
-  // if (DEBUG) freopen("../input_q1_simple.txt", "r", stdin); // Only use for testing
+  // if (DEBUG) freopen("../input_q1_best_worst.txt", "r", stdin); // Only use for testing
 
   int f_flag = 0;
   int b_flag = 0;

@@ -5,27 +5,7 @@
 
 #define PAGE_SIZE 4096 // 2^12
 #define PAGE_TABLE_SIZE 1048576 // 2^20
-#define DEBUG 1
-
-/*
-1) For a4 q2, are the logical addresses given in binary or in decimal (and do we print the physical
-addresses in binary or decimal)?
-
-The address is given as an unsigned int (decimal) and you should print your output as an unsigned
-int (decimal). I have posted a sample file to the assignment that contains addresses from 0 - 2^32.
-I would *remind* students that computers represent data as binary internally regardless of how
-*you* view it. So, if you read an int, then internally this is stored as a binary number. So, you
-can immediately perform the actions on that number you want as if it were a binary number (using
-bit shifting or masking) or a decimal number (using multiplication, division or modulo). When you
-print the number then again it is stored internally as binary but you can print it as a decimal.
-This means you do not need to worry about converting from decimal to binary and back :)
-*/
-
-/*
-For this question you are to use the Least Recently Used (LRU) page replacement
-policy. Since you do NOT have to worry about writing to the page you DO NOT
-need to save the page when you replace it!
- */
+#define DEBUG 0
 
 typedef struct Page {
   struct Frame* frame;
@@ -83,17 +63,24 @@ void extract(FrameStack* stack, Frame* frame) {
     frame->next->previous = frame->previous;
   }
 
+  frame->next = NULL;
+  frame->previous = NULL;
+
   stack->size--;
 }
 
-void print_stack(FrameStack* stack) {
+void print_stack(Frame* current) {
   printf("[");
-  Frame* current = stack->top;
   while (current != NULL) {
     printf("%d", current->frame_number);
 
     if (current->next) {
       printf(", ");
+    }
+
+    if (current == current->next) {
+      printf("Found simple cycle!! NG!!");
+      exit(1);
     }
 
     current = current->next;
@@ -140,23 +127,23 @@ unsigned int get_physical_address(Page* page_table, FrameStack* stack, unsigned 
 
   push(stack, frame); // Put the frame it back on top as it's the MRUs
   if (DEBUG) printf("Stack -> ");
-  if (DEBUG) print_stack(stack);
+  if (DEBUG) print_stack(stack->top);
   return (page_table[page_number].frame->frame_number * PAGE_SIZE) + page_offset;
 }
 
 void free_frames(Frame* frame) {
-  if (frame == NULL) {
-    return;
+  Frame* next = frame;
+  while (next != NULL) {
+    Frame* current = next;
+    next = next->next;
+    current->next = NULL;
+    current->previous = NULL;
+    free(current);
   }
-
-  free_frames(frame->next);
-  frame->next = NULL;
-  frame->previous = NULL;
-  free(frame);
 }
 
 int main(int argc, char** argv) {
-  // if (DEBUG) freopen("../input_q2_simple.txt", "r", stdin); // Only use for testing
+  // freopen("../sample_logical_input.txt", "r", stdin); // Only use for testing
 
   if (argc != 2) {
     printf("Expected a single argument to specify the # of frames!\n");

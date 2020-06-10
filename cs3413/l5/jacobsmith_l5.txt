@@ -1,0 +1,99 @@
+Jacob Smith
+CS3413
+L5
+
+1) Examine the ls command via man ls to figure out all the available options.
+Done!
+
+2) Traversing a directory structure
+Create a subdirectory lab5. Use the ls command to recursively list the contents of
+your current directory and parent directory (including all the subdirectories).
+$ ls -R ..
+
+I'm not sure if this is the exact command you wanted but this recursively gets the contents of the
+directories starting from the parent directory (this includes the current directory as well).
+
+3) Show the i-node number
+i) Show the i-node numbers for files in your directory.
+$ ls -i
+6450593829 l5.txt
+
+ii) Compare your results for this question with those if you ran the same
+command on another lab or assignment directory:
+Did you get the same i-node numbers for both directories, and why?
+No, I got different numbers for the other files. This makes sense as i-nodes are unique to a file 
+(within a file system at least).
+
+iii) Show your directory lab5’s metadata using the stat command. Explain
+the difference between this output and the output you obtained in 3.i.
+  File: ‘lab5’
+  Size: 27              Blocks: 0          IO Block: 32768  directory
+Device: 28h/40d Inode: 6450593828  Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 9836/jsmith21)   Gid: ( 1006/fcsugrad)
+Access: 2020-06-10 17:05:05.685763115 -0300
+Modify: 2020-06-10 17:05:02.573761267 -0300
+Change: 2020-06-10 17:05:02.573761267 -0300
+ Birth: -
+[jsmith21@gaea school]$ ll
+total 0
+
+The output of 3.i. just contained the i-node information for files in the lab5 directory whereas 
+this command displays the status of a folder. They are very different!
+
+2) Copy a file
+i) Create a copy of some file in your directory. Show the i-node numbers for the
+original and copied files. Compare and comment.
+$ cp l5.txt l5.copy.txt
+$ ls -i
+6450593830 l5.copy.txt  6450593829 l5.txt
+
+They are off by one! Linux must use an counter when choosing the next i-node value to use.
+
+4) Link files
+i) Examine the command ln. What is the difference between the cp and ln
+commands? You can use “man cp” and “man ln” to help you.
+cp actually copies the underlying file whereas ln just points to the same file/folder.
+
+ii) Create a file f2.txt. Create a link from this file to f2link.txt. Examine the i-nodes for both files, comment. What kind of link have you created?
+$ touch f2.txt
+$ ln f2.txt f2link.txt
+$ ls -i
+6450593833 f2link.txt  6450593833 f2.txt
+
+The i-nodes are the same!!
+
+iii) Modify content of f2.txt. Comment on the changes of f2link.txt.
+$ echo test > f2.txt
+$ cat f2link.txt
+test
+
+The contents are the same!
+
+iv) Delete f2.txt. What happened to f2link.txt?
+$ rm f2.txt
+$ cat f2link.txt
+test
+
+Nothing happened.
+
+v) Create a link to f2link.txt using the –s option. Examine the i-nodes for both
+files and comment. What kind of link have you created?
+$ ln -s f2.txt f2link.txt
+$ ls -i
+6450593834 f2link.txt  6450593833 f2.txt
+
+They have different i-nodes. This is a symbolic (aka soft) link!
+
+vi) Modify the content of f2.txt. Comment on the changes of f2link.txt.
+$ echo test > f2.txt
+$ cat f2link.txt
+test
+
+They also have the same contents.
+
+vii) Delete f2.txt. What happened to f2link.txt?
+$ rm f2.txt
+$ cat f2link.txt
+cat: f2link.txt: No such file or directory
+
+It seems like the link still exists but you cannot access the contents of the file.
