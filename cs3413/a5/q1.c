@@ -3,7 +3,7 @@
 #include <string.h>
 #define SECTORS 100000
 
-int DEBUG = 1;
+int DEBUG = 0;
 
 // TODO requests arrive in-order, correct?
 // TODO generate input file using Python
@@ -133,7 +133,7 @@ void insert(IOQueue* queue, Request* request, char algorithm, unsigned int head)
 }
 
 int main(int argc, char** argv) {
-  freopen("../input_q1_simple.txt", "r", stdin); // Only use for testing
+  // freopen("../input_q1_simple.txt", "r", stdin); // Only use for testing
 
   if (argc != 4) {
     printf("Expected a 3 arguments! Please try again!\n");
@@ -219,6 +219,7 @@ int main(int argc, char** argv) {
     if (DEBUG) printf("Processing request #%d from #%d at %lus (dur -> %d, dis -> %d, rev -> %d)\n", request->sector, saved_head, time, access_time, distance, reverse_direction);
 
     direction = new_direction;
+    // printf("Moving -> %d, Time -> %d\n", distance, access_time);
     total_movement += distance;
     time += access_time;
   }

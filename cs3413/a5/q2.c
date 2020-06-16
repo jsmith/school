@@ -30,7 +30,7 @@ typedef struct Block {
   int n;
 } Block;
 
-int DEBUG = 1;
+int DEBUG = 0;
 
 int annotate(Block** blocks, Block* block, int file, int n) {
   block->n = n;
@@ -70,7 +70,7 @@ void determine_moved(Block** blocks, Block* block, int current_block, int* total
 }
 
 int main() {
-  freopen("../disk_layout_simple.txt", "r", stdin); // Only use for testing
+  // freopen("../disk_layout2.txt", "r", stdin); // Only use for testing
 
   // Steps
   // 1. Read blocks into array
@@ -87,12 +87,22 @@ int main() {
 
   // Read the blocks!
   char* ptr = NULL;
+  char* ptr1 = NULL;
   char *line = NULL;
   size_t line_size;
   int total = 0;
   while (getline(&line, &line_size, stdin) != -1) {
     int block = (int)strtol(line, &ptr, 10);
-    int next = (int)strtol(ptr, &ptr, 10);
+    int next = (int)strtol(ptr, &ptr1, 10);
+    if (block < -0|| block > SECTORS) {
+      printf("Found out-of-bounds block: %d", block);
+      return 1;
+    }
+
+    if (next < -2 || next > SECTORS) {
+      printf("Found out-of-bounds next block: %d", next);
+      return 1;
+    }
 
     blocks[total] = malloc(sizeof(Block));
     blocks[total]->next = next;
@@ -139,7 +149,7 @@ int main() {
   }
 
   printf("\nSummary\n");
-  printf("Total blocks moved -> %d", total_moved);
+  printf("Total blocks moved -> %d\n", total_moved);
 
   for (int i = 0; i < total; i++) {
     free(blocks[i]);
