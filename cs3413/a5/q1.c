@@ -5,9 +5,6 @@
 
 int DEBUG = 0;
 
-// TODO requests arrive in-order, correct?
-// TODO generate input file using Python
-
 typedef struct Request {
   unsigned int time;
   unsigned int sector;
@@ -202,13 +199,25 @@ int main(int argc, char** argv) {
     Request* request = process(&waiting, algorithm, head);
     unsigned int distance;
     char new_direction;
-    if (request->sector > head) {
-      distance = request->sector - head;
-      new_direction = 'a';
+    if (algorithm == 'C') {
+      if (request->sector > head) {
+        distance = request->sector - head;
+      } else {
+        distance = request->sector + (SECTORS - head);
+      }
+
+      // the direction is always the same for the CSCAN algorithm
+      new_direction = direction;
     } else {
-      distance = head - request->sector;
-      new_direction = 'd';
+      if (request->sector > head) {
+        distance = request->sector - head;
+        new_direction = 'a';
+      } else {
+        distance = head - request->sector;
+        new_direction = 'd';
+      }
     }
+    
 
     unsigned int saved_head = head;
     head = request->sector;

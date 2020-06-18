@@ -19,7 +19,7 @@ typedef struct Block {
   int size;
 
   /**
-   * Which file this block belongs to!
+   * Which file this block belongs to! This is used to determine if a block has already been annotated.
    */
   int file;
 
@@ -59,8 +59,10 @@ void determine_moved(Block** blocks, Block* block, int current_block, int* total
   }
 
   int next_block = block->next == -1 ? -1 : current_block + 1;
-  if (DEBUG) printf("%d %d %s\n", current_block, next_block, moved ? "[m]" : "");
-  else printf("%d %d\n", current_block, next_block);
+  if (DEBUG) {
+    if (moved) printf("%d %d [%d -> %d]\n", current_block, next_block, block->block, current_block);
+    else printf("%d %d\n", current_block, next_block);
+  } else printf("%d %d\n", current_block, next_block);
 
   if (block->next == -1) {
     return;
@@ -70,7 +72,7 @@ void determine_moved(Block** blocks, Block* block, int current_block, int* total
 }
 
 int main() {
-  // freopen("../disk_layout2.txt", "r", stdin); // Only use for testing
+  // freopen("../disk_layout_simple_reversed.txt", "r", stdin); // Only use for testing
 
   // Steps
   // 1. Read blocks into array
@@ -115,8 +117,13 @@ int main() {
 
   if (DEBUG) printf("Read in %d blocks!\n", total);
 
-  // Start annotating
+
+  // ok this isn't exactly correct since files can start after we've already seen blocks in the file
+  // In the disk_layout_simple_reversed we see this happen. Even though there are two files, we count three files
+  // Since this value isn't really used other than to determine if we've seen a file it's ok
   int file_count = 0;
+
+  // Start annotating
   for (int i = 0; i < total; i++) {
     Block* block = blocks[i];
     // Ignore free blocks and blocks that have already been annotated
