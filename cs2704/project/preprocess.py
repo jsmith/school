@@ -1,19 +1,34 @@
 import pandas as pd
 
-# https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
-# https://ourworldindata.org/land-use#total-agricultural-land-use
+# The data source URLs
 # https://ourworldindata.org/internet#internet-access
+# https://ourworldindata.org/grapher/gdp-per-capita-worldbank
 
-gdp_across_time = pd.read_csv("gdp-across-countries.csv")
-total_ag_area = pd.read_csv("total-agricultural-area-over-the-long-term.csv")
-total_ag_area_2016 = total_ag_area.query('Year == 2016')
+gdp_pc_across_time = pd.read_csv("gdp-per-capita-worldbank.csv")
+total_int_access = pd.read_csv("share-of-individuals-using-the-internet.csv")
 
-# total_ag_area.query("Year == '2016'")['Entity'].to_list()
-# print(gdp_across_time)
 
-gdp_2016 = gdp_across_time['2016']
-countries = gdp_across_time['Data Source']
+def get_data_for_year(year: int) -> pd.DataFrame:
+    # Filter each dataset to the year we care about
+    total_int_access_specific = total_int_access.query(f'Year == {year}').set_index("Entity")
+    gdp_pc_specific = gdp_pc_across_time.query(f"Year == {year}").set_index("Entity")
 
-print(countries.to_list())
+    # Do an inner join on the country name so that we only display data where we have both datapoints
+    merged = gdp_pc_specific.merge(total_int_access_specific, left_index=True, right_index=True, how="inner")
 
-set().intersection()
+    # Renaming since the names are super long
+    # The new names aren't that descriptive but are much easier to work with
+    merged = merged.rename(columns={
+        "GDP per capita (int.-$) (constant 2011 international $)": "GDP_PC",
+        "Individuals using the Internet (% of population) (% of population)": "INT",
+    })
+
+    # Extracting the columns I care actually about
+    return merged.loc[:, ['GDP_PC', "INT"]]
+
+
+data_2016 = get_data_for_year(2016)
+data_2000 = get_data_for_year(2000)
+
+data_2016.to_csv("data_2016.csv")
+data_2000.to_csv("data_2000.csv")
