@@ -25,3 +25,4 @@ cmake-build-debug
 # Other
 *.zip
 venv
+node_modules

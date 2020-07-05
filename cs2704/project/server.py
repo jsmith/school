@@ -19,9 +19,9 @@ class Year2016Handler(RequestHandler):
 
 def make_app():
     return Application([
-        (r"/", MainHandler),
-        (r"/2016/", Year2016Handler),
-        (r"/2000/", Year2000Handler),
+        (r"/3534295/", MainHandler),
+        (r"/3534295/2016/", Year2016Handler),
+        (r"/3534295/2000/", Year2000Handler),
     ])
 
 

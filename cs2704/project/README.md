@@ -7,7 +7,7 @@ First, make sure you have Python >= 3.6 installed. Next, just run the following 
 ```
 pip install -r requirements.txt
 ```
-> I recommend first using a virtualenv before running the above `pip install` command.
+> I recommend first using a `virtualenv` before running the above `pip install` command.
 
 ## Usage
 First, you need to preprocess your data.

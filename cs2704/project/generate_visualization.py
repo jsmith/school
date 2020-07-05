@@ -15,7 +15,6 @@ input_year = sys.argv[1]
 def rgb2hex(r, g, b):
     return "#{:02x}{:02x}{:02x}".format(r, g, b)
 
-
 def gen_pastel_color(mix):
     red = round(random.random() * 256)
     green = round(random.random() * 256)
@@ -38,7 +37,7 @@ df["color"] = [gen_pastel_color((200, 200, 200)) for _ in range(len(df))]
 # Changing the range of this column to a new value
 max_gdp = df["size"].max()
 df["size"] = df["size"] / max_gdp * 15 + 5
-print(df["size"].to_list())
+# print(df["size"].to_list())
 
 source = ColumnDataSource(df)
 
